@@ -1,0 +1,337 @@
+@charset "utf-8";
+/*
+	dropdown menu only css
+	Copyright Rectus Inc, 2022
+	https://www.rectus.co.jp/
+ */
+
+/* basic */
+ul,
+div,
+img {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	font-weight: normal;
+}
+/* topmenu */
+#navi {
+	background-color: #FFF;
+	position: fixed;
+	top: 0;
+	left: 0;
+	line-height: 60px;
+	width: 100%;
+}
+/* checkbox hidden */
+#navi input[type="checkbox"] {
+	display: none;
+}
+@media screen and (max-width: 980px) {
+	#navi input[type="checkbox"] {
+		display: inline-block;
+		opacity: 0;
+	}
+}
+/* upleft logo */
+.menu-left {
+	float: left;
+	line-height: 60px;
+	margin: 0 50px 0 20px;
+}
+@media screen and (max-width: 980px) {
+	.menu-left {
+		line-height: 40px;
+		margin: 0 50px 0 20px;
+	}
+}
+.menu-left img {
+	vertical-align: middle;
+	margin-left: 10px;
+}
+.menu-left h1{
+	font-size: inherit;
+}
+/* menu */
+#main-menu {
+	float: right;
+	margin: 10px;
+}
+#main-menu li {
+	position: relative;
+	white-space: nowrap;
+}
+#main-menu li a {
+	display: block;
+}
+#main-menu > li {
+	float: left;
+	padding: 2px 15px;
+	line-height: 40px;
+	margin: 0;
+}
+/* + no display */
+#main-menu > li .pd {
+	display: none;
+}
+
+.menu-right {
+	float: right;
+	margin-right: 16px;
+}
+main .sf {
+	display: none;
+}
+@media screen and (max-width: 980px) {
+	#navi .sf {
+		display: none;
+	}
+	main .sf {
+		float: inherit;
+		display: block;
+	}
+}
+#menu-navibtn {
+	opacity: 0;
+	cursor: pointer;
+	cursor: hand;
+}
+
+/* for sp */
+@media screen and (max-width: 980px) {
+	/* no display */
+	#main-menu {
+		display: none;
+		width: 100%;
+		margin: 0;
+	}
+	#main-menu li {
+		height: auto;
+		width: 100%;
+		padding: 0px 20px;
+		border-bottom: 1px solid #DDD;
+		white-space: nowrap;
+	}
+	#main-menu > li {
+		margin-right: -20px;
+		padding: 0 30px;
+	}
+	/* + を表示 */
+	#main-menu > li .pd {
+		display: inline-block;
+		width: 100%;
+	}
+	#main-menu li a {
+		display: inline-block;
+	}
+	#main-menu li:first-child {
+		border-top: 1px solid #DDD;
+	}
+	#main-menu li i {
+		padding: 0px 6px;
+	}
+	/* fixed menu */
+	#menu-navibtn:checked ~ #navi {
+		position: fixed;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		height: 100%;
+	}
+}
+
+/* dropdown menu */
+#main-menu li ul {
+	position: absolute;
+/*	margin-left: -50%; */
+}
+/* child menu */
+#main-menu > li > ul li {
+	display: none;
+	padding: 0px 20px;
+	background-color: #FFF;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #DDD;
+}
+#main-menu li ul li:first-child {
+	border-top: 1px solid #000;
+}
+#main-menu li ul li:last-child {
+	border-bottom: 1px solid #000;
+}
+#main-menu li ul li ul {
+	top: -1px;
+	left: 100%;
+}
+#main-menu li ul li ul li ul,
+#main-menu li:nth-child(n+3) ul li ul {
+	left: inherit;
+	right: 100%;
+}
+#main-menu > li > ul {
+	width: auto;
+}
+
+/* for pc */
+@media screen and (min-width: 980px) {
+	#main-menu li:hover,
+	#main-menu li:focus-visible {
+		background: #EEF;
+	}
+	#main-menu > li:hover > ul > li,
+	#main-menu > li:focus-within > ul > li,
+	#main-menu li ul li:hover > ul > li,
+	#main-menu li ul li:focus-within > ul > li {
+		display: block;
+	}
+	/* mark */
+	#main-menu li ul li ul:before,
+	#main-menu li ul li ul li ul:before,
+	#main-menu li:nth-child(n+3) ul li ul:before {
+		position: absolute;
+		top: 28px;
+		content: "";
+		border: 5px solid transparent;
+		display: block;
+	}
+	/* normal */
+	#main-menu li ul li ul:before {
+		left: -10px;
+		margin: -12px 0;
+		border-left-color: #666;
+	}
+	/* right */
+	#main-menu li ul li ul li ul:before,
+	#main-menu li:nth-child(n+3) ul li ul:before {
+		right: -10px;
+		border-right-color: #666;
+	}
+}
+/* for sp */
+@media screen and (max-width: 980px) {
+	/* hamburg menu click */
+	#menu-navibtn:checked ~ * #main-menu {
+		display: block;
+	}
+	#menu-navibtn:checked ~ * #main-menu > li {
+		max-height: inherit;
+		overflow-y: visible;
+	}
+	#main-menu > li ul {
+		line-height: 40px;
+	}
+	#main-menu > li > label:hover {
+		cursor: pointer;
+		cursor: hand;
+	}
+	#main-menu li ul {
+		position: static;
+	}
+	/* child menu */
+	#main-menu > li > ul {
+		margin-left: initial;
+		position: relative;
+	}
+	#main-menu li ul li:first-child {
+		border-top: 1px solid #DDD;
+	}
+	#main-menu ul li:last-child {
+		border-bottom: none;
+	}
+	#main-menu > li > ul li {
+		border-left: 1px solid #FFF;
+		border-right: 1px solid #FFF;
+	}
+	#main-menu li ul li ul {
+		top: inherit;
+		left: 0;
+	}
+	#main-menu li ul li:last-child {
+		border-bottom: none;
+	}
+	/* click child menu */
+	#main-menu input[type="checkbox"]:checked ~ label ~ ul > li {
+		max-height: inherit;
+		overflow-y: visible;
+		display: block;
+	}
+	.angletoggle:before {
+		content: "+";
+	}
+	#navi input[type="checkbox"]:checked ~ label .pd .angletoggle:before {
+		content: "-";
+	}
+	#navi .opensubmenu:focus-visible ~ label span span {
+		border: blue 2px solid;
+	}
+
+}
+
+/* sp */
+#navi #navibtn {
+	display: none;
+}
+@media screen and (max-width: 980px) {
+	#navi #navibtn {
+		display: block;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+	#menu-navibtn:focus-visible ~ div label#navibtn {
+		border: blue 2px solid;
+	}
+	#navibtn span:focus-visible,
+	#navibtn span {
+		display: block;
+		width: 40px;
+		height: 40px;
+		background-color: #333;
+	}
+	#navibtn span span {
+		display: block;
+		overflow: hidden;
+		width: 1px;
+		height: 1px;
+	}
+	#navibtn span span::before,
+	#navibtn span span::after,
+	#navibtn span::after {
+		position: absolute;
+		left:10px;
+		content:"";
+		width: 20px;
+		height: 3px;
+		background-color: #FFF;
+	}
+	/* up line */
+	#navibtn span span::before {
+		top:10px;
+	}
+	#menu-navibtn:checked ~ #navi .sf {
+		display: block;
+		width: 100%;
+		text-align: right;
+	}
+	#menu-navibtn:checked ~ #navi label#navibtn span span::before {
+		top:19px;
+		transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+	}
+	/* down line */
+	#navibtn span::after {
+		bottom:10px;
+	}
+	#menu-navibtn:checked ~ #navi label#navibtn > span::after {
+		bottom:18px;
+		transform: rotate(-135deg);
+		-webkit-transform: rotate(-135deg);
+	}
+	/* middle line */
+	#navibtn span span::after {
+		top:18px;
+	}
+	#menu-navibtn:checked ~ #navi label#navibtn span span::after {
+		display: none;
+	}
+}
