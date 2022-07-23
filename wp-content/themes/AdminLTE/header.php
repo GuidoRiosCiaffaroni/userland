@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> <?php blankslate_schema_type(); ?>>
 <head>
-  <meta charset="utf-8">
+  <meta charset="<?php //bloginfo( 'charset' ); ?>" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
   <title>AdminLTE 3 | Dashboard 2</title>
@@ -15,7 +15,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/dist/css/adminlte.min.css">
 </head>
-<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body  class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 
 
@@ -285,7 +285,7 @@
 <!--
 <html <?php language_attributes(); ?> <?php blankslate_schema_type(); ?>>
 <head>
-<meta charset="<?php //bloginfo( 'charset' ); ?>" />
+
 <meta name="viewport" content="width=device-width" />
 <?php wp_head(); ?>
 </head>
