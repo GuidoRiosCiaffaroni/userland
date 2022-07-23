@@ -8,6 +8,18 @@ get_header();
         <div class="row">
 
 
+<?php
+    if(is_user_logged_in())
+    {
+    	echo 'logeado';
+    	echo '</br>';  
+    }else{
+    echo 'nop';
+    echo '</br>';
+    }
+?>
+
+
 
 <?php
 if ( have_posts() ) : while ( have_posts() ) : the_post();
