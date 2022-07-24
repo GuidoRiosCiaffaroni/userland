@@ -13,9 +13,13 @@ get_header();
     {
     	echo 'logeado';
     	echo '</br>';  
-    }else{
+    	switch_theme('AdminLTE');
+    }
+    else
+    {
     echo 'nop';
     echo '</br>';
+    switch_theme('wpbstarter');
     }
 ?>
 
