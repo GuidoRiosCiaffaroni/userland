@@ -4,7 +4,7 @@
   <meta charset="<?php //bloginfo( 'charset' ); ?>" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
-  <title>AdminLTE 3 | Dashboard 2</title>
+  <title>AdminLTE 3 | Dashboard 2 <?php get_bloginfo( 'name' )?></title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/dist/css/adminlte.min.css">
 </head>
 <body  class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<?php wp_body_open(); ?>  
 <div class="wrapper">
 
 
@@ -32,12 +33,36 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="<?php home_url( '/' ) ?>" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li>
     </ul>
+
+    <?php 
+    wp_nav_menu( 
+      array( 
+        'theme_location' => 'main-menu', 
+        'menu'            => '',
+        'container'       => 'div',
+        'container_class' => '',
+        'container_id'    => '',
+        'menu_class'      => 'menu',
+        'menu_id'         => '',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+        'depth'           => 0,
+        'walker'          => ''
+      ) 
+    ); 
+    ?>
+
 
 
     <!-- Right navbar links -->
