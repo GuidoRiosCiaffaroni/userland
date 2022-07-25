@@ -29,7 +29,8 @@ if($_POST['loginEmail'] && $_POST['loginPassword'] && !$_POST['wd_resendActivati
     else
     {
       switch_theme('adminlte');
-      window.location.replace(get_template_directory_uri());
+      //window.location.replace(get_template_directory_uri());
+      header('Location: '.home_url().'');
 
     }  
 }
