@@ -17,34 +17,22 @@
 
 
 
-
-   if($_POST['loginEmail'] && $_POST['loginPassword'])
-   {
+if($_POST['loginEmail'] && $_POST['loginPassword'] && !$_POST['wd_resendActivationButton'])
+{
+    echo $userOK = 0;
     $user = wp_authenticate( $_POST['loginEmail'] , $_POST['loginPassword'] );
-
+    
     if(is_wp_error($user)) 
     {
-        echo $user->get_error_message();
-    } 
-    else 
-    {
-        if($user->user_status === "0") 
-        {
-            wp_logout();
-        } 
-        else 
-        {
-            if(is_user_logged_in()) 
-            {
-              is_user_logged_in();
-            } 
-            else 
-            {
-             
-            }
-        }
+      echo 'Error';
     }
+    else
+    {
+      switch_theme('adminlte');
+    }  
 }
+
+
 
 
 ?>

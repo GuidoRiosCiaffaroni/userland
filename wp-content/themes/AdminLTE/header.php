@@ -150,11 +150,20 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
+
+
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo wp_logout_url( home_url() ); ?>"><i class="fas fa-expand-arrows-alt"></i></a>
+      </li>
+
+
+
       <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
           <i class="fas fa-th-large"></i>
