@@ -41,26 +41,29 @@
     </ul>
 
     <?php 
+   echo preg_replace( '#<li[^>]+>#', '<li class="nav-item">',
     wp_nav_menu( 
       array( 
         'theme_location' => 'main-menu', // Alias de navegación
         'menu'            => '', // menú esperado
-        'container'       => 'nav',// etiqueta del contenedor
-        'container_class' => 'main-header navbar navbar-expand navbar-dark', // valor de clase de nodo primario ul
+        'container'       => '',// etiqueta del contenedor
+        'container_class' => 'navbar-nav', // valor de clase de nodo primario ul
         'container_id'  => '',  // valor de id del nodo primario ul
-        'menu_class'   => 'menu',   // valor de clase de nodo ul
+        'menu_class'   => 'navbar-nav',   // valor de clase de nodo ul
         'menu_id'   => '',  // valor de id del nodo ul
-        'echo'  => true,// Ya sea para mostrar el menú, el valor predeterminado es verdadero
+        'echo'  => false,// Ya sea para mostrar el menú, el valor predeterminado es verdadero
         'fallback_cb' => 'wp_page_menu',  // Si el menú no existe, regrese al menú predeterminado, ajústelo en falso para que no regrese
         'before' => '', // Texto antes del enlace
         'after'  => '', // Texto después del enlace
         'link_before'  => '',   // Antes del texto del enlace
         'link_after'  => '',// Después del texto del enlace
-        'items_wrap'  => '<ul id="%1$s" class="%2$s">%3$s</ul>',   // Cómo empacar la lista
+        'items_wrap'  => '<ul class="navbar-nav">%3$s</ul>',   // Cómo empacar la lista <ul id="%1$s" class="%2$s">%3$s</ul>
         'depth' => 0,   // Profundidad del menú, predeterminado 0
         'walker' => ''  // Walker personalizado
       ) 
-    ); 
+    )
+  );
+  
     ?>
 
 

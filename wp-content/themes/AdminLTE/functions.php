@@ -1,4 +1,10 @@
 <?php
+/* Ocultar barra admin todos los usuarios */
+add_filter('show_admin_bar', '__return_false');
+
+
+
+
 add_action( 'after_setup_theme', 'blankslate_setup' );
 function blankslate_setup() {
 load_theme_textdomain( 'blankslate', get_template_directory() . '/languages' );
