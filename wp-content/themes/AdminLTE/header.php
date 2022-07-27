@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> <?php blankslate_schema_type(); ?>>
+<html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php //bloginfo( 'charset' ); ?>" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
-  <title>AdminLTE 3 | Dashboard 2 <?php get_bloginfo( 'name' )?></title>
+  <title><?php get_bloginfo( 'name' )?></title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -27,53 +27,8 @@
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-dark">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="<?php home_url( '/' ) ?>" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
-    
-    <?php 
-    $cadena = wp_nav_menu( 
-      array( 
-              'theme_location' => 'main-menu', // Alias de navegación
-              'menu'            => '', // menú esperado
-              'container'       => '',// etiqueta del contenedor
-              'container_class' => 'navbar-nav', // valor de clase de nodo primario ul
-              'container_id'  => '',  // valor de id del nodo primario ul
-              'menu_class'   => 'navbar-nav',   // valor de clase de nodo ul
-              'menu_id'   => '',  // valor de id del nodo ul
-              'echo'  => false,// Ya sea para mostrar el menú, el valor predeterminado es verdadero
-              'fallback_cb' => 'wp_page_menu',  // Si el menú no existe, regrese al menú predeterminado, ajústelo en falso para que no regrese
-              'before' => '', // Texto antes del enlace
-              'after'  => '', // Texto después del enlace
-              'link_before'  => '',   // Antes del texto del enlace
-              'link_after'  => '',// Después del texto del enlace
-              'items_wrap'  => '%3$s',   // Cómo empacar la lista // <ul id="%1$s" class="%2$s">%3$s</ul> // <ul class="navbar-nav">%3$s</ul>
-              'depth' => 0,   // Profundidad del menú, predeterminado 0
-              'walker' => ''  // Walker personalizado
-      )
-    );
-
-  $patrones = array();
-  $patrones[0] = '#<li[^>]+>#';
-  $patrones[1] = '/itemprop="url"/';
-
-  $sustituciones = array();
-  $sustituciones[1] = '<li class="nav-item d-none d-sm-inline-block">';
-  $sustituciones[0] = ' class="nav-link" itemprop="url" ';
-
-  echo preg_replace($patrones,$sustituciones,$cadena);
-  
-    ?>
-</ul>
-
+ 
+<?php get_template_part( 'template-parts/content' ); ?>
 
 
     <!-- Right navbar links -->
@@ -228,6 +183,16 @@
         </div>
         <div class="info">
           <a href="#" class="d-block">Alexander Pierce</a>
+          <?php
+
+        $current_user = wp_get_current_user();
+        // echo 'Username: ' . $current_user->user_login . "\n";
+        // echo '</br>';
+        // echo 'User display name: ' . $current_user->display_name . "\n";
+        echo esc_html( $current_user->user_login );
+
+          ?>
+
         </div>
       </div>
 

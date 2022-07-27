@@ -2,9 +2,8 @@
 Contributors: catchthemes
 Tags: grid-layout, one-column, two-columns, right-sidebar, left-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, flexible-header, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, blog, photography, portfolio
 Requires at least: 5.6
-Tested up to: 5.9
+Tested up to: 6.0
 Requires PHP: 5.6
-Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +40,11 @@ You can check our Theme Demo at https://www.catchthemes.com/demo/blakely-free
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 1.1.1 (Released: July 25, 2022) =
+* Bug Fixed: Countdown section not saving AM/PM
+* Bug Fixed: Sticky Playlist page selected by default while enabling section
+* Updated: Google Font hosted locally (https://make.wordpress.org/themes/2022/06/18/complying-with-gdpr-when-using-google-fonts/)
 
 = 1.1 (Released: February 05, 2022) =
 * Updated: WordPress 5.9 ready
@@ -81,3 +85,8 @@ Blakely is distributed under the terms of the GNU GPL
 	Font Awesome icons, Copyright Dave Gandy
 	License: SIL Open Font License, version 1.1.
 	Source: http://fontawesome.io/
+
+* PHP files
+	WPTT_WebFont_Loader
+	License https://opensource.org/licenses/MIT
+	Source: https://github.com/WPTT/webfont-loader
