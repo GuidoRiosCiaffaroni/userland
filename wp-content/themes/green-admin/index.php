@@ -13,10 +13,13 @@
 									<div class="breadcomb-icon">
 										<i class="notika-icon notika-edit"></i>
 									</div>
-
-
 									<div class="breadcomb-ctn">
-									    <?php                                       
+									    
+
+
+
+
+                                        <?php                                       
                                         //get_header();
                                         if ( have_posts() ) : while ( have_posts() ) : the_post();
                                         //get_template_part( 'entry' );
@@ -69,20 +72,17 @@
                                         <!--
                                         </article>
                                         -->
-									</div>
+									
 
                                         <?php
                                         comments_template();
                                         endwhile; endif;
                                         get_template_part( 'nav', 'below' );
                                         //get_footer();
-                                        
                                         ?>
 
 
-
-
-
+                                    </div>    
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
@@ -98,28 +98,5 @@
 	</div>
 	<!-- Trabajo area End-->
 
-
-	
-
-    
-	
-	
-	
-	
-	
-
-
-
 <?php get_footer(); ?>
 
-<?php
-/*
-get_header();
-if ( have_posts() ) : while ( have_posts() ) : the_post();
-get_template_part( 'entry' );
-comments_template();
-endwhile; endif;
-get_template_part( 'nav', 'below' );
-get_footer();
-*/
-?>
