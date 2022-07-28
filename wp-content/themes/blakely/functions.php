@@ -533,10 +533,8 @@ if ( ! function_exists( 'blakely_fonts_url' ) ) :
 	
 			$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 		}
-		// Load google font locally.
-		require_once get_theme_file_path( 'inc/wptt-webfont-loader.php' );
-
-		return esc_url_raw( wptt_get_webfont_url( $fonts_url ) );
+	
+		return esc_url_raw( $fonts_url );
 	}
 endif;
 

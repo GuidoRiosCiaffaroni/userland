@@ -231,5 +231,5 @@ function blakely_sanitize_events_fg_position( $value, $setting ) {
 function blakely_sanitize_date_time( $input ) {
     $date = new DateTime( $input );
     
-    return $date->format('Y-m-d H:m:s');
+    return $date->format('Y-m-d h:m:s');
 }

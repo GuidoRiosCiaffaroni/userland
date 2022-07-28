@@ -6,12 +6,6 @@
  */
 
 $blakely_id      = get_theme_mod( 'blakely_sticky_playlist' );
-
-if ( ! $blakely_id ) {
-	// If number is 0, then this section is disabled
-	return;
-}
-
 $args['page_id'] = absint( $blakely_id );
 
 
