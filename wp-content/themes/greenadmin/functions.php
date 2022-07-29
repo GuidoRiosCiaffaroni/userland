@@ -13,6 +13,8 @@ function wpdocs_check_logged_in()
     else 
     {
         // Logged in.
+        switch_theme('greenadmin');
+
     }
 }
 
