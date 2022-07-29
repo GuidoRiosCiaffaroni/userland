@@ -129,10 +129,10 @@ if($_POST['loginEmail'] && $_POST['loginPassword'] && !$_POST['wd_resendActivati
 <!-- /.login-box -->
 
 <!-- jQuery -->
-<script src="<?php echo get_template_directory_uri(); ?>//plugins/jquery/jquery.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="<?php echo get_template_directory_uri(); ?>//plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="<?php echo get_template_directory_uri(); ?>//dist/js/adminlte.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/dist/js/adminlte.min.js"></script>
 </body>
 </html>
