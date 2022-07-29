@@ -1,4 +1,13 @@
 <?php
+
+
+
+
+
+
+
+
+
 // Seguridad 
 add_action( 'init', 'wpdocs_check_logged_in' );
 function wpdocs_check_logged_in() 

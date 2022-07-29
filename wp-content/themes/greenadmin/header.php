@@ -1,5 +1,30 @@
 <?php // switch_user_theme(); ?>
-<?php wpdocs_check_logged_in(); ?>
+<?php //wpdocs_check_logged_in(); ?>
+
+<?php
+/*
+if($_POST['loginEmail'] && $_POST['loginPassword'])
+{
+    echo $userOK = 0;
+    $user = wp_authenticate( $_POST['loginEmail'] , $_POST['loginPassword'] );
+    
+
+    if(is_wp_error($user)) 
+    {
+      echo 'Error';
+    }
+    else
+    {
+    echo $userOK = 1;
+      switch_theme('greenadmin');
+      //window.location.replace(home_url());
+      header('Location: '.home_url().'');
+
+    }  
+}
+*/
+?>
+
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
 
