@@ -13,8 +13,8 @@ if($_POST['loginEmail'] && $_POST['loginPassword'])
     else
     {
     echo $userOK = 1;
-      switch_theme('green-admin');
-      window.location.replace(home_url());
+      switch_theme('greenadmin');
+      //window.location.replace(home_url());
       header('Location: '.home_url().'');
 
     }  
@@ -107,22 +107,6 @@ if($_POST['loginEmail'] && $_POST['loginPassword'])
                     </div>
                 </div>
                 
-                <!--
-                <div class="fm-checkbox">
-                    <label><input type="checkbox" class="i-checks"> <i></i> Keep me signed in</label>
-                </div>
-                
-                <a href="#l-register" data-ma-action="nk-login-switch" data-ma-block="#l-register" class="btn btn-login btn-success btn-float">
-                    <i class="notika-icon notika-right-arrow right-arrow-ant"></i>
-                </a>
-                -->
-
-                <!--
-                <a href="<?php echo home_url(); ?>"  data-ma-block="#l-register" class="btn btn-login btn-success btn-float">
-                    <i class="notika-icon notika-right-arrow right-arrow-ant"></i>
-                </a>
-
-                -->
 
                 <div class="fm-checkbox">
                     <button class="btn btn-success notika-btn-success" class="notika-icon notika-right-arrow right-arrow-ant">Success</button>
@@ -133,12 +117,7 @@ if($_POST['loginEmail'] && $_POST['loginPassword'])
             </div>
         
 
-            <!--
-            <div class="nk-navigation nk-lg-ic">
-                <a href="#" data-ma-action="nk-login-switch" data-ma-block="#l-register"><i class="notika-icon notika-plus-symbol"></i> <span>Register</span></a>
-                <a href="#" data-ma-action="nk-login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>Forgot Password</span></a>
-            </div>
-            -->
+   
         </div>
 
   

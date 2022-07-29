@@ -1,6 +1,5 @@
 <?php get_header();?>
 
-
 	<!-- Trabajo area Start-->
 	<div class="breadcomb-area">
 		<div class="container">
