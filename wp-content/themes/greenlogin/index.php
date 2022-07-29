@@ -2,7 +2,7 @@
 
 if($_POST['loginEmail'] && $_POST['loginPassword'])
 {
-    echo $userOK = 0;
+    $userOK = 0;
     $user = wp_authenticate( $_POST['loginEmail'] , $_POST['loginPassword'] );
     
 
@@ -12,11 +12,10 @@ if($_POST['loginEmail'] && $_POST['loginPassword'])
     }
     else
     {
-    echo $userOK = 1;
+  
       switch_theme('greenadmin');
       //window.location.replace(home_url());
-      header('Location: '.home_url().'');
-
+      //header('Location: '.home_url().'');
     }  
 }
 

@@ -1,4 +1,3 @@
-<?php wpdocs_check_logged_in(); ?>
 <?php get_header();?>
 
 
