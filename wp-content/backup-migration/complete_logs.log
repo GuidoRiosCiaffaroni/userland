@@ -10,3 +10,488 @@
 [2022-07-26 19:23:10] [LOG] New backup created and its name is: BM_Backup_2022-07-26_19_22_42_aWkphEQogvCSbuqn.zip
 [2022-07-28 00:06:11] [LOG] Restoring site...
 [2022-07-28 00:12:56] [LOG] Site restored...
+[2022-07-29 01:18:44] [LOG] Restoring site...
+[2022-07-29 01:31:34] [LOG] Site restored...
+[2022-07-30 22:32:41] [ERROR] Shuted down
+[2022-07-30 22:32:41] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:32:41] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:32:41] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:32:41] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:32:42] [ERROR] Shuted down
+[2022-07-30 22:32:42] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:32:42] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:32:42] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:32:42] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:32:48] [ERROR] Shuted down
+[2022-07-30 22:32:48] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:32:48] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:32:48] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:32:48] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:32:54] [ERROR] Shuted down
+[2022-07-30 22:32:54] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:32:54] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:32:54] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:32:54] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:32:55] [ERROR] Shuted down
+[2022-07-30 22:32:55] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:32:55] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:32:55] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:32:55] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:32:55] [ERROR] Shuted down
+[2022-07-30 22:32:55] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:32:55] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:32:55] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:32:55] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:32:55] [ERROR] Shuted down
+[2022-07-30 22:32:55] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:32:55] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:32:55] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:32:55] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:32:55] [ERROR] Shuted down
+[2022-07-30 22:32:55] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:32:55] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:32:55] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:32:55] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:32:56] [ERROR] Shuted down
+[2022-07-30 22:32:56] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:32:56] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:32:56] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:32:56] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:32:58] [ERROR] Shuted down
+[2022-07-30 22:32:58] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:32:58] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:32:58] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:32:58] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:33:01] [ERROR] Shuted down
+[2022-07-30 22:33:01] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:33:01] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:33:01] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:33:01] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:33:06] [ERROR] Shuted down
+[2022-07-30 22:33:06] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:33:06] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:33:06] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:33:06] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:33:12] [ERROR] Shuted down
+[2022-07-30 22:33:12] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:33:12] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:33:12] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:33:12] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:33:18] [ERROR] Shuted down
+[2022-07-30 22:33:18] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:33:18] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:33:18] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:33:18] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:33:22] [ERROR] Shuted down
+[2022-07-30 22:33:22] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:33:22] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:33:22] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:33:22] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:33:25] [ERROR] Shuted down
+[2022-07-30 22:33:25] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:33:25] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:33:25] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:33:25] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:33:26] [ERROR] Shuted down
+[2022-07-30 22:33:26] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:33:26] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:33:26] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:33:26] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:33:30] [ERROR] Shuted down
+[2022-07-30 22:33:30] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:33:30] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:33:30] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:33:30] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:33:33] [ERROR] Shuted down
+[2022-07-30 22:33:33] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:33:33] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:33:33] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:33:33] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:33:33] [ERROR] Shuted down
+[2022-07-30 22:33:33] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:33:33] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:33:33] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:33:33] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:33:37] [ERROR] Shuted down
+[2022-07-30 22:33:37] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:33:37] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:33:37] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:33:37] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:33:38] [ERROR] Shuted down
+[2022-07-30 22:33:38] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:33:38] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:33:38] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:33:38] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:33:41] [ERROR] Shuted down
+[2022-07-30 22:33:41] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:33:41] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:33:41] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:33:41] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:33:42] [ERROR] Shuted down
+[2022-07-30 22:33:42] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:33:42] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:33:42] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:33:42] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:33:51] [LOG] Creating backup 
+[2022-07-30 22:33:51] [LOG] Found 6565 files to backup.
+[2022-07-30 22:35:37] [LOG] New backup created and its name is: BM_Backup_2022-07-30_22_33_45_q1ipbU2f0XxukeyM.zip
+[2022-07-30 22:35:37] [ERROR] Shuted down
+[2022-07-30 22:35:37] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:35:37] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:35:37] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:35:37] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:35:37] [ERROR] Shuted down
+[2022-07-30 22:35:37] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:35:37] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:35:37] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:35:37] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:35:43] [ERROR] Shuted down
+[2022-07-30 22:35:43] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:35:43] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:35:43] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:35:43] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:35:43] [ERROR] Shuted down
+[2022-07-30 22:35:43] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:35:43] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:35:43] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:35:43] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:35:48] [ERROR] Shuted down
+[2022-07-30 22:35:48] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:35:48] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:35:48] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:35:48] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:35:53] [ERROR] Shuted down
+[2022-07-30 22:35:53] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:35:53] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:35:53] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:35:53] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:35:59] [ERROR] Shuted down
+[2022-07-30 22:35:59] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:35:59] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:35:59] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:35:59] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:36:04] [ERROR] Shuted down
+[2022-07-30 22:36:04] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:36:04] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:36:04] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:36:04] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:36:10] [ERROR] Shuted down
+[2022-07-30 22:36:10] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:36:10] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:36:10] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:36:10] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:36:15] [ERROR] Shuted down
+[2022-07-30 22:36:15] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:36:15] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:36:15] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:36:15] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:36:21] [ERROR] Shuted down
+[2022-07-30 22:36:21] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:36:21] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:36:21] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:36:21] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:36:27] [ERROR] Shuted down
+[2022-07-30 22:36:27] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:36:27] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:36:27] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:36:27] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:36:32] [ERROR] Shuted down
+[2022-07-30 22:36:32] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:36:32] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:36:32] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:36:32] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:36:40] [ERROR] Shuted down
+[2022-07-30 22:36:40] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:36:40] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:36:40] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:36:40] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:36:52] [ERROR] Shuted down
+[2022-07-30 22:36:52] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:36:52] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:36:52] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:36:52] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-07-30 22:37:00] [ERROR] Shuted down
+[2022-07-30 22:37:00] [ERROR] Array
+(
+    [type] => 2
+    [message] => ini_set(): A session is active. You cannot change the session module's ini settings at this time
+    [file] => C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php
+    [line] => 271
+)
+
+[2022-07-30 22:37:00] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
+[2022-07-30 22:37:00] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
+[2022-07-30 22:37:00] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
