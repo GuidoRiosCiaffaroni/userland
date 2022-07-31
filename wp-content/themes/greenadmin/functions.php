@@ -1,14 +1,92 @@
 <?php
+// Seguridad 
+add_action( 'secure_setup_theme', 'secure_setup' );
+function secure_setup() 
+{
+
+$page = get_the_title();
+if ($page == 'Login')
+{
+    $loginEmail = $_POST['loginEmail'];
+    $loginPassword = $_POST['loginPassword'];
+
+    if($loginEmail && $loginPassword)
+    {
+        $user = wp_authenticate( $loginEmail , $loginPassword );
+        if(!is_wp_error($user))
+        {
+            header('Location: '.home_url().'/home');
+        }
+        else
+        {
+            // usuario o contraseña inconrecta
+            echo $user->get_error_message();
+            wp_logout();
+        }
+
+    }
+
+
+
+    /*
+    echo 'login';
+    echo '</br>';
+    echo home_url();
+    header('Location: '.home_url().'/home');
+    */
+
+
+
+}
+else 
+{
+
+}
+
+
+/*
+        if ( ! session_id() ) {
+          session_start();
+    }
+
+    echo session_id();
+    echo '</br>';
+    $loginEmail = $_POST['loginEmail'];
+    $loginPassword = $_POST['loginPassword'];
+    $_SESSION['loginEmail'] = $loginEmail;
+    echo '</br>';
+    $_SESSION['loginPassword'] = $loginPassword;
+    echo '</br>';
+    echo $_SESSION['loginEmail'];
+    echo '</br>';
+    echo $_SESSION['loginPassword'];
+    echo '</br>';
+echo is_page();
+echo '</br>';
+echo get_the_title() ;
+
+*/
+}
+
+
+
+
+
+
+
+/*
 add_action( 'init', 'dcms_session_start' );
 function dcms_session_start() {
     if ( ! session_id() ) {
           session_start();
     }
 }
+*/
 
 
 
 // Seguridad 
+/*
 add_action( 'secure_setup_theme', 'secure_setup' );
 function secure_setup() 
 {
@@ -34,7 +112,7 @@ echo get_the_title() ;
 
 
 }
-
+*/
 
 /*
 if($_POST['loginEmail'] && $_POST['loginPassword'] && !$_POST['wd_resendActivationButton'])
