@@ -1,1 +1,14 @@
 https://developer.wordpress.org/themes/template-files-section/page-template-files/
+
+https://hotexamples.com/es/examples/-/-/wp_signon/php-wp_signon-function-examples.html
+https://wp-qa.com/wp_authenticate-but-not-logged-in
+
+
+https://riptutorial.com/wordpress/example/9022/getting-the-current-user
+https://pluginsforwp.com/blog/get-current-user-role-wordpress/
+https://learntutorials.net/es/wordpress/topic/6649/wp-get-current-user---
+https://wp-kama.com/function/wp_set_current_user
+
+
+
+https://hotexamples.com/es/examples/-/-/wp_signon/php-wp_signon-function-examples.html
