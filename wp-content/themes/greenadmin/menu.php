@@ -8,7 +8,7 @@
                             <ul class="mobile-menu-nav">
                                 <li><a data-toggle="collapse" data-target="#Charts" href="#">Home</a>
                                     <ul class="collapse dropdown-header-top">
-                                        <li><a href="<?php echo get_template_directory_uri(); ?>/index.html">Dashboard One</a></li>
+                                        <li><a href="<?php echo get_template_directory_uri(); ?>/index.html">Perfil</a></li>
                                         <li><a href="<?php echo get_template_directory_uri(); ?>/index-2.html">Dashboard Two</a></li>
                                         <li><a href="<?php echo get_template_directory_uri(); ?>/index-3.html">Dashboard Three</a></li>
                                         <li><a href="<?php echo get_template_directory_uri(); ?>/index-4.html">Dashboard Four</a></li>
