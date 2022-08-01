@@ -10371,3 +10371,6 @@
 [2022-07-30 23:51:50] [ERROR] There was an error before request shutdown (but it was not logged to backup/restore log)
 [2022-07-30 23:51:50] [ERROR] Error message: ini_set(): A session is active. You cannot change the session module's ini settings at this time
 [2022-07-30 23:51:50] [ERROR] Error file/line: C:\xampp\htdocs\complete\wp-content\plugins\backup-backup\includes\initializer.php|271
+[2022-08-01 01:22:28] [LOG] Creating backup 
+[2022-08-01 01:22:28] [LOG] Found 6567 files to backup.
+[2022-08-01 01:27:26] [LOG] New backup created and its name is: BM_Backup_2022-08-01_01_22_18_Dr9jeHCdGa5gcxVA.zip

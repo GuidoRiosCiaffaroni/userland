@@ -22,15 +22,19 @@ function secure_setup()
             $user = wp_signon($credentials, false);
             if (is_wp_error($user)) 
             {
+                wp_logout();
                 echo 'bad';
                 //wp_send_json(array('data' => $user->get_error_message()));
             }
             else 
             {
+                echo 'good';
+                header('Location: '.home_url().'/home');
                 if ( is_user_logged_in() ) 
                 {
                     $current_user = wp_get_current_user();
                     echo 'Welcome, ' . $current_user->user_login . '!';
+                    header('Location: '.home_url().'/home');
                 } 
                 else 
                 {
@@ -45,7 +49,7 @@ function secure_setup()
     }
     else 
     {
-
+ 
     }
 }
 
