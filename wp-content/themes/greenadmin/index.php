@@ -1,5 +1,5 @@
 <?php get_header();?>
-
+<?php secure_user();?>
 
 	<!-- Trabajo area Start-->
 	<div class="breadcomb-area">
@@ -16,7 +16,9 @@
 									<div class="breadcomb-ctn">
 									    
 
-                                        <?php                                       
+                                        <?php      
+                                    
+
                                         //get_header();
                                         if ( have_posts() ) : while ( have_posts() ) : the_post();
                                         //get_template_part( 'entry' );
@@ -28,9 +30,10 @@
                                         
                                         <h2>Wizard</h2>
                                         -->
-										
+										 
                                         
                                         <?php 
+                                 
                                         if ( is_singular() ) 
                                         { 
                                             echo '<h1 class="entry-title" itemprop="headline">'; 

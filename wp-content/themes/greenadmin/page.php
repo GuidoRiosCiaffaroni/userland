@@ -1,6 +1,5 @@
-
 <?php get_header();?>
-
+<?php //secure_user();?>
 
 	<!-- Trabajo area Start-->
 	<div class="breadcomb-area">

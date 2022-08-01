@@ -1,5 +1,5 @@
 <?php
-// Seguridad 
+// Verificacion de Contraseña 
 add_action( 'secure_setup_theme', 'secure_setup' );
 function secure_setup() 
 {
@@ -30,6 +30,7 @@ function secure_setup()
             {
                 echo 'good';
                 header('Location: '.home_url().'/home');
+                
                 if ( is_user_logged_in() ) 
                 {
                     $current_user = wp_get_current_user();
@@ -41,6 +42,7 @@ function secure_setup()
                     echo 'Welcome, visitor!';
                     wp_logout();
                 }
+
             } 
    
         }
@@ -49,8 +51,28 @@ function secure_setup()
     }
     else 
     {
- 
+ //
     }
 }
+
+// seguridad de la aplicacion
+add_action( 'secure_user_theme', 'secure_user' );
+function secure_user()
+{
+    if ( is_user_logged_in() ) 
+    {
+        $current_user = wp_get_current_user();
+        echo 'Welcome, ' . $current_user->user_login . '!';
+    } 
+    else 
+    {
+        echo 'Welcome, visitor!';
+        wp_logout();
+        header('Location: '.home_url().'/login');
+
+    }
+
+}
+
 
 ?>

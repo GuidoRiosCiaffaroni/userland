@@ -1,4 +1,5 @@
 <?php secure_setup(); ?> 
+<?php //secure_user();?>
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
 
