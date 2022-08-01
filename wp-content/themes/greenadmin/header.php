@@ -1,8 +1,6 @@
 <?php secure_setup(); ?> 
-<?php //secure_user();?>
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
-
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -67,8 +65,6 @@
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-
     <?php get_template_part( 'top-area' ); ?>
     <?php get_template_part( 'menu' ); ?>            
 

@@ -1,5 +1,4 @@
- 
-   <!-- Start Header Top Area -->
+    <!-- Start Header Top Area -->
     <div class="header-top-area">
         <div class="container">
             <div class="row">
@@ -277,7 +276,7 @@
                             </li>
 
 
-                            <li class="nav-item"><a href="<?php wp_logout_url(get_permalink()) ?>" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
+                            <li class="nav-item"><a href="<?php echo wp_logout_url( home_url() ); ?>" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
                             
                             </li>
 
