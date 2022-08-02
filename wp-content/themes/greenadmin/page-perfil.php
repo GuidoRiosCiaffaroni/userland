@@ -54,6 +54,8 @@
   										$roles = ( array ) $current_user->roles;
 										echo '</br>';
   										echo 'User Roles: '.$roles[0];
+  										echo '</br>';
+  										echo 'User avatar: ' . get_avatar( $current_user->ID, 64 ) . '<br />';
 
 
 									?>
