@@ -55,8 +55,15 @@
 										echo '</br>';
   										echo 'User Roles: '.$roles[0];
   										echo '</br>';
-  										echo 'User avatar: ' . get_avatar( $current_user->ID, 64 ) . '<br />';
-
+  										echo 'User avatar por defecto : ' . get_avatar( $current_user->ID, 64 ) . '<br />';
+										echo '</br>';
+  										echo 'User avatar por original : ' . get_wp_user_avatar($current_user->ID, 'original');
+  										echo '</br>';
+  										echo 'User avatar por large : ' . get_wp_user_avatar($current_user->ID, 'large');
+  										echo '</br>';
+  										echo 'User avatar por medium : ' . get_wp_user_avatar($current_user->ID, 'medium');
+  										echo '</br>';
+  										echo 'User avatar por thumbnail : ' . get_wp_user_avatar($current_user->ID, 'thumbnail');
 
 									?>
 																		
