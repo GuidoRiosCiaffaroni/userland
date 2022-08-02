@@ -3,12 +3,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                
                     <div class="mobile-menu">
                         <nav id="dropdown">
                             <ul class="mobile-menu-nav">
+                        
                                 <li><a data-toggle="collapse" data-target="#Charts" href="#">Home</a>
                                     <ul class="collapse dropdown-header-top">
-                                        <li><a href="<?php echo get_template_directory_uri(); ?>/index.html">Perfil</a></li>
+                                        <li><a href="">Perfil</a></li>
                                         <li><a href="<?php echo get_template_directory_uri(); ?>/index-2.html">Dashboard Two</a></li>
                                         <li><a href="<?php echo get_template_directory_uri(); ?>/index-3.html">Dashboard Three</a></li>
                                         <li><a href="<?php echo get_template_directory_uri(); ?>/index-4.html">Dashboard Four</a></li>
@@ -16,6 +18,8 @@
                                         <li><a href="<?php echo get_template_directory_uri(); ?>/widgets.html">Widgets</a></li>
                                     </ul>
                                 </li>
+
+                                
                                 <li><a data-toggle="collapse" data-target="#demoevent" href="#">Email</a>
                                     <ul id="demoevent" class="collapse dropdown-header-top">
                                         <li><a href="<?php echo get_template_directory_uri(); ?>/inbox.html">Inbox</a></li>
@@ -23,6 +27,7 @@
                                         <li><a href="<?php echo get_template_directory_uri(); ?>/compose-email.html">Compose Email</a></li>
                                     </ul>
                                 </li>
+
                                 <li><a data-toggle="collapse" data-target="#democrou" href="#">Interface</a>
                                     <ul id="democrou" class="collapse dropdown-header-top">
                                         <li><a href="<?php echo get_template_directory_uri(); ?>/animations.html">Animations</a></li>
@@ -33,6 +38,9 @@
                                         <li><a href="<?php echo get_template_directory_uri(); ?>/wizard.html">Wizard</a></li>
                                     </ul>
                                 </li>
+       
+
+
                                 <li><a data-toggle="collapse" data-target="#demolibra" href="#">Charts</a>
                                     <ul id="demolibra" class="collapse dropdown-header-top">
                                         <li><a href="flot-charts.html">Flot Charts</a></li>
@@ -54,6 +62,7 @@
                                         <li><a href="<?php echo get_template_directory_uri(); ?>/form-examples.html">Form Examples</a></li>
                                     </ul>
                                 </li>
+                     
                                 <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">App views</a>
                                     <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
                                         <li><a href="<?php echo get_template_directory_uri(); ?>/notification.html">Notifications</a>
@@ -78,6 +87,7 @@
                                         </li>
                                     </ul>
                                 </li>
+    
                                 <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages</a>
                                     <ul id="Pagemob" class="collapse dropdown-header-top">
                                         <li><a href="contact.html">Contact</a>
@@ -94,21 +104,26 @@
                                         </li>
                                     </ul>
                                 </li>
+                            
                             </ul>
                         </nav>
                     </div>
+                
                 </div>
             </div>
         </div>
     </div>
     <!-- Mobile Menu end -->
+
+
     <!-- Main Menu area start-->
     <div class="main-menu-area mg-tb-40">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
-                        <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
+                        <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home </a>
                         </li>
                         <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Email</a>
                         </li>
@@ -125,10 +140,11 @@
                         <li><a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> Pages</a>
                         </li>
                     </ul>
+
                     <div class="tab-content custom-menu-content">
                         <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="<?php echo get_template_directory_uri(); ?>/index.html">Dashboard One</a>
+                                <li><a href="<?php echo home_url(); ?>/perfil">Perfil</a>
                                 </li>
                                 <li><a href="<?php echo get_template_directory_uri(); ?>/index-2.html">Dashboard Two</a>
                                 </li>

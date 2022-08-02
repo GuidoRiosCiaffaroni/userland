@@ -10,6 +10,8 @@
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="header-top-menu">
                         <ul class="nav navbar-nav notika-top-nav">
+
+                            <!--
                             <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
                                 <div role="menu" class="dropdown-menu search-dd animated flipInX">
@@ -19,6 +21,9 @@
                                     </div>
                                 </div>
                             </li>
+                            -->
+
+                            <!--
                             <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
@@ -87,6 +92,9 @@
                                     </div>
                                 </div>
                             </li>
+                            -->
+
+                            <!--
                             <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
@@ -154,6 +162,9 @@
                                     </div>
                                 </div>
                             </li>
+                            -->
+
+                            <!--
                             <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
@@ -199,7 +210,9 @@
                                     </div>
                                 </div>
                             </li>
+                            -->
 
+                            <!--
                             <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd chat-dd animated zoomIn">
                                     <div class="hd-mg-tt">
@@ -274,9 +287,9 @@
                                     </div>
                                 </div>
                             </li>
+                            -->
 
-
-                            <li class="nav-item"><a href="<?php echo wp_logout_url( home_url() ); ?>" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
+                            <li class="nav-item"><a href="<?php echo wp_logout_url( home_url() ); ?>" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-next"></i></span></a>
                             
                             </li>
 
