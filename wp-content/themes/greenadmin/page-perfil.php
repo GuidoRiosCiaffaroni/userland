@@ -25,6 +25,8 @@
 
 									<?php
 									    $current_user = wp_get_current_user();
+  										$roles = ( array ) $current_user->roles;
+
 									    //echo "User Login :".$current_user->user_login;
 									    //echo '</br>';
 									    //echo "User ID :".$current_user->ID;
@@ -52,7 +54,6 @@
   										//echo 'User last name: ' . $current_user->user_lastname;
   										//echo '</br>';
   										//echo 'User Roles: ' . $current_user->roles;
-  										$roles = ( array ) $current_user->roles;
 										//echo '</br>';
   										//echo 'User Roles: '.$roles[0];
   										//echo '</br>';
@@ -65,12 +66,8 @@
   										//echo 'User avatar por medium : ' . get_wp_user_avatar($current_user->ID, 'medium');
   										//echo '</br>';
   										//echo 'User avatar por thumbnail : ' . get_wp_user_avatar($current_user->ID, 'thumbnail');
-
 									?>
 																		
-
-
-
 									<div class="entry-links"><?php wp_link_pages(); ?></div>
 									</div>
 									</article>
