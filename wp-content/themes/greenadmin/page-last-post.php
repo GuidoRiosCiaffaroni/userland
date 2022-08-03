@@ -33,29 +33,29 @@ https://developer.wordpress.org/reference/functions/get_posts/
                                             foreach ( $my_posts as $p )
                                             {
                                                 $output .= '<li><a href="' . get_permalink( $p->ID ) . '">'. $p->post_title . '</a></li>';
-                                                $output .= '<li> ID : '. $p->ID . '</li>';
-                                                $output .= '<li> post_author    : '. $p->post_author . '</li>';
-                                                $output .= '<li> post_date      : '. $p->post_date . '</li>';
-                                                $output .= '<li>'. $p->post_date_gmt . '</li>';
-                                                $output .= '<li>'. $p->post_content . '</li>';
-                                                $output .= '<li>'. $p->post_excerpt . '</li>';
-                                                $output .= '<li>'. $p->post_status . '</li>';
-                                                $output .= '<li>'. $p->comment_status. '</li>';
-                                                $output .= '<li>'. $p->ping_status. '</li>';
-                                                $output .= '<li>'. $p->post_password. '</li>';
-                                                $output .= '<li>'. $p->post_name. '</li>';
-                                                $output .= '<li>'. $p->to_ping. '</li>';
-                                                $output .= '<li>'. $p->pinged. '</li>';
-                                                $output .= '<li>'. $p->post_modified. '</li>';
-                                                $output .= '<li>'. $p->post_modified_gmt. '</li>';
-                                                $output .= '<li>'. $p->post_content_filtered. '</li>';
-                                                $output .= '<li>'. $p->post_parent. '</li>';
-                                                $output .= '<li>'. $p->guid. '</li>';
-                                                $output .= '<li>'. $p->menu_order. '</li>';
-                                                $output .= '<li>'. $p->post_type. '</li>';
-                                                $output .= '<li>'. $p->post_mime_type. '</li>';
-                                                $output .= '<li>'. $p->comment_count. '</li>';
-                                                $output .= '<li>'. $p->filter. '</li>';
+                                                $output .= '<li> ID ->'. $p->ID . '</li>';
+                                                $output .= '<li> post_author ->'. $p->post_author . '</li>';
+                                                $output .= '<li> post_date ->'. $p->post_date . '</li>';
+                                                $output .= '<li> post_date_gmt ->'. $p->post_date_gmt . '</li>';
+                                                $output .= '<li> post_content ->'. $p->post_content . '</li>';
+                                                $output .= '<li> post_excerpt ->'. $p->post_excerpt . '</li>';
+                                                $output .= '<li> post_status ->'. $p->post_status . '</li>';
+                                                $output .= '<li> comment_status ->'. $p->comment_status. '</li>';
+                                                $output .= '<li> ping_status ->'. $p->ping_status. '</li>';
+                                                $output .= '<li> post_password ->'. $p->post_password. '</li>';
+                                                $output .= '<li> post_name ->'. $p->post_name. '</li>';
+                                                $output .= '<li> to_ping ->'. $p->to_ping. '</li>';
+                                                $output .= '<li> pinged ->'. $p->pinged. '</li>';
+                                                $output .= '<li> post_modified ->'. $p->post_modified. '</li>';
+                                                $output .= '<li> post_modified_gmt ->'. $p->post_modified_gmt. '</li>';
+                                                $output .= '<li> post_content_filtered ->'. $p->post_content_filtered. '</li>';
+                                                $output .= '<li> post_parent ->'. $p->post_parent. '</li>';
+                                                $output .= '<li> guid ->'. $p->guid. '</li>';
+                                                $output .= '<li> menu_order ->'. $p->menu_order. '</li>';
+                                                $output .= '<li> post_type ->'. $p->post_type. '</li>';
+                                                $output .= '<li> post_mime_type ->'. $p->post_mime_type. '</li>';
+                                                $output .= '<li> comment_count ->'. $p->comment_count. '</li>';
+                                                $output .= '<li> filter ->'. $p->filter. '</li>';
 
 
 
