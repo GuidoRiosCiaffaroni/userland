@@ -147,7 +147,7 @@
                                 <li><a href="<?php echo home_url(); ?>">Home</a></li>
                                 <li><a href="<?php echo home_url(); ?>/perfil">Perfil</a></li>
                                 <li><a href="<?php echo home_url(); ?>/post">Post</a></li>
-                                <li><a href="<?php echo home_url(); ?>/post">Post</a></li>
+                                <li><a href="<?php echo home_url(); ?>/last-post">Last Post</a></li>
                                 <li><a href="<?php echo home_url(); ?>/post">Post</a></li>
                                 <li><a href="<?php echo get_template_directory_uri(); ?>/analytics.html">Analytics</a></li>
                                 <li><a href="<?php echo get_template_directory_uri(); ?>/widgets.html">Widgets</a></li>

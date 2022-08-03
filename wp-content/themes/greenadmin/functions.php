@@ -50,6 +50,7 @@ function post_insert()
  
     // Insert the post into the database
     wp_insert_post( $my_post );
+    //header('Location: '.home_url().'/last-post');
 }
 /********************************************************************************************/
 
