@@ -15,20 +15,17 @@
 									    
 
                                         <?php      
-                                    
-
+                                
                                         //get_header();
                                         if ( have_posts() ) : while ( have_posts() ) : the_post();
                                         //get_template_part( 'entry' );
                                         ?>
-	
 
                                         <!--
                                         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                                         
                                         <h2>Wizard</h2>
-                                        -->
-										 
+                                        -->										 
                                         
                                         <?php 
                                  
