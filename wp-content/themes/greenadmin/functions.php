@@ -24,7 +24,11 @@ function secure_setup()
     }
 }
 
-
+// Ingreso Post
+/*
+URLs
+https://developer.wordpress.org/reference/functions/wp_insert_post/
+*/
 
 
 
