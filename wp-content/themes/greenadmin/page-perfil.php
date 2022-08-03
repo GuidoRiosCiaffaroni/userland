@@ -1,4 +1,12 @@
 <?php get_header();?>
+<?php 
+/*
+Dependecia
+PlugIn Name             :   One User Avatar
+PlugIn Url              :   https://onedesigns.com/
+PlugIn Url WordPress    :   https://wordpress.org/plugins/one-user-avatar/
+*/
+?>     
 	<!-- Trabajo area Start-->
 	<div class="breadcomb-area">
 		<div class="container">

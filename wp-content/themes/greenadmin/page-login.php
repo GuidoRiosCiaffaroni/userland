@@ -58,6 +58,15 @@
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
+<?php 
+/*
+Dependecia
+PlugIn Name             :   Ultimate Member
+PlugIn Url              :   https://ultimatemember.com/
+PlugIn Url WordPress    :   https://wordpress.org/plugins/ultimate-member/
+*/
+?>        
     <!-- Login Register area Start-->
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
     <div class="login-content">

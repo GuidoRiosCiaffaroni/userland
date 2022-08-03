@@ -1,5 +1,11 @@
 <?php
 // Verificacion de Contraseña 
+/*
+Dependecia
+PlugIn Name             :   Ultimate Member
+PlugIn Url              :   https://ultimatemember.com/
+PlugIn Url WordPress    :   https://wordpress.org/plugins/ultimate-member/
+*/
 add_action( 'secure_setup_theme', 'secure_setup' );
 function secure_setup() 
 {
@@ -17,5 +23,10 @@ function secure_setup()
         }
     }
 }
+
+
+
+
+
 
 ?>
