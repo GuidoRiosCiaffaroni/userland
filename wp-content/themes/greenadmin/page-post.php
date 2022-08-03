@@ -30,6 +30,21 @@
                                 </div>
                             </div>
 
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="nk-int-st">
+                                        <input name="tags_imput" type="text" class="form-control" placeholder="tags_imput">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="nk-int-st">
+                                        <input name="meta_input" type="text" class="form-control" placeholder="meta_input">
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="fm-checkbox">
                                 <button class="btn btn-success notika-btn-success" class="notika-icon notika-right-arrow right-arrow-ant">Success</button>
@@ -47,6 +62,7 @@
 
 
                         <?php echo get_the_category_list(); ?>
+                        <p>Tags: <?php echo the_tags(); ?></p>
 
                     </div>
                 </div>

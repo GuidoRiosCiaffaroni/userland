@@ -1,4 +1,5 @@
 <?php
+/********************************************************************************************/
 // Verificacion de Contraseña 
 /*
 Dependecia
@@ -6,6 +7,7 @@ PlugIn Name             :   Ultimate Member
 PlugIn Url              :   https://ultimatemember.com/
 PlugIn Url WordPress    :   https://wordpress.org/plugins/ultimate-member/
 */
+/********************************************************************************************/
 add_action( 'secure_setup_theme', 'secure_setup' );
 function secure_setup() 
 {
@@ -23,40 +25,60 @@ function secure_setup()
         }
     }
 }
+/********************************************************************************************/
 
-
+/********************************************************************************************/
 // Ingreso Post
 /*
 URLs
 https://developer.wordpress.org/reference/functions/wp_insert_post/
 */
-
+/********************************************************************************************/
 add_action( 'test_post_insert', 'post_insert' );
 function post_insert() 
 {
-/*********************************************************************************************/
     // Create post object
     $my_post = array(
         'post_title'    => wp_strip_all_tags( $_POST['post_title'] ),
         'post_content'  => $_POST['post_content'],
         'post_status'   => 'publish',
         'post_author'   => 1,
-        'post_category' => array( 4 )
+        'post_category' => array( 4 ),
+        'tags_input'    => array( $_POST['tags_imput'] ),
+        'meta_input'    => array( $_POST['meta_input'] )
     );
  
     // Insert the post into the database
     wp_insert_post( $my_post );
-/*********************************************************************************************/
-
-
-
-
-
-
-
-
-
 }
+/********************************************************************************************/
+
+/********************************************************************************************/
+// Listar Post
+/*
+URLs
+https://developer.wordpress.org/reference/functions/wp_insert_post/
+*/
+/********************************************************************************************/
+
+
+/********************************************************************************************/
+
+
+
+
+
+
+
+
+/********************************************************************************************/
+// Ingreso Meta
+//https://developer.wordpress.org/reference/functions/add_post_meta/
+//https://www.codigonexo.com/blog/aprendiendo/wordpress/consultas-complejas-a-wp_postmeta/
+/********************************************************************************************/
+
+
+
 
 
 
