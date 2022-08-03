@@ -147,7 +147,8 @@
                                 <li><a href="<?php echo home_url(); ?>">Home</a></li>
                                 <li><a href="<?php echo home_url(); ?>/perfil">Perfil</a></li>
                                 <li><a href="<?php echo home_url(); ?>/post">Post</a></li>
-                                <li><a href="<?php echo get_template_directory_uri(); ?>/index-4.html">Dashboard Four</a></li>
+                                <li><a href="<?php echo home_url(); ?>/post">Post</a></li>
+                                <li><a href="<?php echo home_url(); ?>/post">Post</a></li>
                                 <li><a href="<?php echo get_template_directory_uri(); ?>/analytics.html">Analytics</a></li>
                                 <li><a href="<?php echo get_template_directory_uri(); ?>/widgets.html">Widgets</a></li>
                             </ul>

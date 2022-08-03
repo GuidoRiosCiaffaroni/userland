@@ -76,12 +76,60 @@
 		============================================ -->
     <script src="<?php echo get_template_directory_uri(); ?>/js/chat/moment.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/chat/jquery.chat.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/chat/jquery.chat.js"></script>
     <!-- main JS
 		============================================ -->
     <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
+
+    <!-- flot JS
+        ============================================ -->
+    <script src="<?php echo get_template_directory_uri(); ?>/js/flot/jquery.flot.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/flot/jquery.flot.resize.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/flot/flot-active.js"></script>
 	<!-- tawk chat JS
 		============================================ -->
     <!--<script src="<?php echo get_template_directory_uri(); ?>/js/tawk-chat.js"></script>-->
+
+    <!-- Input Mask JS
+        ============================================ -->
+    <script src="<?php echo get_template_directory_uri(); ?>/js/jasny-bootstrap.min.js"></script>
+    <!-- icheck JS
+        ============================================ -->
+    <script src="<?php echo get_template_directory_uri(); ?>/js/icheck/icheck.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/icheck/icheck-active.js"></script>
+    <!-- rangle-slider JS
+        ============================================ -->
+    <script src="<?php echo get_template_directory_uri(); ?>/js/rangle-slider/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/rangle-slider/jquery-ui-touch-punch.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/rangle-slider/rangle-active.js"></script>
+    <!-- datapicker JS
+        ============================================ -->
+    <script src="<?php echo get_template_directory_uri(); ?>/js/datapicker/bootstrap-datepicker.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/datapicker/datepicker-active.js"></script>
+    <!-- bootstrap select JS
+        ============================================ -->
+    <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap-select/bootstrap-select.js"></script>
+    <!--  color-picker JS
+        ============================================ -->
+    <script src="<?php echo get_template_directory_uri(); ?>/js/color-picker/farbtastic.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/color-picker/color-picker.js"></script>
+    <!--  notification JS
+        ============================================ -->
+    <script src="<?php echo get_template_directory_uri(); ?>/js/notification/bootstrap-growl.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/notification/notification-active.js"></script>
+    <!--  summernote JS
+        ============================================ -->
+    <script src="<?php echo get_template_directory_uri(); ?>/js/summernote/summernote-updated.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/summernote/summernote-active.js"></script>
+    <!-- dropzone JS
+        ============================================ -->
+    <script src="<?php echo get_template_directory_uri(); ?>/js/dropzone/dropzone.js"></script>
+   
+    <!--  chosen JS
+        ============================================ -->
+    <script src="<?php echo get_template_directory_uri(); ?>/js/chosen/chosen.jquery.js"></script>
+ 
+    
 </body>
 
 </html>

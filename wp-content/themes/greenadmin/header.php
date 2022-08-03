@@ -31,6 +31,13 @@
     <!-- animate CSS
 		============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
+    <!-- summernote CSS
+        ============================================ -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/summernote/summernote.css">
+
+    <!-- Range Slider CSS
+        ============================================ -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/themesaller-forms.css">
     <!-- normalize CSS
 		============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/normalize.css">
@@ -55,6 +62,27 @@
     <!-- responsive CSS
 		============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/responsive.css">
+    <!-- bootstrap select CSS
+        ============================================ -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap-select/bootstrap-select.css">
+    <!-- datapicker CSS
+        ============================================ -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/datapicker/datepicker3.css">
+    <!-- Color Picker CSS
+        ============================================ -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/color-picker/farbtastic.css">
+    <!-- main CSS
+        ============================================ -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/chosen/chosen.css">
+    <!-- notification CSS
+        ============================================ -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/notification/notification.css">
+    <!-- dropzone CSS
+        ============================================ -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/dropzone/dropzone.css">
+
+
+    
     <!-- modernizr JS
 		============================================ -->
     <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.8.3.min.js"></script>
