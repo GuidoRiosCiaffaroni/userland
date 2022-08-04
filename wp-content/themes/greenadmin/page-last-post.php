@@ -56,10 +56,6 @@ https://developer.wordpress.org/reference/functions/get_posts/
                                                 $output .= '<li> post_mime_type ->'. $p->post_mime_type. '</li>';
                                                 $output .= '<li> comment_count ->'. $p->comment_count. '</li>';
                                                 $output .= '<li> filter ->'. $p->filter. '</li>';
-
-
-
-
                                             }
                                             $output .= '<ul>';
                                         }

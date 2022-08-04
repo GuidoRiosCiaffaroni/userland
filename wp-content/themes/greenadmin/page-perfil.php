@@ -173,6 +173,35 @@ PlugIn Url WordPress    :   https://wordpress.org/plugins/one-user-avatar/
 
 
 
+        <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                    <div class="normal-table-list">
+                        <div class="basic-tb-hd">
+                            <h2>Prueba</h2>
+                            <p>Taxonomia</p>
+                        </div>
+                        <div class="bsc-tbl">
+     
+                        <?php
+                        $taxonomies = get_taxonomies();
+
+                        foreach( $taxonomies as $taxonomy ) {
+                            echo '<p>'. $taxonomy. '</p>';
+                        }
+
+                        ?>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
 
 
 
