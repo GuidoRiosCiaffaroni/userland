@@ -33,8 +33,11 @@ https://developer.wordpress.org/reference/functions/get_posts/
                                             $array = get_post_meta(49,'dato',false);
                                             echo $array[0];
 
-                                            delete_post_meta( 49, 'dato' );
+                                            //delete_post_meta( 49, 'dato' );
+
                                             ?>
+
+                                            <?php if ( function_exists( 'wpsp_display' ) ) wpsp_display( 71 ); ?>
                                       
 
 
