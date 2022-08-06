@@ -57,23 +57,36 @@ URLs
 https://developer.wordpress.org/reference/functions/wp_insert_post/
 */
 /********************************************************************************************/
-add_action( 'test_post_insert', 'post_insert' );
+add_action( 'page_post_insert', 'post_insert' );
 function post_insert() 
 {
     // Create post object
-    $my_post = array(
+
+    if ($_POST['post_title'] == null || $_POST['post_content'] == null)
+    {
+        echo 'Error -------------------------------------------->';
+    }
+    else 
+    {
+        $my_post = array(
         'post_title'    => wp_strip_all_tags( $_POST['post_title'] ),
         'post_content'  => $_POST['post_content'],
-        'post_status'   => 'publish',
+        'post_status'   => 'publish'
+        /*
         'post_author'   => 1,
         'post_category' => array( 4 ),
         'tags_input'    => array( $_POST['tags_imput'] ),
         'meta_input'    => array( $_POST['meta_input'] )
-    );
+        */
+        );
  
-    // Insert the post into the database
-    wp_insert_post( $my_post );
-    //header('Location: '.home_url().'/last-post');
+        // Insert the post into the database
+        wp_insert_post( $my_post );
+        //header('Location: '.home_url().'/last-post');
+
+    }
+
+
 }
 /********************************************************************************************/
 
@@ -100,10 +113,6 @@ https://developer.wordpress.org/reference/functions/wp_insert_post/
 //https://developer.wordpress.org/reference/functions/add_post_meta/
 //https://www.codigonexo.com/blog/aprendiendo/wordpress/consultas-complejas-a-wp_postmeta/
 /********************************************************************************************/
-
-
-
-
 
 
 
