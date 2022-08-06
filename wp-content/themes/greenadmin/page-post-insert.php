@@ -8,7 +8,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
                         <div class="basic-tb-hd">
-                            <h2>Input Text</h2>
+                            <h2>Texto Para Ingresar</h2>
                             <p>Text.</p>
                         </div>
 
@@ -22,6 +22,8 @@
                                 </div>
                             </div>
 
+
+
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group">
                                     <div class="nk-int-st">
@@ -29,6 +31,21 @@
                                     </div>
                                 </div>
                             </div>
+
+                       
+                            <div class="nk-int-mk sl-dp-mn">
+                                <h2>Idioma de Origen</h2>
+                            </div>
+                            
+                            <div class="bootstrap-select fm-cmp-mg">
+                                <select class="selectpicker">
+                                    <option>Español</option>
+                                    <option>Ingles</option>
+                                </select>
+                            </div>
+                       
+
+ 
 
                             <!--
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -50,7 +67,7 @@
 
 
                             <div class="fm-checkbox">
-                                <button class="btn btn-success notika-btn-success" class="notika-icon notika-right-arrow right-arrow-ant">Insert</button>
+                                <button class="btn btn-success notika-btn-success" class="notika-icon notika-right-arrow right-arrow-ant">Ingresar</button>
                             </div>
                             
                         </div>

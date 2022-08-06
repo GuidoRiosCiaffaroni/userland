@@ -43,13 +43,6 @@ add_pages_page( 'Appending Query Arg', 'Test Pages', 'edit_pages', 'testpages', 
 }
 /********************************************************************************************/
 
-
-
-
-
-
-
-
 /********************************************************************************************/
 // Ingreso Post
 /*
@@ -82,10 +75,12 @@ function post_insert()
  
         // Insert the post into the database
         wp_insert_post( $my_post );
+        $_POST['post_title'] = null;
+        $_POST['post_content'] = null;
+
         //header('Location: '.home_url().'/last-post');
 
     }
-
 
 }
 /********************************************************************************************/
