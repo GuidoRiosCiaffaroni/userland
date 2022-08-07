@@ -211,7 +211,7 @@
                         </div>
                         <div id="Appviews" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="<?php echo get_template_directory_uri(); ?>/notification.html">Install</a></li>
+                                <li><a href="<?php echo home_url(); ?>/install">Install</a></li>
                             </ul>
                         </div>
                         <div id="Page" class="tab-pane notika-tab-menu-bg animated flipInX">

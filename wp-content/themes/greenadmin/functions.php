@@ -84,7 +84,44 @@ PlugIn Url WordPress    :
 add_action( 'install_setup_theme', 'install_setup' );
 function install_setup() 
 {
-//add_pages_page( 'Appending Query Arg', 'Test Pages', 'edit_pages', 'testpages', 'mt_pages_page' );
+    // Creacion de pagina Home
+    $my_page = array(
+    'post_title'    => 'Home',
+    'post_content'  => '',
+    'post_status'   => 'publish',
+    'post_type'     => 'page'
+    );
+    wp_insert_post( $my_page );
+
+    // Creacion de pagina Home
+    $my_page = array(
+    'post_title'    => 'Login',
+    'post_content'  => '',
+    'post_status'   => 'publish',
+    'post_type'     => 'page'
+    );
+    wp_insert_post( $my_page );
+
+    // Creacion de pagina Post Insert
+    $my_page = array(
+    'post_title'    => 'Post Insert',
+    'post_content'  => '',
+    'post_status'   => 'publish',
+    'post_type'     => 'page'
+    );
+    wp_insert_post( $my_page );
+
+    // Creacion de pagina Post Insert
+    $my_page = array(
+    'post_title'    => 'Meta Insert',
+    'post_content'  => '',
+    'post_status'   => 'publish',
+    'post_type'     => 'page'
+    );
+    wp_insert_post( $my_page );
+
+
+
 }
 /********************************************************************************************/
 

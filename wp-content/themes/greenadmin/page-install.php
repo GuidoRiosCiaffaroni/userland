@@ -21,26 +21,36 @@ https://developer.wordpress.org/reference/functions/get_posts/
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                       
-                                            <?php 
-                                            add_post_meta(49, 'dato', 'numero', false );
+                                       <form action="<?php echo home_url().'/install' ?>" method="post">
 
+                                        <?php 
+                                                
+                                        if ($_POST['install'] == 1)
+                                        {
+                                            echo 'Instalacion </br>';
+                                            install_setup();
+                                        }
+                                        else 
+                                        {
+                                            echo 'Apagado </br>';
 
-                                            echo '</br>';
-                                            $array = get_post_meta(49,'dato',true);
-                                            echo $array;
-                                            echo '</br>';
-                                            $array = get_post_meta(49,'dato',false);
-                                            echo $array[0];
+                                        }    
 
-                                            //delete_post_meta( 49, 'dato' );
+                                                
 
-                                            ?>
+                                        ?>
 
-                                            <?php if ( function_exists( 'wpsp_display' ) ) wpsp_display( 71 ); ?>
-                                      
-
-
+                                            <div class="nk-toggle-switch">
+                                                <label for="ts1" class="ts-label">Activar para Instalar</label>
+                                                <input id="ts1" name="install" value="1" type="checkbox" hidden="hidden">
+                                                <label for="ts1" class="ts-helper"></label>
+                                                
+                                            </div>
+                                            <div class="fm-checkbox">
+                                                <button class="btn btn-success notika-btn-success" class="notika-icon notika-right-arrow right-arrow-ant">Instalar</button>
+                                            </div>
+                                        </form>
+ 
                                     </div>    
                                 </div>
                             </div>
@@ -53,6 +63,12 @@ https://developer.wordpress.org/reference/functions/get_posts/
                     </div>
                 </div>
             </div>
+                   
+                          
+        
+                       
+                  
+
         </div>
     </div>
     <!-- Trabajo area End-->
