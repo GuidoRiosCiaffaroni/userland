@@ -21,49 +21,50 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <div class="nk-int-st">
-                                        <input name="post_content" type="text" class="form-control" placeholder="post_content">
-                                    </div>
-                                </div>
-                            </div>
-
-                       
-                            <div class="nk-int-mk sl-dp-mn">
-                                <h2>Idioma de Origen</h2>
-                            </div>
                             
-                            <div class="bootstrap-select fm-cmp-mg">
-                                <select class="selectpicker">
-                                    <option>Español</option>
-                                    <option>Ingles</option>
-                                </select>
-                            </div>
-                       
-
- 
-
-                            <!--
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <div class="nk-int-st">
-                                        <input name="tags_imput" type="text" class="form-control" placeholder="tags_imput">
-                                    </div>
+                                <div class="cmp-tb-hd">
+                                    <h2>HTML Editor</h2>
+                                    <p>Super Simple WYSIWYG Editor on Bootstrap</p>
+                                </div>
+                                    
+                                <div class="cmp-tb-hd bsc-smp-sm">
+                                    <label>Basic Example</label>
+                                </div>
+                                
+                                <div class="html-editor">
+                                </div>
+                                    
+                                <div class="cmp-tb-hd mg-t-20">
+                                    <h2>Click to edit</h2>
+                                    <p>You can edit content on the fly</p>
+                                </div>
+                                    
+                                <div class="summernote-clickable">
+                                    <button class="btn btn-primary btn-sm hec-button">Click here to edit the content</button>
+                                    <button class="btn btn-success btn-sm hec-save" style="display:none;">Save</button>
                                 </div>
                             </div>
-
+                   
+                
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <div class="nk-int-st">
-                                        <input name="meta_input" type="text" class="form-control" placeholder="meta_input">
-                                    </div>
+                                <div class="cmp-tb-hd">
+                                    <h2>Idioma de Origen</h2>
+                                    <p>Super Simple WYSIWYG Editor on Bootstrap</p>
                                 </div>
+                                    
+                                <div class="bootstrap-select fm-cmp-mg">
+                                    <select class="selectpicker">
+                                        <option>Español</option>
+                                        <option>Ingles</option>
+                                    </select>
+                                </div>
+                                    
                             </div>
-                            -->
+
+                            
+
+            
 
 
                             <div class="fm-checkbox">
