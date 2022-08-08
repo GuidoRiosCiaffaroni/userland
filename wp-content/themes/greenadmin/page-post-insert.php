@@ -8,7 +8,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
                         <div class="basic-tb-hd">
-                            <h2>Texto Para Ingresar</h2>
+                            <h2>Texto</h2>
                             <!-- <p>Text.</p> -->
                         </div>
 
@@ -24,24 +24,20 @@
                             
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="cmp-tb-hd">
-                                    <h2>HTML Editor</h2>
-                                    <!-- <p>Super Simple WYSIWYG Editor on Bootstrap</p> -->
-                                </div>
+                                    <h2>Descripción</h2>
                                     
-                                <div class="cmp-tb-hd bsc-smp-sm">
-                                    <label>Basic Example</label>
                                 </div>
-                                
-                                <div class="html-editor">
+                  
+                                <div class="summernote-clickable">
+                                    <textarea class="html-editor" name="post_content" id="summernote"></textarea>
                                 </div>
-                                    
 
                             </div>
                    
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="cmp-tb-hd">
                                     <h2>Idioma de Origen</h2>
-                                    <!-- <p>Super Simple WYSIWYG Editor on Bootstrap</p> -->
+                                    
                                 </div>
                                     
                                 <div class="bootstrap-select fm-cmp-mg">
@@ -56,20 +52,15 @@
  
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <!--
-                                <div class="cmp-tb-hd">
-                                    <h2>Idioma de Origen</h2>
-                                    <p>Super Simple WYSIWYG Editor on Bootstrap</p>
-                                </div>
-                                -->
+                    
                                     
                                 <div class="fm-checkbox">
-                                    <button class="btn btn-success notika-btn-success" class="notika-icon notika-right-arrow right-arrow-ant">Ingresar</button>
+                                    
                                 </div>
                                     
                                 <div class="summernote-clickable">
-                                    <button class="btn btn-primary btn-sm hec-button">Click here to edit the content</button>
-                                    <button class="btn btn-success btn-sm hec-save" style="display:none;">Save</button>
+                                    <button class="btn btn-primary btn-sm hec-button">Ingresar</button>
+                    
                                 </div>    
                             </div>
                             
