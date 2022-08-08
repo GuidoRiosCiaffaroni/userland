@@ -8,6 +8,9 @@ Dependecia
 PlugIn Name             :   Ultimate Member
 PlugIn Url              :   https://ultimatemember.com/
 PlugIn Url WordPress    :   https://wordpress.org/plugins/ultimate-member/
+
+URLs
+https://code.tutsplus.com/es/tutorials/wordpress-for-web-app-development-sessions--wp-34228
 */
 /********************************************************************************************/
 add_action( 'secure_setup_theme', 'secure_setup' );
