@@ -23,11 +23,12 @@ function secure_setup()
         if ( is_user_logged_in() ) 
         {
             $current_user = wp_get_current_user();
+            /*
             session_start();
             $_SESSION['sessionID'] = session_id();
             $_SESSION['post_title'] = '';
             $_SESSION['post_content'] = '';
-
+            */
         } 
         else 
         {
@@ -53,7 +54,7 @@ https://code.tutsplus.com/es/tutorials/wordpress-for-web-app-development-session
 add_action( 'logout_setup_theme', 'logout_setup' );
 function logout_setup() 
 {
-
+/*
     session_reset();
     session_abort();
     session_destroy();
@@ -63,13 +64,9 @@ function logout_setup()
     wp_set_current_user( 0 );
     wp_logout();
     header('Location: '.home_url().'/login');
+*/
 }
 /********************************************************************************************/
-
-
-
-
-
 
 
 

@@ -95,7 +95,7 @@ class Mutator
 	public function registerHooks()
 	{
 		add_action('wp_ajax_analyst_notification_dismiss', function () {
-			$this->factory->remove($_POST['id']);
+			$this->factory->remove(sanitize_text_field($_POST['id']));
 
 			$this->factory->sync();
 		});

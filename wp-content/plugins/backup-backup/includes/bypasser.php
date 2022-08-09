@@ -6,6 +6,7 @@
   // Usage
   use BMI\Plugin\BMI_Logger AS Logger;
   use BMI\Plugin\Progress\BMI_ZipProgress AS Output;
+  use BMI\Plugin\Checker\System_Info as SI;
 
   // Exit on direct access
   if (!(defined('BMI_CURL_REQUEST') || defined('ABSPATH'))) exit;
@@ -40,6 +41,12 @@
       $this->filessofar = intval($remote_settings['filessofar']);
       $this->identyfile = BMI_INCLUDES . '/htaccess' . '/.' . $this->identy;
       $this->browserSide = ($remote_settings['browser'] === true || $remote_settings['browser'] === 'true') ? true : false;
+
+      // if (isset($remote_settings['shareallowed'])) {
+      //   $this->shareallowed = $remote_settings['shareallowed'];
+      // } else {
+      //   $this->shareallowed = 'ask';
+      // }
 
       $this->identyFolder = BMI_INCLUDES . '/htaccess/bg-' . $this->identy;
       $this->fileList = BMI_INCLUDES . '/htaccess/files_latest.list';
@@ -86,6 +93,7 @@
           'Content-Start:' . $this->backupstart,
           'Content-Filessofar:' . $this->filessofar,
           'Content-Total:' . $this->total_files,
+          // 'Content-Shareallowed:' . $this->shareallowed,
           'Content-Rev:' . $this->rev,
           'Content-It:' . $this->it,
           'Content-Browser:' . $this->browserSide ? 'true' : 'false'
@@ -175,6 +183,7 @@
       if (file_exists($clidata)) @unlink($clidata);
       if (file_exists($identyfile)) @unlink($identyfile);
       if (file_exists($identyfile . '-running')) @unlink($identyfile . '-running');
+      if (file_exists($this->lock_cli)) @unlink($this->lock_cli);
 
       // Remove backup
       if (file_exists(BMI_BACKUPS . '/.running')) @unlink(BMI_BACKUPS . '/.running');
@@ -231,6 +240,8 @@
       // End logger
       if (isset($this->output)) @$this->output->end();
 
+      $this->actionsAfterProcess(true);
+
       // End the process
       exit;
 
@@ -267,6 +278,8 @@
       if ($abort === false) $this->output->log('#002', 'END-CODE');
       else $this->output->log('#003', 'END-CODE');
       if (isset($this->output)) @$this->output->end();
+
+      $this->actionsAfterProcess();
       exit;
 
     }
@@ -814,6 +827,118 @@
         }
 
       }
+
+    }
+
+    public function sendTroubleshootingDetails($send_type = 'manual', $blocking = true) {
+
+      define('WP_USE_THEMES', false);
+
+      // Use WP Globals and load WordPress
+      global $wp, $wp_query, $wp_the_query, $wp_rewrite, $wp_did_header;
+      require_once $this->bmi_find_wordpress_base_path() . DIRECTORY_SEPARATOR . 'wp-load.php';
+      require_once BMI_INCLUDES . DIRECTORY_SEPARATOR . 'check' . DIRECTORY_SEPARATOR . 'system_info.php';
+
+      $bmiSiteData = new SI();
+      $bmiSiteData = $bmiSiteData->to_array();
+
+      $latestBackupLogs = 'does_not_exist';
+      $latestBackupProgress = 'does_not_exist';
+      $latestRestorationLogs = 'does_not_exist';
+      $latestRestorationProgress = 'does_not_exist';
+      $currentPluginConfig = 'does_not_exist';
+      $pluginGlobalLogs = 'does_not_exist';
+      $backgroundErrors = 'does_not_exist';
+
+      if (file_exists(BMI_BACKUPS . '/latest.log')) {
+        $latestBackupLogs = file_get_contents(BMI_BACKUPS . '/latest.log');
+      }
+
+      if (file_exists(BMI_BACKUPS . '/latest_progress.log')) {
+        $latestBackupProgress = file_get_contents(BMI_BACKUPS . '/latest_progress.log');
+      }
+
+      if (file_exists(BMI_BACKUPS . '/latest_migration.log')) {
+        $latestRestorationLogs = file_get_contents(BMI_BACKUPS . '/latest_migration.log');
+      }
+
+      if (file_exists(BMI_BACKUPS . '/latest_migration_progress.log')) {
+        $latestRestorationProgress = file_get_contents(BMI_BACKUPS . '/latest_migration_progress.log');
+      }
+
+      if (file_exists(BMI_CONFIG_DIR . DIRECTORY_SEPARATOR . '/config.json')) {
+        $currentPluginConfig = file_get_contents(BMI_CONFIG_DIR . DIRECTORY_SEPARATOR . '/config.json');
+      }
+
+      if (file_exists(BMI_CONFIG_DIR . DIRECTORY_SEPARATOR . 'complete_logs.log')) {
+        $pluginGlobalLogs = file_get_contents(BMI_CONFIG_DIR . DIRECTORY_SEPARATOR . 'complete_logs.log');
+      }
+
+      $backgroundLogsPath = BMI_CONFIG_DIR . DIRECTORY_SEPARATOR . 'background-errors.log';
+      if (file_exists($backgroundLogsPath)) {
+        if ((filesize($backgroundLogsPath) / 1024 / 1024) <= 4) {
+          $backgroundErrors = file_get_contents($backgroundLogsPath);
+        } else $backgroundErrors = 'file_too_large';
+      }
+
+      $url = 'https://' . BMI_API_BACKUPBLISS_PUSH . '/v1' . '/push';
+      $response = wp_remote_post($url, array(
+        'method' => 'POST',
+        'timeout' => 15,
+        'blocking' => $blocking,
+        'sslverify' => false,
+        'send_type' => $send_type,
+        'body' => array(
+          'admin_url' => admin_url(),
+          'home_url' => home_url(),
+          'site_url' => get_site_url(),
+          'is_multisite' => is_multisite() ? "yes" : "no",
+          'is_abspath_writable' => is_writable(ABSPATH) ? "yes" : "no",
+          'site_information' => $bmiSiteData,
+          'latest_backup_logs' => $latestBackupLogs,
+          'latest_backup_progress' => $latestBackupProgress,
+          'latest_restoration_logs' => $latestRestorationLogs,
+          'latest_restoration_progress' => $latestRestorationProgress,
+          'current_plugin_config' => $currentPluginConfig,
+          'plugin_global_logs' => $pluginGlobalLogs,
+          'background_errors' => $backgroundErrors,
+          'triggered_by' => 'backup',
+          'is_cli' => BMI_CLI_REQUEST
+        )
+      ));
+
+    }
+
+    public function actionsAfterProcess($success = false) {
+
+      return null;
+
+      // REMOVED CODE:
+      // $canShare = $this->shareallowed;
+      // if ($canShare === 'allowed') {
+      //
+      //   $send_type = 'error';
+      //   if ($success) $send_type = 'success';
+      //   $this->sendTroubleshootingDetails($send_type, false);
+      //
+      // }
+
+    }
+
+    public function bmi_find_wordpress_base_path() {
+
+      $dir = dirname(__FILE__);
+      $previous = null;
+
+      do {
+
+        if (file_exists($dir . '/wp-config.php')) return $dir;
+        if ($previous == $dir) break;
+        $previous = $dir;
+
+      } while ($dir = dirname($dir));
+
+      return null;
 
     }
 

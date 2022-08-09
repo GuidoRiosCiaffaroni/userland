@@ -1219,6 +1219,23 @@
       return $str;
     }
 
+    public static function canShareLogsOrShouldAsk() {
+
+      return 'not-allowed';
+
+      // REMOVED CODE:
+      // $isAllowed = get_option('BMI_LOGS_SHARING_IS_ALLOWED', 'unknown');
+      // $isAllowedConfig = Dashboard\bmi_get_config('LOGS::SHARING');
+      //
+      // if ($isAllowed == 'unknown' || empty($isAllowedConfig)) return 'ask';
+      // else if ($isAllowed === 'yes' && $isAllowedConfig === 'yes') {
+      //   return 'allowed';
+      // } else if ($isAllowed === 'no' && $isAllowedConfig === 'no') {
+      //   return 'not-allowed';
+      // } else return 'ask';
+
+    }
+
     public static function merge_arrays(&$array1, &$array2) {
       for ($i = 0; $i < sizeof($array2); ++$i) {
         $array1[] = $array2[$i];

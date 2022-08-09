@@ -12,6 +12,9 @@
   if (!defined('BMI_AUTHOR_URI')) {
     define('BMI_AUTHOR_URI', 'https://backupbliss.com/');
   }
+  if (!defined('BMI_API_BACKUPBLISS_PUSH')) {
+    define('BMI_API_BACKUPBLISS_PUSH', 'api.backupbliss.com');
+  }
   if (!defined('BMI_BACKUPS_DEFAULT')) {
     define('BMI_BACKUPS_DEFAULT', WP_CONTENT_DIR . DIRECTORY_SEPARATOR . 'backup-migration');
   }

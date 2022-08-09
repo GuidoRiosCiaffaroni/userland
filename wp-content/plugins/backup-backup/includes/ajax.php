@@ -102,6 +102,10 @@
         BMP::res($this->forceBackupToStop());
       } elseif ($this->post['f'] == 'force-restore-to-stop') {
         BMP::res($this->forceRestoreToStop());
+      } elseif ($this->post['f'] == 'send-troubleshooting-logs') {
+        BMP::res($this->sendTroubleshootingDetails());
+      } elseif ($this->post['f'] == 'log-sharing-details') {
+        BMP::res($this->logSharing());
       } elseif ($this->post['f'] == 'debugging') {
         BMP::res($this->debugging());
       } else {
@@ -490,7 +494,7 @@
           @exec(BMI_CLI_EXECUTABLE . ' -f "' . $cliHandler . '" bmi_backup ' . $name . ' > /dev/null &', $res);
           $res = implode("\n", $res);
 
-          sleep(2);
+          sleep(3);
 
           if (file_exists($cli_lock_end) && (time() - filemtime($cli_lock_end)) < 10) {
 
@@ -600,6 +604,9 @@
         $zip_progress->log('#002', 'END-CODE');
         $zip_progress->end();
 
+        if ($isCLI === true) touch($cli_lock_end);
+        $this->actionsAfterProcess();
+
         // Return error
         return ['status' => 'error'];
       } else {
@@ -640,6 +647,9 @@
         $zip_progress->log('#100', 'END-CODE');
         $zip_progress->end();
 
+        if ($isCLI === true) touch($cli_lock_end);
+        $this->actionsAfterProcess();
+
         // Return error
         return ['status' => 'error', 'bfs' => true];
       }
@@ -658,6 +668,9 @@
         // Log and close log
         $zip_progress->log('#002', 'END-CODE');
         $zip_progress->end();
+
+        if ($isCLI === true) touch($cli_lock_end);
+        $this->actionsAfterProcess();
 
         // Return error
         return ['status' => 'error'];
@@ -744,8 +757,12 @@
         $zip_progress->log('#002', 'END-CODE');
         $zip_progress->end();
 
+        if ($isCLI === true) touch($cli_lock_end);
+
         // Return error
         if (file_exists($backup_path)) @unlink($backup_path);
+
+        $this->actionsAfterProcess();
         return ['status' => 'error'];
       }
 
@@ -765,8 +782,10 @@
         $zip_progress->log('#002', 'END-CODE');
         $zip_progress->end();
 
+        if ($isCLI === true) touch($cli_lock_end);
         Logger::log(__("Backup process aborted.", 'backup-backup'));
 
+        $this->actionsAfterProcess();
         return ['status' => 'msg', 'why' => __('Backup process aborted.', 'backup-backup'), 'level' => 'info'];
       }
 
@@ -791,6 +810,9 @@
         $zip_progress->log('#002', 'END-CODE');
         $zip_progress->end();
 
+        if ($isCLI === true) touch($cli_lock_end);
+        $this->actionsAfterProcess();
+
         // Return error
         return ['status' => 'error'];
       }
@@ -799,6 +821,8 @@
       $zip_progress->log(__("New backup created and its name is: ", 'backup-backup') . $name, 'success');
       $zip_progress->log('#001', 'END-CODE');
       $zip_progress->end();
+
+      if ($isCLI === true) touch($cli_lock_end);
 
       // Unlink progress
       if (file_exists(BMI_BACKUPS . '/.running')) @unlink(BMI_BACKUPS . '/.running');
@@ -810,7 +834,7 @@
 
       $GLOBALS['bmi_error_handled'] = true;
 
-      touch($cli_lock_end);
+      $this->actionsAfterProcess(true);
       return ['status' => 'success', 'filename' => $name, 'root' => plugin_dir_url(BMI_ROOT_FILE)];
 
     }
@@ -930,7 +954,7 @@
           @exec(BMI_CLI_EXECUTABLE . ' -f "' . $cliHandler . '" bmi_restore ' . $backupName . ' ' . $remoteType . ' > /dev/null &', $res);
           $res = implode("\n", $res);
 
-          sleep(2);
+          sleep(3);
 
           if (file_exists($lock_cli_end) && (time() - filemtime($lock_cli_end)) < 10) {
 
@@ -945,10 +969,13 @@
 
           if (!file_exists($lock_cli) || (time() - filemtime($lock_cli)) > 10) {
 
+            $progressFile = null;
             $migration->log(__('No response from PHP CLI - plugin will try to recover the migration with traditional restore.', 'backup-backup'), 'warn');
             if (file_exists($lock_cli)) @unlink($lock_cli);
 
           } else {
+
+            $progressFile = null;
 
             // $migration->log(__('PHP CLI responded with correct code - we will continue via PHP CLI.', 'backup-backup'), 'info');
             // $migration->end();
@@ -972,6 +999,7 @@
 
         if (defined('BMI_USING_CLI_FUNCTIONALITY') && BMI_USING_CLI_FUNCTIONALITY === true) {
           $migration->log(__('PHP CLI: Restore process initialized, restoring...', 'backup-backup'), 'success');
+          error_log('running cli');
           touch($lock_cli);
         } else {
           $migration->log(__('Restore process initialized, restoring (non-cli mode)...', 'backup-backup'), 'success');
@@ -1050,6 +1078,9 @@
               $migration->log('#004', 'END-CODE');
               $migration->end();
 
+              if ($isCLIRunning == true) touch($lock_cli_end);
+              $this->actionsAfterProcess(false, 'migration');
+
               return ['status' => 'error'];
             } else {
               $migration->log(__('Confirmed, there is enough space on the device, checked: ' . ($bytes) . ' bytes.', 'backup-backup'), 'SUCCESS');
@@ -1065,6 +1096,9 @@
           if (file_exists($lock)) @unlink($lock);
           $migration->log('#003', 'END-CODE');
           $migration->end();
+
+          if ($isCLIRunning == true) touch($lock_cli_end);
+          $this->actionsAfterProcess(false, 'migration');
 
           return ['status' => 'error'];
         }
@@ -1093,6 +1127,9 @@
         $migration->log('#002', 'END-CODE');
         $migration->end();
 
+        if ($isCLIRunning == true) touch($lock_cli_end);
+        $this->actionsAfterProcess(false, 'migration');
+
         return ['status' => 'error'];
       }
 
@@ -1105,10 +1142,13 @@
       $migration->log('#001', 'END-CODE');
       $migration->end();
 
+      if ($isCLIRunning == true) touch($lock_cli_end);
+
       // Put autologin
       file_put_contents($autologin_file, $autoLoginMD);
       touch($autologin_file);
 
+      $this->actionsAfterProcess(true, 'migration');
       return ['status' => 'success', 'login' => explode('_', $autoLoginMD)[0], 'url' => site_url()];
     }
 
@@ -1152,16 +1192,23 @@
 
         require_once BMI_INCLUDES . '/progress/migration.php';
         $progress = BMI_BACKUPS . '/latest_migration_progress.log';
+        $shouldClearLogs = true;
 
-        if (file_exists($lock_cli_end) && (time() - filemtime($lock_cli_end)) > 10) {
+        if (isset($this->post['clearLogs']) && $this->post['clearLogs'] == 'false') {
+          $shouldClearLogs = false;
+        }
 
-          $migration = new MigrationProgress();
-          $migration->start();
-          $migration->log(__('Initializing restore process...', 'backup-backup'), 'STEP');
-          $migration->end();
+        if ($shouldClearLogs === true) {
+          if (file_exists($lock_cli_end) && (time() - filemtime($lock_cli_end)) > 10) {
 
-          file_put_contents($progress, '0');
+            $migration = new MigrationProgress();
+            $migration->start();
+            $migration->log(__('Initializing restore process...', 'backup-backup'), 'STEP');
+            $migration->end();
 
+            file_put_contents($progress, '0');
+
+          }
         }
 
         return ['status' => 'success'];
@@ -1790,6 +1837,9 @@
       }
       $ignored_folders = $ignored_folders_default;
       $ignored_paths_default = [BMI_CONFIG_DIR, BMI_BACKUPS, BMI_ROOT_DIR];
+      $ignored_paths_default[] = "***ABSPATH***/wp-content/ai1wm-backups";
+      $ignored_paths_default[] = "***ABSPATH***/wp-content/uploads/wp-clone";
+      $ignored_paths_default[] = "***ABSPATH***/wp-content/updraft";
       if (defined('BMI_PRO_ROOT_DIR')) $ignored_paths_default[] = BMI_PRO_ROOT_DIR;
       if ($is && $dpathsis) {
         BMP::merge_arrays($ignored_paths_default, $dpaths);
@@ -1893,10 +1943,12 @@
       if ($acis == false) {
         $acis = true;
         $ac = [
-          '***ABSPATH***/wp-content/uploads/wpforms/.htaccess.cpmh3129' // Binary broken file of wpforms
+          '***ABSPATH***/wp-content/uploads/wpforms/.htaccess.cpmh3129', // Binary broken file of wpforms
+          '***ABSPATH***/logs/traffic.html/.md5sums' // Binary broken file of wpforms
         ];
       } else {
         $ac[] = '***ABSPATH***/wp-content/uploads/wpforms/.htaccess.cpmh3129'; // Binary broken file of wpforms
+        $ac[] = '***ABSPATH***/logs/traffic.html/.md5sums'; // Binary broken file of wpforms
       }
 
       $temp_is = false;
@@ -2114,6 +2166,8 @@
       if (file_exists(BMI_CONFIG_PATH)) {
         @unlink(BMI_CONFIG_PATH);
       }
+
+      // update_option('BMI_LOGS_SHARING_IS_ALLOWED', 'unknown');
 
       return ['status' => 'success'];
     }
@@ -2407,6 +2461,160 @@
       }
 
       return ['status' => 'success'];
+
+    }
+
+    public function sendTroubleshootingDetails($send_type = 'manual', $triggeredBy = false, $blocking = true) {
+
+      require_once BMI_INCLUDES . DIRECTORY_SEPARATOR . 'check' . DIRECTORY_SEPARATOR . 'system_info.php';
+      $bmiSiteData = new SI();
+      $bmiSiteData = $bmiSiteData->to_array();
+
+      $latestBackupLogs = 'does_not_exist';
+      $latestBackupProgress = 'does_not_exist';
+      $latestRestorationLogs = 'does_not_exist';
+      $latestRestorationProgress = 'does_not_exist';
+      $currentPluginConfig = 'does_not_exist';
+      $pluginGlobalLogs = 'does_not_exist';
+      $backgroundErrors = 'does_not_exist';
+
+      if (file_exists(BMI_BACKUPS . '/latest.log')) {
+        $latestBackupLogs = file_get_contents(BMI_BACKUPS . '/latest.log');
+      }
+
+      if (file_exists(BMI_BACKUPS . '/latest_progress.log')) {
+        $latestBackupProgress = file_get_contents(BMI_BACKUPS . '/latest_progress.log');
+      }
+
+      if (file_exists(BMI_BACKUPS . '/latest_migration.log')) {
+        $latestRestorationLogs = file_get_contents(BMI_BACKUPS . '/latest_migration.log');
+      }
+
+      if (file_exists(BMI_BACKUPS . '/latest_migration_progress.log')) {
+        $latestRestorationProgress = file_get_contents(BMI_BACKUPS . '/latest_migration_progress.log');
+      }
+
+      if (file_exists(BMI_CONFIG_DIR . DIRECTORY_SEPARATOR . '/config.json')) {
+        $currentPluginConfig = file_get_contents(BMI_CONFIG_DIR . DIRECTORY_SEPARATOR . '/config.json');
+      }
+
+      if (file_exists(BMI_CONFIG_DIR . DIRECTORY_SEPARATOR . 'complete_logs.log')) {
+        $pluginGlobalLogs = file_get_contents(BMI_CONFIG_DIR . DIRECTORY_SEPARATOR . 'complete_logs.log');
+      }
+
+      $backgroundLogsPath = BMI_CONFIG_DIR . DIRECTORY_SEPARATOR . 'background-errors.log';
+      if (file_exists($backgroundLogsPath)) {
+        if ((filesize($backgroundLogsPath) / 1024 / 1024) <= 4) {
+          $backgroundErrors = file_get_contents($backgroundLogsPath);
+        } else $backgroundErrors = 'file_too_large';
+      }
+
+      $ifCLI = false;
+      if (defined('BMI_USING_CLI_FUNCTIONALITY') && BMI_USING_CLI_FUNCTIONALITY === true) {
+        $ifCLI = true;
+      }
+
+      $logsSourceFrontEnd = 'manual';
+      if ($triggeredBy != false) {
+        $logsSourceFrontEnd = $triggeredBy;
+      }
+      if (isset($this->post['source']) && in_array($this->post['source'], ['backup', 'migration'])) {
+        $logsSourceFrontEnd = $this->post['source'];
+      }
+
+      $url = 'https://' . BMI_API_BACKUPBLISS_PUSH . '/v1' . '/push';
+      $response = wp_remote_post($url, array(
+        'method' => 'POST',
+        'timeout' => 15,
+        'blocking' => $blocking,
+        'sslverify' => false,
+        'send_type' => $send_type,
+        'body' => array(
+          'admin_url' => admin_url(),
+          'home_url' => home_url(),
+          'site_url' => get_site_url(),
+          'is_multisite' => is_multisite() ? "yes" : "no",
+          'is_abspath_writable' => is_writable(ABSPATH) ? "yes" : "no",
+          'site_information' => $bmiSiteData,
+          'latest_backup_logs' => $latestBackupLogs,
+          'latest_backup_progress' => $latestBackupProgress,
+          'latest_restoration_logs' => $latestRestorationLogs,
+          'latest_restoration_progress' => $latestRestorationProgress,
+          'current_plugin_config' => $currentPluginConfig,
+          'plugin_global_logs' => $pluginGlobalLogs,
+          'background_errors' => $backgroundErrors,
+          'triggered_by' => $logsSourceFrontEnd,
+          'is_defined' => defined('BMI_BACKUP_PRO') ? 'yes' : 'no',
+          'is_cli' => $ifCLI
+        )
+      ));
+
+      if (is_wp_error($response)) {
+        $error_message = $response->get_error_message();
+        Logger::error($error_message, 'backup-backup');
+        return ['status' => 'fail'];
+      } else {
+        try {
+          $body = json_decode($response['body']);
+          if (isset($body->code)) {
+            return ['status' => 'success', 'code' => sanitize_text_field($body->code)];
+          } else {
+            return ['status' => 'fail'];
+          }
+        } catch (\Exception $e) {
+          Logger::error(print_r($e, true), 'backup-backup');
+          return ['status' => 'fail'];
+        } catch (\Throwable $t) {
+          Logger::error(print_r($t, true), 'backup-backup');
+          return ['status' => 'fail'];
+        }
+      }
+
+    }
+
+    public function actionsAfterProcess($success = false, $triggeredBy = 'backup') {
+
+      return null;
+
+      // REMOVED CODE:
+      // $canShare = BMP::canShareLogsOrShouldAsk();
+      // if ($canShare === 'allowed') {
+      //
+      //   $send_type = 'error';
+      //   if ($success) $send_type = 'success';
+      //   $this->sendTroubleshootingDetails($send_type, $triggeredBy, false);
+      //
+      // }
+
+    }
+
+    public function logSharing() {
+
+      $type = $this->post['question'];
+
+      if ($type == 'set_yes') {
+
+        // $isOk = Dashboard\bmi_set_config('LOGS::SHARING', 'yes');
+        // update_option('BMI_LOGS_SHARING_IS_ALLOWED', 'yes');
+        return ['status' => 'success'];
+
+      } else if ($type == 'set_no') {
+
+        // $isOk = Dashboard\bmi_set_config('LOGS::SHARING', 'no');
+        // update_option('BMI_LOGS_SHARING_IS_ALLOWED', 'no');
+        return ['status' => 'success'];
+
+      } else if ($type == 'is_allowed') {
+
+        // $canShare = BMP::canShareLogsOrShouldAsk();
+        // return ['status' => 'success', 'result' => $canShare];
+        return ['status' => 'success', 'result' => 'not-allowed'];
+
+      } else {
+
+        return ['status' => 'fail'];
+
+      }
 
     }
 

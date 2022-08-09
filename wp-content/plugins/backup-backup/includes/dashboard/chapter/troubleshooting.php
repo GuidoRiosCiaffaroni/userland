@@ -14,6 +14,13 @@
   // Tooltips
   $ctl = __("Your account on Wordpress.org (where you open a new support thread) is different to the one you login to your WordPress dashboard (where you are now). If you don’t have a WordPress.org account yet, please sign up at the top right on the Support Forum page, and then scroll down on that page . It only takes a minute :) Thank you!", 'backup-backup');
 
+  $bmiTroubleshootingLogShareInfo = __("You'll share: Website URL, %s1backup logs%s2, %s3restore logs%s2, our plugin logs & configuration, basic data about your site.", 'backup-backup');
+  $bmiTroubleshootingLogShareInfo2 = __("No confidential data such as email gets shared.", 'backup-backup');
+
+  $bmiTroubleshootingLogShareInfo = str_replace('%s1', '<a href="#" class="download-backup-log-url hoverable secondary" download="backup_logs.txt">', $bmiTroubleshootingLogShareInfo);
+  $bmiTroubleshootingLogShareInfo = str_replace('%s3', '<a href="#" class="download-restore-log-url hoverable secondary" download="restore_logs.txt">', $bmiTroubleshootingLogShareInfo);
+  $bmiTroubleshootingLogShareInfo = str_replace('%s2', '</a>', $bmiTroubleshootingLogShareInfo);
+
 ?>
 
 <div class="mm mt mb f20 lh40">
@@ -93,6 +100,30 @@
     <div class="f26 semibold mb">
       <?php _e("Troubleshooting settings", 'backup-backup'); ?>
     </div>
+  </div>
+
+  <div class="mm bmi-troubleshooting-btn-mm">
+
+    <div class="f20 semibold">
+      <?php _e("Send troubleshooting data", 'backup-backup'); ?>
+    </div>
+
+    <div class="f16 mtll mbll bmi-troubleshooting-btn-section">
+      <div class="bmi-troubleshooting-btn-text">
+        <?php _e("Send us debug information of your latest failed backup or restore, so that we can investigate.", 'backup-backup'); ?>
+      </div>
+      <div class="bmi-inline">
+        <a href="#" class="btn bmi-send-troubleshooting-logs bmi-troubleshooting-btn mm30"><?php _e("Share debug infos with BackupBliss team", 'backup-backup'); ?></a>
+      </div>
+      <div class="bmi-troubleshooting-info-logs">
+        <?php echo $bmiTroubleshootingLogShareInfo; ?><br>
+        <?php echo $bmiTroubleshootingLogShareInfo2; ?>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="mm">
     <div class="f20 semibold">
       <?php _e("Site information", 'backup-backup'); ?>
     </div>

@@ -14,11 +14,15 @@
   } else $configu_sets = '';
 
 ?>
-
+<script type="text/javascript">
+  if (document.querySelector('#modal-css')) document.querySelector('#modal-css').remove();
+</script>
 <style>
   #wpfooter { display: none !important; }
   #wpfooter #footer-left { display: none; }
   #wpfooter #footer-upgrade { display: none; }
+  #wp-auth-check-wrap { display: none !important; }
+  .modal { transform: translateY(0%) !important; }
 </style>
 <div id="bmi-preload">
   <div class="progress">
@@ -208,6 +212,9 @@
   <?php require_once 'modals/delete-confirm-modal.php'; ?>
   <?php require_once 'modals/reset-confirm-modal.php'; ?>
   <?php require_once 'modals/bfs-modal.php'; ?>
+  <?php require_once 'modals/after-logs-sent.php'; ?>
+  <?php require_once 'modals/freeze-loading.php'; ?>
+  <?php //require_once 'modals/logs-sharing-ask.php'; ?>
   <?php do_action('bmi_load_premium_modals'); ?>
 
   <!-- Other modules -->

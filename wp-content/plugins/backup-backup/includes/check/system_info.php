@@ -492,6 +492,7 @@ class System_Info {
       'curl_ssl_enabled' => isset($curl_version['features']) ? (bool) ($curl_version['features'] & 4) : false,
       'php_open_ssl_version_text' => isset($curl_version['ssl_version']) ? $curl_version['ssl_version'] : null,
       'php_open_ssl_version_number' => isset($curl_version['ssl_version_number']) ? $curl_version['ssl_version_number'] : null,
+      'plugin_compile_method' => defined('BMI_REV') ? BMI_REV : 'unknown'
     ];
   }
 }

@@ -37,7 +37,7 @@
 
     }
 
-    public function createManifest() {
+    public function createManifest($dbBackupEngine = 'v4') {
 
       global $table_prefix;
 
@@ -56,6 +56,7 @@
         'dbdomain' => get_option('siteurl'),
         'uid' => get_current_user_id(),
         'source_query_output' => BMI_DB_MAX_ROWS_PER_QUERY,
+        'db_backup_engine' => $dbBackupEngine,
         'config' => array(
           'ABSPATH' => ABSPATH,
           'DB_NAME' => DB_NAME,

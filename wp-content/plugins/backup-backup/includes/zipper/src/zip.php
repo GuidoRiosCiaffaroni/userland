@@ -163,11 +163,26 @@ class Zip {
 
       } else {
 
-        // Require Database Manager
-        require_once BMI_INCLUDES . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'better-backup.php';
+        $dbBackupEngine = 'v4';
 
-        // Get database dump
-        $this->zip_progress->log(__("Making database backup (using V2 engine, requires at least v1.1.0 to restore)", 'backup-backup'), 'STEP');
+        if ($dbBackupEngine == 'v4') {
+
+          // Require Database Manager
+          require_once BMI_INCLUDES . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'better-backup-v3.php';
+
+          // Get database dump
+          $this->zip_progress->log(__("Making database backup (using v3 engine, requires at least v1.2.2 to restore)", 'backup-backup'), 'STEP');
+
+        } else {
+
+          // Require Database Manager
+          require_once BMI_INCLUDES . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'better-backup.php';
+
+          // Get database dump
+          $this->zip_progress->log(__("Making database backup (using v2 engine, requires at least v1.1.0 to restore)", 'backup-backup'), 'STEP');
+
+        }
+
         $this->zip_progress->log(__("Iterating database...", 'backup-backup'), 'INFO');
 
         if (!is_dir($better_database_files_dir)) @mkdir($better_database_files_dir, 0755, true);
@@ -276,7 +291,7 @@ class Zip {
           }
         }
 
-        $lib->addFromString('bmi_backup_manifest.json', $this->zip_progress->createManifest());
+        $lib->addFromString('bmi_backup_manifest.json', $this->zip_progress->createManifest($dbBackupEngine));
         $lib->addFromString('bmi_logs_this_backup.log', $logs);
         $this->zip_progress->progress($max . '/' . $max);
 
@@ -302,7 +317,7 @@ class Zip {
 
       // Run the backup in background
       if ((!defined('BMI_USING_CLI_FUNCTIONALITY') || BMI_USING_CLI_FUNCTIONALITY === false) && ($legacy === false || BMI_CLI_ENABLED === true) && sizeof($this->org_files) > 10) {
-        file_put_contents($database_file_dir . 'bmi_backup_manifest.json', $this->zip_progress->createManifest());
+        file_put_contents($database_file_dir . 'bmi_backup_manifest.json', $this->zip_progress->createManifest($dbBackupEngine));
         $url = plugins_url(null) . '/backup-backup/includes/backup-heart.php';
         $identy = 'BMI-' . rand(10000000, 999999999);
         $remote_settings = [
@@ -320,6 +335,7 @@ class Zip {
           'abs_dir' => trailingslashit(ABSPATH),
           'root_dir' => plugin_dir_path(BMI_ROOT_FILE),
           'browser' => false,
+          'shareallowed' => BMP::canShareLogsOrShouldAsk(),
           'url' => $url
         ];
 
@@ -508,7 +524,7 @@ class Zip {
 
         $this->zip_progress->end();
 
-        file_put_contents($database_file_dir . 'bmi_backup_manifest.json', $this->zip_progress->createManifest());
+        file_put_contents($database_file_dir . 'bmi_backup_manifest.json', $this->zip_progress->createManifest($dbBackupEngine));
         file_put_contents($database_file_dir . 'bmi_logs_this_backup.log', file_get_contents(BMI_BACKUPS . DIRECTORY_SEPARATOR . 'latest.log'));
 
         $this->zip_progress->start(true);

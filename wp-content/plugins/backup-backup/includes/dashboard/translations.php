@@ -37,7 +37,7 @@
     <?php endif; ?>
   </div>
   <div id="premium-tooltip-pre"><b><u><?php _e('Pro feature:', 'backup-backup'); ?></u></b></div>
-  
+
   <div id="bmi-success-copy">
     <?php _e('Text copied successfully', 'backup-backup') ?>
   </div>
@@ -161,6 +161,20 @@
   <div id="bmi-force-stop-success">
     <?php _e("The process should be stopped now.", 'backup-backup') ?>
   </div>
+  <div id="bmi-support-send-success">
+    <?php _e("Logs shared successfully.", 'backup-backup') ?>
+  </div>
+  <div id="bmi-support-send-fail">
+    <?php _e("There was an error while sharing logs for support.", 'backup-backup') ?>
+  </div>
+  <div id="bmi-support-send-start">
+    <?php _e("Sending your logs, please wait (up to 15 seconds)...", 'backup-backup') ?>
+  </div>
+  <?php if (false) { ?>
+  <div id="bmi-share-logs-thank-you">
+    <?php _e("Thank you very much for your support!", 'backup-backup') ?>
+  </div>
+  <?php } ?>
   <div id="BMI_URL_ROOT"><?php echo plugin_dir_url(BMI_ROOT_FILE); ?></div>
   <div id="BMI_BLOG_URL"><?php echo get_site_url(); ?></div>
   <div id="BMI_REV"><?php echo BMI_REV; ?></div>

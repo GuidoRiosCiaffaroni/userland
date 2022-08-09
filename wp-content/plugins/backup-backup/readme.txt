@@ -2,8 +2,8 @@
 Contributors: Migrate
 Tags: Backup, Migration, Migrate, Backups, Restore, All In One, Duplicate, Clone, Import, Export, Transfer
 Requires at least: 4.6
-Tested up to: 6.0
-Stable tag: 1.2.1
+Tested up to: 6.0.1
+Stable tag: 1.2.2
 License: GPLv3
 Requires PHP: 5.6
 
@@ -73,7 +73,7 @@ Backup file size depends on the criteria you select on the “What will be backe
 
 Yes. You can create full site backups, automatic backups, and migrate your site (duplicate site) free of charge. [Backup Migration Pro](https://sellcodes.com/oZxnXtc2) provides more sophisticated filters and selections of files that will be included/excluded from backups (affecting backup size), faster backup creation times, number of external backup storage locations, backup encryption, backup file compression methods, advanced backup triggers, additional backup notifications by email, priority support, and more.
 
-= Is cloud backup available?  =
+= Is cloud backup available? =
 Backup to cloud are some of the upcoming features, that will be available,
 In Free version: Google Drive, FTP, Amazon S3, Rackspace, DreamObjects, Openstack and
 In Premium version: Google cloud, SFTP/SCP, Microsoft Azure, OneDrive, Backblaze, and more.
@@ -89,11 +89,13 @@ Besides having the most intuitive interface and smoothest user experience, Backu
 - XCloner: Automatic backups are dependant on wp cron; full restore not available on a local server;
 - Total Upkeep: They lack the advanced selective backups and exclusion rules, lacks a monthly backup schedule
 
-= Is the plugin also available in my language? =
+= How to upload my backup file? =
+Uploading a backup can be simply done by navigating to the Manage & Restore Backup(s) section of the BM plugin (tab on the right side). There you have “Upload backup file” button, after clicking on it, you need to select a proper backup that is made by this plugin only. You cannot use backups from other plugins (to restore those, go back to those plugins and restore them this way). If you use “Super-quick migration” (section b), your backup will ba automaticaly uploaded. If you are having trouble uploading the backup file, go bac and ensure that the folder designated for backups is writtable. You can find the backup destination in plugin section “Where shall the backup(s) be stored?
 
+= Is the plugin also available in my language? =
 So far we have translated the plugin into these languages:
 
-Arabic: [إنشاء نسخة احتياطية واستعادة النسخ الاحتياطية وترحيل المواقع. أفضل مكون إضافي لمواقع الترحيل والاستنساخ!] (https://ar.wordpress.org/plugins/backup-backup/)
+Arabic: [إنشاء نسخة احتياطية واستعادة النسخ الاحتياطية وترحيل المواقع. أفضل مكون إضافي لمواقع الترحيل والاستنساخ!](https://ar.wordpress.org/plugins/backup-backup/)
 Chinese (China): [创建备份、还原备份和迁移站点。 迁移和克隆网站的最佳插件！](https://cn.wordpress.org/plugins/backup-backup/)
 Croatian: [Izradite sigurnosnu kopiju, vratite sigurnosne kopije i migrirajte web-mjesta. Najbolji dodatak za migraciju i kloniranje web stranica!](https://hr.wordpress.org/plugins/backup-backup/)
 Dutch: [Maak back-ups, herstel back-ups en migreer sites. De beste plug-in voor het migreren en klonen van websites!](https://nl.wordpress.org/plugins/backup-backup/)
@@ -140,6 +142,27 @@ Vietnamese: [Tạo sao lưu, khôi phục các bản sao lưu và di chuyển c�
 
 
 == Changelog ==
+
+= 1.2.2 =
+* Fixed some plugin conflicts causing styling issues in our plugin
+* Removed unnecessary error logging
+* Resolved issues with PHP 8 and PHP 8.1 internal log format
+* Added more blacklisted tables to restoration process
+* Added pre-loader between calculation and backup load
+* Added new troubleshooting method, allows to share complete logs with one click
+* Added new backup and restoration engine for database (much quicker!)
+* Decreased possibility of out of memory issues during URL adjustment
+* Improved stability of PHP CLI restoration process
+* Fixed issues of too quick restorations, decreasing false-positive errors
+* Added handler for browser-side errors, decreasing chance of frozen process
+* Fixed issues when log in pop-up was display during or after restoration
+* Fixed issues when backed-up wp-config.php was overriding main wp-config.php
+* Adjusted log display to be more smooth (no delays, quicker steps update)
+* Fixed formatting issues in readme file (FAQ)
+* Fixed automatic cleanup of files after migration
+* Fixed issue when restoration was not continued after download (Super-Quick Migration)
+* Modified error windows for backup and restore process
+* Tested with WordPress 6.0.1
 
 = 1.2.1 =
 * Adjusted typos in our FAQ for migration process
@@ -380,17 +403,24 @@ Vietnamese: [Tạo sao lưu, khôi phục các bản sao lưu và di chuyển c�
 * Initial release
 
 == Upgrade Notice ==
-= 1.2.1 =
-What's new in 1.2.1?
-* Adjusted typos in our FAQ for migration process
-* Updated blacklist of plugins to activate after migration
-* Added blacklist for junk data tables - should significantly speed up restore process in some cases
-* Fixed notice messages of non existing temporary files
-* Improved latest Search & Replace engine to preform properly on multi-level subdomains
-* Tested with WordPress 6.0-beta3
-* Added blacklist for binary broken files
-* Added flushing of rewrite rules after migration
-* Adjusted display of TABs in settings on smaller screens
-* Premium: Fixed our settings display issues with PHP 8 and PHP 8.1
-* Added option: Select first method of backup (which makes one database file)
-* Added option: Removal of all plugins and themes after migration that were not included in the backup
+= 1.2.2 =
+What's new in 1.2.2?
+* Fixed some plugin conflicts causing styling issues in our plugin
+* Removed unnecessary error logging
+* Resolved issues with PHP 8 and PHP 8.1 internal log format
+* Added more blacklisted tables to restoration process
+* Added pre-loader between calculation and backup load
+* Added new troubleshooting method, allows to share complete logs with one click
+* Added new backup and restoration engine for database (much quicker!)
+* Decreased possibility of out of memory issues during URL adjustment
+* Improved stability of PHP CLI restoration process
+* Fixed issues of too quick restorations, decreasing false-positive errors
+* Added handler for browser-side errors, decreasing chance of frozen process
+* Fixed issues when log in pop-up was display during or after restoration
+* Fixed issues when backed-up wp-config.php was overriding main wp-config.php
+* Adjusted log display to be more smooth (no delays, quicker steps update)
+* Fixed formatting issues in readme file (FAQ)
+* Fixed automatic cleanup of files after migration
+* Fixed issue when restoration was not continued after download (Super-Quick Migration)
+* Modified error windows for backup and restore process
+* Tested with WordPress 6.0.1

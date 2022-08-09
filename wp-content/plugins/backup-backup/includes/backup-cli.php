@@ -87,12 +87,12 @@
   } catch (\Exception $e) {
 
     error_log('There was an error with Backup Migration plugin: ' . $e->getMessage());
-    error_log($e);
+    error_log(strval($e));
 
   } catch (\Throwable $e) {
 
     error_log('There was an error with Backup Migration plugin: ' . $e->getMessage());
-    error_log($e);
+    error_log(strval($e));
 
   }
 

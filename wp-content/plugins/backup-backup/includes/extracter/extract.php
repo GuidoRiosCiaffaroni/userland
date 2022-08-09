@@ -33,7 +33,6 @@
       // Requirements
       require_once BMI_INCLUDES . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'manager.php';
       require_once BMI_INCLUDES . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'better-restore.php';
-      require_once BMI_INCLUDES . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'even-better-restore-v3.php';
       require_once BMI_INCLUDES . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'smart-sort.php';
 
       // IsCLI?
@@ -57,7 +56,7 @@
       $this->cleanupbefore = Dashboard\bmi_get_config('OTHER:RESTORE:BEFORE:CLEANUP') ? true : false;
 
       // Restore start time
-      $this->start = microtime(true);
+      $this->start = intval(microtime(true));
 
       // File amount by default 0 later we replace it with scan
       $this->fileAmount = 0;
@@ -71,7 +70,7 @@
         $this->fileAmount = intval($options['amount']);
       }
       if (isset($options['start'])) {
-        $this->start = floatval($options['start']);
+        $this->start = intval($options['start']);
       }
       $this->continueFile = false;
       if (isset($options['continueFile'])) {
@@ -168,6 +167,7 @@
       $this->src = BMI_BACKUPS . DIRECTORY_SEPARATOR . $this->backup_name;
 
       $this->v3Importer = null;
+      $this->usingDbEngineV4 = null;
 
     }
 
@@ -275,6 +275,91 @@
       $tblmap = BMI_INCLUDES . DIRECTORY_SEPARATOR . 'htaccess' . DIRECTORY_SEPARATOR . '.table_map';
       if (file_exists($tblmap)) {
         @unlink($tblmap);
+      }
+
+      $allowedFiles = ['wp-config.php', '.htaccess', '.litespeed', '.default.json'];
+      foreach (glob(untrailingslashit(ABSPATH) . DIRECTORY_SEPARATOR . 'backup-migration_??????????') as $filename) {
+
+        $basename = basename($filename);
+
+        if (is_dir($filename) && !in_array($basename, ['.', '..'])) {
+          $filesToBeRemoved[] = $filename;
+        }
+
+      }
+
+      foreach (glob(BMI_INCLUDES . DIRECTORY_SEPARATOR . 'htaccess' . DIRECTORY_SEPARATOR . '.*') as $filename) {
+
+        $basename = basename($filename);
+
+        if (in_array($basename, ['.', '..'])) continue;
+        if (is_file($filename) && !in_array($basename, $allowedFiles)) {
+          $filesToBeRemoved[] = $filename;
+        }
+
+      }
+
+      foreach (glob(BMI_INCLUDES . DIRECTORY_SEPARATOR . 'htaccess' . DIRECTORY_SEPARATOR . 'restore_scan_*') as $filename) {
+
+        $basename = basename($filename);
+
+        if (in_array($basename, ['.', '..'])) continue;
+        if (is_file($filename) && !in_array($basename, $allowedFiles)) {
+          $filesToBeRemoved[] = $filename;
+        }
+
+      }
+
+      foreach (glob(untrailingslashit(ABSPATH) . DIRECTORY_SEPARATOR . 'wp-config.??????????.php') as $filename) {
+
+        $basename = basename($filename);
+
+        if (in_array($basename, ['.', '..'])) continue;
+        if (is_file($filename) && !in_array($filename, $allowedFiles)) {
+          $filesToBeRemoved[] = $filename;
+        }
+
+      }
+
+      foreach ($filesToBeRemoved as $file) {
+        $this->rrmdir($file);
+      }
+
+    }
+
+    private function rrmdir($dir) {
+
+      if (is_dir($dir)) {
+
+        $objects = scandir($dir);
+        foreach ($objects as $object) {
+
+          if ($object != "." && $object != "..") {
+
+            if (is_dir($dir . DIRECTORY_SEPARATOR . $object) && !is_link($dir . DIRECTORY_SEPARATOR . $object)) {
+
+              $this->rrmdir($dir . DIRECTORY_SEPARATOR . $object);
+
+            } else {
+
+              @unlink($dir . DIRECTORY_SEPARATOR . $object);
+
+            }
+
+          }
+
+        }
+
+        @rmdir($dir);
+
+      } else {
+
+        if (file_exists($dir) && is_file($dir)) {
+
+          @unlink($dir);
+
+        }
+
       }
 
     }
@@ -673,43 +758,6 @@
       }
 
       return true;
-
-    }
-
-    private function rrmdir($dir) {
-
-      if (is_dir($dir)) {
-
-        $objects = scandir($dir);
-        foreach ($objects as $object) {
-
-          if ($object != "." && $object != "..") {
-
-            if (is_dir($dir . DIRECTORY_SEPARATOR . $object) && !is_link($dir . DIRECTORY_SEPARATOR . $object)) {
-
-              $this->rrmdir($dir . DIRECTORY_SEPARATOR . $object);
-
-            } else {
-
-              @unlink($dir . DIRECTORY_SEPARATOR . $object);
-
-            }
-
-          }
-
-        }
-
-        @rmdir($dir);
-
-      } else {
-
-        if (file_exists($dir) && is_file($dir)) {
-
-          @unlink($dir);
-
-        }
-
-      }
 
     }
 
@@ -1150,10 +1198,19 @@
 
           }
 
+          // Even remove extracted WP-config if it's different site.
+          if (untrailingslashit($manifest->dbdomain) != untrailingslashit($this->siteurl)) {
+
+            // Unlink wp-config inside extracted directory
+            $extractedWpConfigPath = $this->tmp . DIRECTORY_SEPARATOR . 'wordpress' . DIRECTORY_SEPARATOR . 'wp-config.php';
+            if (file_exists($extractedWpConfigPath)) @unlink($extractedWpConfigPath);
+
+          }
+
           // Restore files
           $this->restoreBackupFromFiles($manifest);
 
-          // Restore WP-config if it's different site.
+
           if (untrailingslashit($manifest->dbdomain) != untrailingslashit($this->siteurl)) {
 
             // Restore WP Config if it's different domain
@@ -1207,7 +1264,12 @@
           $wasDisabled = 0;
           if ($this->v3engine) {
 
-            $this->migration->log(__('Splitting process is disabled because v3 restore engine is enabled.', 'backup-backup'), 'INFO');
+            if ($this->usingDbEngineV4) {
+              $this->migration->log(__('Splitting process is disabled because v4 restore engine is enabled.', 'backup-backup'), 'INFO');
+            } else {
+              $this->migration->log(__('Splitting process is disabled because v3 restore engine is enabled.', 'backup-backup'), 'INFO');
+            }
+
             $wasDisabled = 1;
 
           } else if (!$this->splitting) {
@@ -1321,6 +1383,14 @@
             $manifest = $this->getCurrentManifest();
           }
 
+          if (isset($manifest->db_backup_engine) && $manifest->db_backup_engine === 'v4') {
+            require_once BMI_INCLUDES . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'even-better-restore-v4.php';
+            $this->usingDbEngineV4 = true;
+          } else {
+            require_once BMI_INCLUDES . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'even-better-restore-v3.php';
+            $this->usingDbEngineV4 = false;
+          }
+
           // Try to restore database
           if (!$this->isCLI) {
 
@@ -1387,6 +1457,14 @@
           // And do the rest
           // Step 9 runs only at the end of database import
 
+          if (isset($manifest->db_backup_engine) && $manifest->db_backup_engine === 'v4') {
+            require_once BMI_INCLUDES . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'even-better-restore-v4.php';
+            $this->usingDbEngineV4 = true;
+          } else {
+            require_once BMI_INCLUDES . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'even-better-restore-v3.php';
+            $this->usingDbEngineV4 = false;
+          }
+
           // Get manifest
           if (!isset($manifest)) {
             $manifest = $this->getCurrentManifest();
@@ -1441,7 +1519,11 @@
           touch($autologin_file);
 
           // Final verbose
-          $this->migration->log(__('Restore process took: ', 'backup-backup') . number_format(microtime(true) - $this->start, 2) . ' seconds.', 'INFO');
+          if ((intval(microtime(true)) - intval($this->start)) > 0) {
+            $this->migration->log(__('Restore process took: ', 'backup-backup') . (intval(microtime(true)) - intval($this->start)) . ' seconds.', 'INFO');
+          } else {
+            $this->migration->log(__('Restore process fully finished.', 'INFO'));
+          }
           Logger::log('Site restored...');
 
           // Return success

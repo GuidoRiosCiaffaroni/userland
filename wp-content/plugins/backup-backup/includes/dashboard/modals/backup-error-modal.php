@@ -6,6 +6,18 @@
   // Exit on direct access
   if (!defined('ABSPATH')) exit;
 
+  $backupErrorInstruction = __('Please click on the button below to enable us to investigate.', 'backup-backup');
+
+  $messageBackupError1 = __("That's unusual! But no worries – we're happy to look into it, and fix it for you (%s1for free!%s2)", 'backup-backup');
+  $messageBackupError1 = str_replace('%s1', '<b>', $messageBackupError1);
+  $messageBackupError1 = str_replace('%s2', '</b>', $messageBackupError1);
+
+  $bmiTroubleshootingLogShareInfo = __("You'll share: Website URL, %s1backup logs%s2, our plugin logs & configuration, basic data about your site.", 'backup-backup');
+  $bmiTroubleshootingLogShareInfo2 = __("No confidential data such as email gets shared.", 'backup-backup');
+
+  $bmiTroubleshootingLogShareInfo = str_replace('%s1', '<a href="#" class="download-backup-log-url hoverable secondary" download="backup_logs.txt">', $bmiTroubleshootingLogShareInfo);
+  $bmiTroubleshootingLogShareInfo = str_replace('%s2', '</a>', $bmiTroubleshootingLogShareInfo);
+
 ?>
 
 <div class="modal" id="backup-error-modal">
@@ -19,46 +31,27 @@
         <img src="<?php echo $this->get_asset('images', 'x-face.png'); ?>" alt="red-cross" width="110px">
       </div>
 
-      <div class="mm60 f20 left-align">
-        <?php _e('The backup process ran into some difficulties. Error report:', 'backup-backup');  ?>
+      <div class="mm60 f22 lh28">
+        <?php echo $messageBackupError1; ?>
       </div>
 
-      <div class="mm60 relative">
-        <div class="log-wrapper">
-          <pre id="backup-error-pre" style="min-height: 32px;"></pre>
-        </div>
-
-        <div class="mm60 right-align" style="position: absolute; top: 15px; right: 30px;">
-          <a href="#" class="btn inline btn-with-img btn-img-low-pad btn-pad bmi-copper" data-copy="backup-error-pre">
-            <div class="text">
-              <img src="<?php echo $this->get_asset('images', 'copy-icon.png'); ?>" alt="copy-img">
-              <div class="f18 semibold"><?php _e('Copy', 'backup-backup') ?></div>
-            </div>
-          </a>
-        </div>
+      <div class="mm60 f22 mbl mtl lh28">
+        <?php echo $backupErrorInstruction; ?>
       </div>
 
-      <div class="mm60 f20 mbl mtl lh30 left-align">
-        <?php
-          _e('Please copy this and post into a new support thread you open in the Support Forum - we are happy to help you quickly (100% free)!', 'backup-backup');
-        ?>
+      <div class="mm60">
+        <a class="btn inline semibold mm60 f16 bmi-send-troubleshooting-logs" href="#!" target="_blank">
+          <?php _e('Share debug infos with BackupBliss team', 'backup-backup') ?>
+        </a>
       </div>
 
-      <div class="mm60 flex flexcenter mtl">
-        <div class="flex1 f16">
-          <a href="<?php echo get_site_url(); ?>/?backup-migration=PROGRESS_LOGS&progress-id=latest.log&backup-id=current&t=<?php echo time(); ?>"
-            class="hoverable nodec secondary" download="backup_error_log.txt">
-            <?php _e('Download logs', 'backup-backup') ?>
-          </a>
-        </div>
-        <div class="flex2">
-          <a class="btn inline semibold mm60 f16" href="https://wordpress.org/support/plugin/backup-backup/" target="_blank">
-            <?php _e('Go to Support Forum', 'backup-backup') ?>
-          </a>
-        </div>
-        <div class="flex1 f16 tooltip-html info-cursor" tooltip="<?php _e("Your account on Wordpress.org (where you open a new support thread) is different to the one you login to your WordPress dashboard (where you are now). If you don't have a WordPress.org account yet, please sign up at the top right on here. It only takes a minute :) Thank you!", 'backup-backup') ?>">
-          <?php _e('Cannot login there?', 'backup-backup') ?>
-        </div>
+      <div class="mm60 f16 lh28 mtl">
+        <?php echo $bmiTroubleshootingLogShareInfo; ?><br>
+        <?php echo $bmiTroubleshootingLogShareInfo2; ?>
+      </div>
+
+      <div class="mm60 f18 center mb mtl">
+        <a href="#" class="modal-closer text-muted" data-close="backup-error-modal"><?php _e('Close window', 'backup-backup') ?></a>
       </div>
 
     </div>

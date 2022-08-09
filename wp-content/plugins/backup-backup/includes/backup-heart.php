@@ -53,6 +53,7 @@
   define('BMI_CONFIG_DIR', $fields['content-configdir']);
   define('BMI_BACKUPS', $fields['content-backups']);
   define('BMI_ROOT_DIR', $fields['content-dir']);
+  // define('BMI_SHARE_LOGS_ALLOWED', $fields['content-shareallowed']);
   define('BMI_INCLUDES', BMI_ROOT_DIR . 'includes');
   define('BMI_SAFELIMIT', intval($fields['content-safelimit']));
 
@@ -117,6 +118,7 @@
         'filessofar' => $fields['content-filessofar'],
         'total_files' => $fields['content-total'],
         'browser' => $fields['content-browser']
+        // 'shareallowed' => $fields['content-shareallowed']
       ],
       $fields['content-it']
     );
@@ -127,12 +129,12 @@
   } catch (\Exception $e) {
 
     error_log('There was an error with Backup Migration plugin: ' . $e->getMessage());
-    error_log($e);
+    error_log(strval($e));
 
   } catch (\Throwable $e) {
 
     error_log('There was an error with Backup Migration plugin: ' . $e->getMessage());
-    error_log($e);
+    error_log(strval($e));
 
   }
 

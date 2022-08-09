@@ -91,7 +91,7 @@ class BMI_Search_Replace_Engine {
         $row_count = $row_count[0]->num;
         if ($row_count == 0) continue;
 
-  			$page_size = 1000;
+  			$page_size = 500;
   			$pages = ceil($row_count / $page_size);
 
   			for ($page = 0; $page < $pages; $page++) {
@@ -130,16 +130,22 @@ class BMI_Search_Replace_Engine {
             if ($upd && !empty($where_sql)) {
               $sql = 'UPDATE ' . $table . ' SET ' . implode(', ', $update_sql) . ' WHERE ' . implode(' AND ', array_filter($where_sql));
               $wpdb->query($sql);
+              unset($sql);
+
               $report['updates']++;
 
               if ($wpdb->last_error !== '') {
-                error_log($wpdb->last_query);
-                error_log($wpdb->last_result);
-                error_log($wpdb->last_error);
+                // error_log(strval($wpdb->last_query));
+                // error_log(strval($wpdb->last_result));
+                // error_log(strval($wpdb->last_error));
               }
             }
 
+            unset($row);
+
           }
+
+          unset($data);
 
   			}
 

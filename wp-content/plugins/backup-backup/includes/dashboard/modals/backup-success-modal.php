@@ -96,7 +96,7 @@
         </div>
 
         <div class="f18 inline align-right">
-          <a href="#" class="nlink hoverable" id="download-backup-log-url" download="backup_logs.txt">
+          <a href="#" class="nlink hoverable download-backup-log-url" download="backup_logs.txt">
             <?php _e('Download logs', 'backup-backup') ?>
           </a>
         </div>

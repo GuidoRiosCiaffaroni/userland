@@ -95,8 +95,7 @@
       </div>
 
       <div class="center f17 mbl">
-        <a href="<?php echo get_site_url(); ?>/?backup-migration=PROGRESS_LOGS&progress-id=latest_migration.log&backup-id=current&t=<?php echo time(); ?>"
-           download="restoration_logs.txt">
+        <a href="#!" class="download-restore-log-url" download="restoration_logs.txt">
           <?php _e("Download the log", 'backup-backup'); ?></a> <?php _e("of the restoration process", 'backup-backup'); ?>
       </div>
 

@@ -164,7 +164,7 @@ class BMI_Even_Better_Database_Restore {
 
     $seek = &$this->seek['last_seek'];
     if ($seek == 0) {
-      $seek = 19;
+      $seek = 5;
       $wpdb->query("DROP TABLE IF EXISTS `" . $tableName . "`;");
 
       $str = __("Started restoration of %table_name% %total_tables% table", 'backup-backup');
@@ -176,12 +176,6 @@ class BMI_Even_Better_Database_Restore {
       $this->filterFile($filePath, basename($filePath));
     }
 
-    $qs = "/* QUERY START */\n";
-    $qe = "/* QUERY END */\n";
-
-    $vs = "/* VALUES START */\n";
-    $ve = "/* VALUES END */\n";
-
     $wpdb->suppress_errors();
 
     $wpdb->query('SET autocommit = 0;');
@@ -189,24 +183,19 @@ class BMI_Even_Better_Database_Restore {
     $wpdb->query("SET SQL_MODE = 'NO_AUTO_VALUE_ON_ZERO';");
     $wpdb->query('START TRANSACTION;');
 
-    $sqlStarted = false;
-
     $sql = '';
     while (!$objFile->eof()) {
       $objFile->seek($seek); $seek++;
-
-      if ($objFile->current() == $qs) { $sqlStarted = true; continue; }
-      else if ($objFile->current() == $vs || $objFile->current() == $ve) {
-        continue;
-      } else if ($objFile->current() == $qe) {
-        $sqlStarted = false;
+      $line = rtrim($objFile->current(), "\n");
+      if (strlen($line) !== 0) {
+        $sql = $line;
+        unset($line);
         break;
       }
-
-      if ($sqlStarted == true) $sql .= rtrim($objFile->current(), "\n");
     }
 
-    $wpdb->query($sql); unset($sql);
+    $wpdb->query($sql);
+    unset($sql);
     $wpdb->query('COMMIT;');
     $wpdb->query('SET autocommit = 1;');
     $wpdb->query('SET foreign_key_checks = 1;');
@@ -215,10 +204,13 @@ class BMI_Even_Better_Database_Restore {
     $str = str_replace('%table_name%', $realTableName, $str);
 
     $objFile->seek($objFile->getSize());
-    $total_size = $objFile->key();
+    $total_size = $objFile->key() - 5;
     $objFile->seek($seek);
 
-    $progress = ($seek - 1) . '/' . $total_size . " (" . number_format(($seek - 1) / $total_size * 100, 2) . "%)";
+    if ($total_size <= 0) $total_size = 1;
+    if (($seek - 5) <= 0) $seek = 6;
+
+    $progress = ($seek - 5) . '/' . $total_size . " (" . number_format(($seek - 5) / $total_size * 100, 2) . "%)";
     $str = str_replace('%progress%', $progress, $str);
     $this->logger->log($str, 'INFO');
 
@@ -250,10 +242,10 @@ class BMI_Even_Better_Database_Restore {
 
     $objFile = new \SplFileObject($file);
 
-    $objFile->seek(17);
+    $objFile->seek(1);
     $realTableName = explode('`', $objFile->current())[1];
 
-    $objFile->seek(18);
+    $objFile->seek(2);
     $tmpTableName = explode('`', $objFile->current())[1];
 
     $finished = $this->queryFile($objFile, $file, $tmpTableName, $realTableName);
@@ -437,7 +429,9 @@ class BMI_Even_Better_Database_Restore {
       'bluehost-wordpress-plugin/bluehost-wordpress-plugin.php',
       'sg-cachepress/sg-cachepress.php',
       'wordpress-starter/siteground-wizard.php',
-      'revslider/revslider.php'
+      'revslider/revslider.php',
+      'easy-soundcloud-shortcode/easy-soundcloud-shortcode.php',
+      'easy-soundcloud-shortcode/EasySoundcloudShortcode.php'
     ];
 
     for ($i = 0; $i < sizeof($plugins_copy); ++$i) {
@@ -654,50 +648,21 @@ class BMI_Even_Better_Database_Restore {
 
     if ($shouldBeExcluded == true) {
 
-      $str = '';
-      $str .= "/" . "* QUERY START */\n";
-      $str .= "SET foreign_key_checks = 0;\n";
-      $str .= "/" . "* QUERY END */\n";
-      $str .= "\n";
-      $str .= "/" . "* QUERY START */\n";
-      $str .= "SET SQL_MODE = 'NO_AUTO_VALUE_ON_ZERO';\n";
-      $str .= "/" . "* QUERY END */\n";
-      $str .= "\n";
-      $str .= "/" . "* QUERY START */\n";
-      $str .= "SET time_zone = '+00:00';\n";
-      $str .= "/" . "* QUERY END */\n";
-      $str .= "\n";
-      $str .= "/" . "* QUERY START */\n";
-      $str .= "SET NAMES 'utf8';\n";
-      $str .= "/" . "* QUERY END */\n";
-      $str .= "\n";
-
       $file = new \SplFileObject($path);
       $file->seek($file->getSize());
       $total_lines = $file->key() + 1;
 
-      $query_has_not_ended = true;
-      for ($i = 16; $query_has_not_ended && $i < $total_lines; ++$i) {
-        $file->seek($i);
-        $line = trim($file->current());
+      if ($total_lines >= 6) {
 
-        if ($line == "/" . "* QUERY END */") {
+        $str = "\n\n\n\n\n";
 
-          $str .= $line;
-          $query_has_not_ended = false;
-          break;
-
-        } else {
-
-          $str .= $line . "\n";
-
-        }
-      }
-
-      if ($query_has_not_ended === false) {
+        $file->seek(5);
+        $str .= trim($file->current());
 
         $this->logger->log(str_replace('%s', substr($name, 0, -4), __('Cleaning up contents of %s table.', 'backup-backup')), 'INFO');
         file_put_contents($path, $str);
+
+        $file = null;
 
       }
 
@@ -732,8 +697,8 @@ class BMI_Even_Better_Database_Restore {
 
   private function initMessage() {
 
-    $this->logger->log(__('Successfully detected backup created with v2 engine, importing...', 'backup-backup'), 'INFO');
-    $this->logger->log(__('Restoring database (using v3 engine)...', 'backup-backup'), 'STEP');
+    $this->logger->log(__('Successfully detected backup created with v3 engine, importing...', 'backup-backup'), 'INFO');
+    $this->logger->log(__('Restoring database (using v4 engine)...', 'backup-backup'), 'STEP');
 
     if (file_exists($this->tablemap)) {
       @unlink($this->tablemap);
