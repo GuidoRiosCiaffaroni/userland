@@ -1,4 +1,6 @@
 <?php secure_setup(); ?> 
+<?php //cyb_session_start(); ?>
+<?php //session_setup(); ?>
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
 <head>

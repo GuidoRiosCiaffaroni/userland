@@ -23,6 +23,9 @@
                                     echo '</br>';
                                     $_SESSION["newsession"]='2';
                                     echo $_SESSION["newsession"];
+                                    session_reset();
+                                    echo '</br>';
+                                    echo $_SESSION["newsession"];
                                     ?>
 
                                 <div class="summernote-clickable">

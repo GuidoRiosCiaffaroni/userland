@@ -1,94 +1,83 @@
 <?php get_header();?>
-<?php post_insert(); ?>
+<?php meta_insert(); ?>
     <!-- Form Element area Start-->
-    <form action="<?php echo home_url().'/post' ?>" method="post">
+    <form action="<?php echo home_url().'/post-insert' ?>" method="post">
     <div class="form-element-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list">
-                        <div class="basic-tb-hd">
-                            <h2>Input Text</h2>
-                            <p>Text.</p>
-                        </div>
 
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="breadcomb-wp">
-                                    <div class="breadcomb-icon">
-                                        <i class="notika-icon notika-edit"></i>
+
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="normal-table-list">
+                                        <div class="basic-tb-hd">
+                                            <h2>Basic Table</h2>
+                                        </div>
+                        
+                                        <div class="bsc-tbl">
+                                            <table class="table table-sc-ex">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Frase</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><? echo $idPost; ?></td>
+                                                        <td>Alexandra</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
-                                    <div class="breadcomb-ctn">
-                                    <?php 
-                                    meta_insert(); 
-                                    ?>
-
-                                        <?php
-                                        $args = array(
-                                            'numberposts'   => 1,
-                                            'category'      => 5
-                                        );
-                                        $my_posts = get_posts( $args );
-                                        if( ! empty( $my_posts ) )
-                                        {
-                                            $output = '<ul>';
-                                            foreach ( $my_posts as $p )
-                                            {
-                                                $output .= '<li><a href="' . get_permalink( $p->ID ) . '">'. $p->post_title . '</a></li>';
-                                                $output .= '<li> ID ->'. $p->ID . '</li>';
-                                                $output .= '<li> post_author ->'. $p->post_author . '</li>';
-                                                $output .= '<li> post_date ->'. $p->post_date . '</li>';
-                                                $output .= '<li> post_date_gmt ->'. $p->post_date_gmt . '</li>';
-                                                $output .= '<li> post_content ->'. $p->post_content . '</li>';
-                                                $output .= '<li> post_excerpt ->'. $p->post_excerpt . '</li>';
-                                                $output .= '<li> post_status ->'. $p->post_status . '</li>';
-                                                $output .= '<li> comment_status ->'. $p->comment_status. '</li>';
-                                                $output .= '<li> ping_status ->'. $p->ping_status. '</li>';
-                                                $output .= '<li> post_password ->'. $p->post_password. '</li>';
-                                                $output .= '<li> post_name ->'. $p->post_name. '</li>';
-                                                $output .= '<li> to_ping ->'. $p->to_ping. '</li>';
-                                                $output .= '<li> pinged ->'. $p->pinged. '</li>';
-                                                $output .= '<li> post_modified ->'. $p->post_modified. '</li>';
-                                                $output .= '<li> post_modified_gmt ->'. $p->post_modified_gmt. '</li>';
-                                                $output .= '<li> post_content_filtered ->'. $p->post_content_filtered. '</li>';
-                                                $output .= '<li> post_parent ->'. $p->post_parent. '</li>';
-                                                $output .= '<li> guid ->'. $p->guid. '</li>';
-                                                $output .= '<li> menu_order ->'. $p->menu_order. '</li>';
-                                                $output .= '<li> post_type ->'. $p->post_type. '</li>';
-                                                $output .= '<li> post_mime_type ->'. $p->post_mime_type. '</li>';
-                                                $output .= '<li> comment_count ->'. $p->comment_count. '</li>';
-                                                $output .= '<li> filter ->'. $p->filter. '</li>';
-                                            }
-                                            $output .= '<ul>';
-                                        }
-                                        echo $output;
-                                        ?>
-
-
-                                    </div>    
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
+
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                                                            <div class="basic-tb-hd">
+                                            <h2>Basic Table</h2>
+                                            <p>Basic example without any additional modification classes</p>
+                                        </div>
+                                    <div class="nk-int-st">
+                                        <input name="post_title" type="text" class="form-control" placeholder="post_title">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
 
-
-                        <div class="row">
-
-                  
+                            
+      
             
 
-               
+ 
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    
+                                    
+                                <div class="fm-checkbox">
+                                    
+                                </div>
+                                    
+                                <div class="summernote-clickable">
+                                    <button class="btn btn-primary btn-sm hec-button">Ingresar</button>
+                    
+                                </div>    
+                            </div>
+                            
                         </div>
 
-              
 
-                    
+
+                        <!--
+                        <?php echo get_the_category_list(); ?>
+                        <p>Tags: <?php echo the_tags(); ?></p>
+                        -->
                     </div>
                 </div>
             </div>

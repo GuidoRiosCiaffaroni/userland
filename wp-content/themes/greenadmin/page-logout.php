@@ -61,8 +61,9 @@
 
    
  <?php
-
+session_destroy();
     logout_setup();
+    
  ?>
 
 

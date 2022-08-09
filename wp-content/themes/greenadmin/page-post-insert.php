@@ -25,7 +25,6 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="cmp-tb-hd">
                                     <h2>Descripción</h2>
-                                    
                                 </div>
                   
                                 <div class="summernote-clickable">
@@ -41,9 +40,9 @@
                                 </div>
                                     
                                 <div class="bootstrap-select fm-cmp-mg">
-                                    <select class="selectpicker">
-                                        <option>Español</option>
-                                        <option>Ingles</option>
+                                    <select class="selectpicker" name="language">
+                                        <option value='es'>Español</option>
+                                        <option value='en'>Ingles</option>
                                     </select>
                                 </div>
                                     

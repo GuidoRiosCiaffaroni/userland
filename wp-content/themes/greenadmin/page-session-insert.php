@@ -17,7 +17,6 @@
                                 <div class="fm-checkbox">
                                 </div>
                                     <?php
-                                    session_start();
                                     $_SESSION["newsession"]='1';
                                     echo '</br>';
                                     echo $_SESSION["newsession"];
