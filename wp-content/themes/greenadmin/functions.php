@@ -23,15 +23,55 @@ function secure_setup()
         if ( is_user_logged_in() ) 
         {
             $current_user = wp_get_current_user();
-            session_start(); 
+            session_start();
+            $_SESSION['sessionID'] = session_id();
+            $_SESSION['post_title'] = '';
+            $_SESSION['post_content'] = '';
+
         } 
         else 
         {
+            session_destroy();
             header('Location: '.home_url().'/login');
         }
     }
 }
 /********************************************************************************************/
+
+/********************************************************************************************/
+// Verificacion de Contraseña 
+/*
+Dependecia
+PlugIn Name             :   Ultimate Member
+PlugIn Url              :   https://ultimatemember.com/
+PlugIn Url WordPress    :   https://wordpress.org/plugins/ultimate-member/
+
+URLs
+https://code.tutsplus.com/es/tutorials/wordpress-for-web-app-development-sessions--wp-34228
+*/
+/********************************************************************************************/
+add_action( 'logout_setup_theme', 'logout_setup' );
+function logout_setup() 
+{
+
+    session_reset();
+    session_abort();
+    session_destroy();
+    echo $home = home_url();
+    wp_destroy_current_session();
+    wp_clear_auth_cookie();
+    wp_set_current_user( 0 );
+    wp_logout();
+    header('Location: '.home_url().'/login');
+}
+/********************************************************************************************/
+
+
+
+
+
+
+
 
 /********************************************************************************************/
 // Ingreso Post
@@ -47,6 +87,7 @@ function post_insert()
 
     $_SESSION['post_title'] = $_POST['post_title'];
     $_SESSION['post_content'] = $_POST['post_content'];
+
 
   
 
@@ -82,16 +123,20 @@ URLs
 add_action( 'page_meta_insert', 'post_meta' );
 function meta_insert() 
 {
+/*
+    echo $_SESSION['sessionID'];
+    echo '</br>';
     echo $_SESSION['post_title'];
     echo '</br>';
     echo $_SESSION['post_content'];
+    echo '</br>';
+    printf ( $_SESSION['post_title']);
+    echo '</br>';
+    printf ($_SESSION['post_content']);
+*/
 
 }
 /********************************************************************************************/
-
-
-
-
 
 
 
@@ -137,6 +182,15 @@ function install_setup()
     // Creacion de pagina Post Insert
     $my_page = array(
     'post_title'    => 'Meta Insert',
+    'post_content'  => '',
+    'post_status'   => 'publish',
+    'post_type'     => 'page'
+    );
+    wp_insert_post( $my_page );
+
+    // Creacion de pagina Post Insert
+    $my_page = array(
+    'post_title'    => 'Logout',
     'post_content'  => '',
     'post_status'   => 'publish',
     'post_type'     => 'page'

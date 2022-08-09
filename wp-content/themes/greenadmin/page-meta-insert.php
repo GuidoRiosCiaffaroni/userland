@@ -19,7 +19,9 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                    <?php meta_insert(); ?>
+                                    <?php 
+                                    meta_insert(); 
+                                    ?>
 
                                         <?php
                                         $args = array(

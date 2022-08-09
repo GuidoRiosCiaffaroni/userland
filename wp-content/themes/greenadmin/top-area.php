@@ -289,7 +289,7 @@
                             </li>
                             -->
 
-                            <li class="nav-item"><a href="<?php echo wp_logout_url( home_url() ); ?>" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-next"></i></span></a>
+                            <li class="nav-item"><a href="<?php echo home_url().'/logout' ?>" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-next"></i></span></a>
                             
                             </li>
 
