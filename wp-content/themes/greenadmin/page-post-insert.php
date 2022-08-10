@@ -33,22 +33,7 @@
 
                             </div>
                    
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="cmp-tb-hd">
-                                    <h2>Idioma de Origen</h2>
-                                    
-                                </div>
-                                    
-                                <div class="bootstrap-select fm-cmp-mg">
-                                    <select class="selectpicker" name="language">
-                                        <option value='es'>Español</option>
-                                        <option value='en'>Ingles</option>
-                                    </select>
-                                </div>
-                                    
-                            </div>
-
- 
+  
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     

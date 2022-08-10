@@ -46,6 +46,20 @@ PlugIn Url WordPress    :   https://wordpress.org/plugins/one-user-avatar/
 
 			<div class="row">
 			<?php
+/*
+global $current_user;
+print_r($current_user);
+
+
+//Saber si el usuario esta activado o no
+echo $current_user->user_status;
+//nombre del usuario
+echo $current_user->display_name;
+//array de los permisos del usuario
+echo $current_user->roles;
+*/
+
+
 				$current_user = wp_get_current_user();
   				$roles = ( array ) $current_user->roles;
 			?>	
