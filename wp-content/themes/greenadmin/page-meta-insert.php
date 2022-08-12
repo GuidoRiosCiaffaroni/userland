@@ -102,7 +102,7 @@
                                 <div class="form-group">
                                         <div class="basic-tb-hd">
                                             <h2>Traduccion</h2>
-                                            <p>Traduccion del significado</p>
+                                            <p>Traduccion directa</p>
                                         </div>
                                     <div class="nk-int-st">
                                         <input name="translation" type="text" class="form-control" placeholder="">
@@ -193,7 +193,11 @@
 
 
 
-                            <input  name="prodId" type="hidden" value="xm234jq">
+                            <input  name="ID_Post" type="hidden" value="<?php echo $ID_Post; ?>">
+
+
+
+
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     

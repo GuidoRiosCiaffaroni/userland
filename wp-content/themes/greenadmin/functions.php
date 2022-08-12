@@ -65,7 +65,6 @@ function post_insert()
 }
 /********************************************************************************************/
 
-
 /********************************************************************************************/
 // Ingreso Meta
 /*
@@ -76,8 +75,35 @@ URLs
 add_action( 'page_meta_insert', 'post_meta' );
 function meta_insert() 
 {
+echo '----------------------------------------------------->';
+echo '</br>';
+echo $_POST['ID_Post'];
+echo '</br>';
+echo '----------------------------------------------------->';
+echo '</br>';
+echo $_POST['translation'];
+echo '</br>';
+echo '----------------------------------------------------->';
+echo '</br>';
+echo $_POST['literal_translation'];
+echo '</br>';
+echo '----------------------------------------------------->';
+echo '</br>';
+echo $_POST['ideogram'];
+echo '</br>';
+echo '----------------------------------------------------->';
+echo '</br>';
+echo $_POST['pronunciation'];
+echo '</br>';
+echo '----------------------------------------------------->';
 
-$_POST['post_title'];
+
+add_post_meta( $_POST['ID_Post'], '_translation', $_POST['translation'], false );
+add_post_meta( $_POST['ID_Post'], '_ideogram', $_POST['ideogram'], false );
+add_post_meta( $_POST['ID_Post'], '_pronunciation', $_POST['pronunciation'], false );
+
+
+
 
 //add_post_meta( 68, '_color', 'red', true );
 
