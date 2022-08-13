@@ -81,8 +81,7 @@ add_post_meta( $_POST['ID_Post'], '_pronunciation', $_POST['pronunciation'], fal
 add_post_meta( $_POST['ID_Post'], '_source_language', $_POST['source_language'], false );
 add_post_meta( $_POST['ID_Post'], '_target_language', $_POST['target_language'], false );
 
-
-//add_post_meta( 68, '_color', 'red', true );
+//header('Location: '.home_url().'/tag-insert');
 
 }
 /********************************************************************************************/
@@ -94,15 +93,10 @@ URLs
 
 */
 /********************************************************************************************/
-add_action( 'page_meta_insert', 'post_meta' );
-function meta_insert() 
+add_action( 'page_tag_insert', 'tag_insert' );
+function tag_insert() 
 {
-add_post_meta( $_POST['ID_Post'], '_translation', $_POST['translation'], false );
-add_post_meta( $_POST['ID_Post'], '_ideogram', $_POST['ideogram'], false );
-add_post_meta( $_POST['ID_Post'], '_pronunciation', $_POST['pronunciation'], false );
-add_post_meta( $_POST['ID_Post'], '_source_language', $_POST['source_language'], false );
-add_post_meta( $_POST['ID_Post'], '_target_language', $_POST['target_language'], false );
-
+//wp_add_post_tags( int $post_id, string|array $tags = '' )
 
 //add_post_meta( 68, '_color', 'red', true );
 
