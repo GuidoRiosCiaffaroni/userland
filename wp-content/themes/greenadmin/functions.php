@@ -75,34 +75,11 @@ URLs
 add_action( 'page_meta_insert', 'post_meta' );
 function meta_insert() 
 {
-echo '----------------------------------------------------->';
-echo '</br>';
-echo $_POST['ID_Post'];
-echo '</br>';
-echo '----------------------------------------------------->';
-echo '</br>';
-echo $_POST['translation'];
-echo '</br>';
-echo '----------------------------------------------------->';
-echo '</br>';
-echo $_POST['literal_translation'];
-echo '</br>';
-echo '----------------------------------------------------->';
-echo '</br>';
-echo $_POST['ideogram'];
-echo '</br>';
-echo '----------------------------------------------------->';
-echo '</br>';
-echo $_POST['pronunciation'];
-echo '</br>';
-echo '----------------------------------------------------->';
-
-
 add_post_meta( $_POST['ID_Post'], '_translation', $_POST['translation'], false );
 add_post_meta( $_POST['ID_Post'], '_ideogram', $_POST['ideogram'], false );
 add_post_meta( $_POST['ID_Post'], '_pronunciation', $_POST['pronunciation'], false );
-
-
+add_post_meta( $_POST['ID_Post'], '_source_language', $_POST['source_language'], false );
+add_post_meta( $_POST['ID_Post'], '_target_language', $_POST['target_language'], false );
 
 
 //add_post_meta( 68, '_color', 'red', true );
@@ -110,7 +87,27 @@ add_post_meta( $_POST['ID_Post'], '_pronunciation', $_POST['pronunciation'], fal
 }
 /********************************************************************************************/
 
+/********************************************************************************************/
+// Ingreso tag
+/*
+URLs
 
+*/
+/********************************************************************************************/
+add_action( 'page_meta_insert', 'post_meta' );
+function meta_insert() 
+{
+add_post_meta( $_POST['ID_Post'], '_translation', $_POST['translation'], false );
+add_post_meta( $_POST['ID_Post'], '_ideogram', $_POST['ideogram'], false );
+add_post_meta( $_POST['ID_Post'], '_pronunciation', $_POST['pronunciation'], false );
+add_post_meta( $_POST['ID_Post'], '_source_language', $_POST['source_language'], false );
+add_post_meta( $_POST['ID_Post'], '_target_language', $_POST['target_language'], false );
+
+
+//add_post_meta( 68, '_color', 'red', true );
+
+}
+/********************************************************************************************/
 
 
 
