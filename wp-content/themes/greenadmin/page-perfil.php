@@ -39,6 +39,22 @@ PlugIn Url WordPress    :   https://wordpress.org/plugins/one-user-avatar/
 							</div>
 						</div>
 
+
+<?php
+/*
+global $current_user;
+print_r($current_user);
+//Saber si el usuario esta activado o no
+echo $current_user->user_status;
+//nombre del usuario
+echo $current_user->display_name;
+//array de los permisos del usuario
+echo $current_user->roles;
+*/
+$current_user = wp_get_current_user();
+$roles = ( array ) $current_user->roles;
+?>  
+
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="normal-table-list">
@@ -51,51 +67,102 @@ PlugIn Url WordPress    :   https://wordpress.org/plugins/one-user-avatar/
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>First Name</th>
-                                                    <th>Last Name</th>
+                                                    <th>Key</th>
+                                                    <th>Value</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <td>1</td>
-                                                    <td>Alexandra</td>
-                                                    <td>Christopher</td>
+                                                    <td>User ID :</td>
+                                                    <td><?php echo $current_user->ID; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>2</td>
-                                                    <td>Madeleine</td>
-                                                    <td>Hollaway</td>
+                                                    <td>User Display Name :</td>
+                                                    <td><?php echo $current_user->display_name; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>3</td>
-                                                    <td>Sebastian</td>
-                                                    <td>Johnston</td>
+                                                    <td>User First Name :</td>
+                                                    <td><?php echo $current_user->user_firstname; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>4</td>
-                                                    <td>Mitchell</td>
-                                                    <td>Christin</td>
+                                                    <td>User Last Name :</td>
+                                                    <td><?php echo $current_user->user_lastname; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>5</td>
-                                                    <td>Elizabeth</td>
-                                                    <td>Belkitt</td>
+                                                    <td>User NicName :</td>
+                                                    <td><?php echo $current_user->user_nicename ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>6</td>
-                                                    <td>Benjamin</td>
-                                                    <td>Parnell</td>
+                                                    <td>User e-mail :</td>
+                                                    <td><?php echo $current_user->user_email ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>7</td>
-                                                    <td>Katherine</td>
-                                                    <td>Buckland</td>
+                                                    <td>User URL :</td>
+                                                    <td><?php echo $current_user->user_url ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>8</td>
-                                                    <td>Nicholas</td>
-                                                    <td>Walmart</td>
+                                                    <td>User Registered :</td>
+                                                    <td><?php echo $current_user->user_registered ?></td>
                                                 </tr>
+                                                 <tr>
+                                                    <td>9</td>
+                                                    <td>User Pass :</td>
+                                                    <td><?php echo $current_user->user_pass ?></td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>10</td>
+                                                    <td>User Activation Key :</td>
+                                                    <td><?php echo $current_user->user_activation_key ?></td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>11</td>
+                                                    <td>User Roles :</td>
+                                                    <td><?php echo $roles[0]; ?></td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>12</td>
+                                                    <td>User Status :</td>
+                                                    <td><?php echo $current_user->user_status ?></td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>13</td>
+                                                    <td>User level:</td>
+                                                    <td><?php echo $current_user->user_level ?></td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>14</td>
+                                                    <td>User avatar por defecto :</td>
+                                                    <td><?php echo get_avatar( $current_user->ID, 64 ) ?></td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>15</td>
+                                                    <td>User avatar original :</td>
+                                                    <td><?php echo get_wp_user_avatar($current_user->ID, 'original') ?></td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>16</td>
+                                                    <td>User avatar large :</td>
+                                                    <td><?php echo get_wp_user_avatar($current_user->ID, 'large') ?></td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>17</td>
+                                                    <td>User avatar medium :</td>
+                                                    <td><?php echo get_wp_user_avatar($current_user->ID, 'medium') ?></td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>17</td>
+                                                    <td>User avatar thumbnail :</td>
+                                                    <td><?php echo get_wp_user_avatar($current_user->ID, 'thumbnail') ?></td>
+                                                </tr>
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -109,24 +176,7 @@ PlugIn Url WordPress    :   https://wordpress.org/plugins/one-user-avatar/
 
 
 			<div class="row">
-			<?php
-/*
-global $current_user;
-print_r($current_user);
 
-
-//Saber si el usuario esta activado o no
-echo $current_user->user_status;
-//nombre del usuario
-echo $current_user->display_name;
-//array de los permisos del usuario
-echo $current_user->roles;
-*/
-
-
-				$current_user = wp_get_current_user();
-  				$roles = ( array ) $current_user->roles;
-			?>	
                 <!--
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
@@ -147,98 +197,98 @@ echo $current_user->roles;
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>User ID :</td>
-                                        <td><?php echo $current_user->ID; ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td>User Login :</td>
-                                        <td><?php echo $current_user->user_login; ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
-                                        <td>User Display Name :</td>
-                                        <td><?php echo $current_user->display_name; ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>4</td>
-                                        <td>User First Name: :</td>
-                                        <td><?php echo $current_user->user_firstname; ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>5</td>
-                                        <td>User Last Name :</td>
-                                        <td><?php echo $current_user->user_lastname; ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>6</td>
-                                        <td>User NicName :</td>
-                                        <td><?php echo $current_user->user_nicename ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>7</td>
-                                        <td>User e-mail</td>
-                                        <td><?php echo $current_user->user_email ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>8</td>
-                                        <td>User URL :</td>
-                                        <td><?php echo $current_user->user_url ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>9</td>
-                                        <td>User Registered :</td>
-                                        <td><?php echo $current_user->user_registered ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>10</td>
-                                        <td>User Pass :</td>
-                                        <td><?php echo $current_user->user_pass ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>  
                                     <tr>
                                         <td>11</td>
-                                        <td>User Activation Key :</td>
-                                        <td><?php echo $current_user->user_activation_key ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr> 
                                     <tr>
                                         <td>12</td>
-                                        <td>User Roles :</td>
-                                        <td><?php echo $roles[0]; ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>13</td>
-                                        <td>User Status :</td>
-                                        <td><?php echo $current_user->user_status ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>14</td>
-                                        <td>User level:</td>
-                                        <td><?php echo $current_user->user_level ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                   	<tr>
                                         <td>15</td>
-                                        <td>User avatar por defecto :</td>
-                                        <td><?php echo get_avatar( $current_user->ID, 64 ) ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                   	<tr>
                                         <td>16</td>
-                                        <td>User avatar original :</td>
-                                        <td><?php echo get_wp_user_avatar($current_user->ID, 'original') ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                   	<tr>
                                         <td>17</td>
-                                        <td>User avatar large :</td>
-                                        <td><?php echo get_wp_user_avatar($current_user->ID, 'large') ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>18</td>
-                                        <td>User avatar medium :</td>
-                                        <td><?php echo get_wp_user_avatar($current_user->ID, 'medium') ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>19</td>
-                                        <td>User avatar thumbnail :</td>
-                                        <td><?php echo get_wp_user_avatar($current_user->ID, 'thumbnail') ?></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>                                                         
                                 </tbody>
                             </table>
