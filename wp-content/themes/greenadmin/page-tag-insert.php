@@ -59,23 +59,38 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group">
                                         <div class="basic-tb-hd">
-                                            <h2>Traduccion</h2>
-                                            <p>Traduccion directa</p>
+                                            <h2>Ingresar Etiqueta</h2>
+                                            <p></p>
                                         </div>
                                     <div class="nk-int-st">
-                                        <input name="translation" type="text" class="form-control" placeholder="">
+                                        <input name="tag" type="text" class="form-control" placeholder="">
                                     </div>
                                 </div>
                             </div>
 
-                            <input  name="status" type="hidden" value="enable">
+
+
+<?php
+
+
+/*
+$tags = get_tags(array('get'=>'all'));
+    $output .= '<ul class="tag-cloud-list">';
+        if($tags) {
+        foreach ($tags as $tag):
+        $output .= '<li><a href="'. get_term_link($tag).'">'. $tag->name .'</a></li>';
+        endforeach;
+        } else {
+        _e('No tags created.', 'text-domain');
+        }
+    $output .= '</ul>';
+echo  $output;
+*/
+
+?>
 
 
                             <input  name="ID_Post" type="hidden" value="<?php echo $ID_Post; ?>">
-
-
-
-
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     
