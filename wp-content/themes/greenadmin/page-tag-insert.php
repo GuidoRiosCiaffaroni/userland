@@ -63,7 +63,7 @@
                                             <p></p>
                                         </div>
                                     <div class="nk-int-st">
-                                        <input name="tag" type="text" class="form-control" placeholder="">
+                                        <input name="new_tag" type="text" class="form-control" placeholder="">
                                     </div>
                                 </div>
                             </div>
@@ -95,7 +95,7 @@
                                     <h2>Multiple Example</h2>
                                 </div>
                                 <div class="chosen-select-act fm-cmp-mg">
-                                    <select class="chosen" multiple data-placeholder="Choose a Country...">
+                                    <select name="old_tag" class="chosen" multiple data-placeholder="seleccione las etiquetas">
                                     <?php
                                         $tags = get_tags(array('get'=>'all'));
                                             $output .= '';
