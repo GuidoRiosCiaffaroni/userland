@@ -70,7 +70,7 @@
 
 
 
-
+                            <!--
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                     <h2>Multiple Example</h2>
@@ -87,14 +87,44 @@
                                         </select>
                                 </div>
                             </div>
+                            -->
+
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                    <h2>Multiple Example</h2>
+                                </div>
+                                <div class="chosen-select-act fm-cmp-mg">
+                                    <select class="chosen" multiple data-placeholder="Choose a Country...">
+                                    <?php
+                                        $tags = get_tags(array('get'=>'all'));
+                                            $output .= '';
+                                            if($tags) 
+                                            {
+                                                foreach ($tags as $tag):
+                                                $output .= '<option value="'. $tag->name .'">'. $tag->name .'</option>';
+                                                endforeach;
+                                            } 
+                                            else 
+                                            {
+                                                _e('No tags created.', 'text-domain');
+                                            }
+                                            $output .= '';
+                                            echo  $output;
+                                    ?>
+
+                                    </select>
+                                </div>
+                            </div>
                             
+
 
 
 
 
 <?php
 
-
+/*
 
 $tags = get_tags(array('get'=>'all'));
     $output .= '<ul class="tag-cloud-list">';
@@ -107,7 +137,7 @@ $tags = get_tags(array('get'=>'all'));
         }
     $output .= '</ul>';
 echo  $output;
-
+*/
 ?>
 
 
