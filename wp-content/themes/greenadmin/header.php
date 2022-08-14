@@ -10,83 +10,60 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
-    <!-- favicon
-		============================================ -->
+    <!-- favicon  ============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <!-- Google Fonts
-		============================================ -->
+    <!-- Google Fonts ============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
-    <!-- Bootstrap CSS
-		============================================ -->
+    <!-- Bootstrap CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css">
-    <!-- Bootstrap CSS
-		============================================ -->
+    <!-- Bootstrap CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
-    <!-- owl.carousel CSS
-		============================================ -->
+    <!-- owl.carousel CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/owl.carousel.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/owl.theme.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/owl.transitions.css">
-    <!-- meanmenu CSS
-		============================================ -->
+    <!-- meanmenu CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/meanmenu/meanmenu.min.css">
-    <!-- animate CSS
-		============================================ -->
+    <!-- animate CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
-    <!-- summernote CSS
-        ============================================ -->
+    <!-- summernote CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/summernote/summernote.css">
-
-    <!-- Range Slider CSS
-        ============================================ -->
+    <!-- font awesome CSS ============================================ -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
+    <!-- Range Slider CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/themesaller-forms.css">
-    <!-- normalize CSS
-		============================================ -->
+    <!-- normalize CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/normalize.css">
-    <!-- mCustomScrollbar CSS
-		============================================ -->
+    <!-- mCustomScrollbar CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/scrollbar/jquery.mCustomScrollbar.min.css">
-    <!-- jvectormap CSS
-		============================================ -->
+    <!-- jvectormap CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/jvectormap/jquery-jvectormap-2.0.3.css">
-    <!-- notika icon CSS
-		============================================ -->
+    <!-- notika icon CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/notika-custom-icon.css">
-    <!-- wave CSS
-		============================================ -->
+    <!-- wave CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/wave/waves.min.css">
-    <!-- main CSS
-		============================================ -->
+    <!-- main CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/main.css">
-    <!-- style CSS
-		============================================ -->
+    <!-- style CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
-    <!-- responsive CSS
-		============================================ -->
+    <!-- responsive CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/responsive.css">
-    <!-- bootstrap select CSS
-        ============================================ -->
+    <!-- bootstrap select CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap-select/bootstrap-select.css">
-    <!-- datapicker CSS
-        ============================================ -->
+    <!-- datapicker CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/datapicker/datepicker3.css">
-    <!-- Color Picker CSS
-        ============================================ -->
+    <!-- Color Picker CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/color-picker/farbtastic.css">
-    <!-- main CSS
-        ============================================ -->
+    <!-- main CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/chosen/chosen.css">
-    <!-- notification CSS
-        ============================================ -->
+    <!-- notification CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/notification/notification.css">
-    <!-- dropzone CSS
-        ============================================ -->
+    <!-- dropzone CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/dropzone/dropzone.css">
 
 
     
-    <!-- modernizr JS
-		============================================ -->
+    <!-- modernizr JS ============================================ -->
     <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
