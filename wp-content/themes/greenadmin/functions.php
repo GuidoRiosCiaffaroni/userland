@@ -113,11 +113,35 @@ function tag_insert()
 
 */
 /********************************************************************************************/
-add_action( 'page_tag_insert', 'tag_insert' );
-function tag_insert() 
+add_action( 'page_category_insert', 'category_insert' );
+function category_insert() 
 {
-    wp_add_post_tags( $_POST['ID_Post'], $_POST['new_tag'] );
-    wp_add_post_tags( $_POST['ID_Post'], $_POST['old_tag'] );
+
+ 
+   // echo $id = wp_create_category( 'Child of Uncategorized', 0 );
+ /*
+    register_taxonomy_for_object_type('category', 'attachment');
+ register_taxonomy_for_object_type('category', 'page');
+  register_taxonomy_for_object_type('post_tag', 'page');
+*/
+
+
+
+require_once('wp-load.php' );
+require_once(ABSPATH . 'wp-admin/includes/taxonomy.php');
+
+$cat_defaults = array(
+    'cat_name' => 'some_name',
+    'category_description' => 'as asdfasdf sdf adfa fas f',
+    'category_nicename' => '',
+    'category_parent' => '',
+    'taxonomy' => 'category'
+ );
+$someSome = wp_insert_category($cat_defaults);
+
+
+
+
 }
 /********************************************************************************************/
 
