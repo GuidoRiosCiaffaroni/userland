@@ -1,5 +1,5 @@
 <?php get_header();?>
-<?php meta_insert(); ?>
+<?php tag_insert(); ?>
     <!-- Form Element area Start-->
 <?php
     $args = array(
@@ -68,21 +68,7 @@
                                 </div>
                             </div>
 
-
-                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                        <div class="basic-tb-hd">
-                                            <h2>Traduccion Literal</h2>
-                                            <p>Traduccion literal desde el idioma de origen</p>
-                                        </div>
-                                    <div class="nk-int-st">
-                                        <input name="literal_translation" type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-                            </div>                            
-      
-    
-
+                            <input  name="status" type="hidden" value="enable">
 
 
                             <input  name="ID_Post" type="hidden" value="<?php echo $ID_Post; ?>">

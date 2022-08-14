@@ -42,7 +42,6 @@ add_action( 'page_post_insert', 'post_insert' );
 function post_insert() 
 {
 
-
     if ($_POST['post_title'] == null || $_POST['post_content'] == null)
     {
         echo ' ';
@@ -59,7 +58,6 @@ function post_insert()
         wp_insert_post( $my_post );
         
         header('Location: '.home_url().'/meta-insert');
-
     }
 
 }
@@ -72,16 +70,23 @@ URLs
 
 */
 /********************************************************************************************/
-add_action( 'page_meta_insert', 'post_meta' );
+add_action( 'page_meta_insert', 'meta_insert' );
 function meta_insert() 
 {
-add_post_meta( $_POST['ID_Post'], '_translation', $_POST['translation'], false );
-add_post_meta( $_POST['ID_Post'], '_ideogram', $_POST['ideogram'], false );
-add_post_meta( $_POST['ID_Post'], '_pronunciation', $_POST['pronunciation'], false );
-add_post_meta( $_POST['ID_Post'], '_source_language', $_POST['source_language'], false );
-add_post_meta( $_POST['ID_Post'], '_target_language', $_POST['target_language'], false );
 
-//header('Location: '.home_url().'/tag-insert');
+    if ($_POST['translation'] == null || $_POST['ideogram'] == null || $_POST['pronunciation'] == null || $_POST['source_language'] == null || $_POST['target_language'] == null )
+    {
+        echo ' ';
+    }
+    else 
+    {      
+    add_post_meta( $_POST['ID_Post'], '_translation', $_POST['translation'], false );
+    add_post_meta( $_POST['ID_Post'], '_ideogram', $_POST['ideogram'], false );
+    add_post_meta( $_POST['ID_Post'], '_pronunciation', $_POST['pronunciation'], false );
+    add_post_meta( $_POST['ID_Post'], '_source_language', $_POST['source_language'], false );
+    add_post_meta( $_POST['ID_Post'], '_target_language', $_POST['target_language'], false );
+    header('Location: '.home_url().'/tag-insert');
+    }
 
 }
 /********************************************************************************************/
@@ -89,7 +94,6 @@ add_post_meta( $_POST['ID_Post'], '_target_language', $_POST['target_language'],
 /********************************************************************************************/
 // Ingreso tag
 /*
-URLs
 
 */
 /********************************************************************************************/
