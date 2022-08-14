@@ -57,42 +57,8 @@
 
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                        <div class="basic-tb-hd">
-                                            <h2>Ingresar Etiqueta</h2>
-                                            <p></p>
-                                        </div>
-                                    <div class="nk-int-st">
-                                        <input name="new_tag" type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <!--
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                    <h2>Multiple Example</h2>
-                                </div>
-                                <div class="chosen-select-act fm-cmp-mg">
-                                    <select class="chosen" multiple data-placeholder="Choose a Country...">
-                                            <option value="United States">United States</option>
-                                            <option value="United Kingdom">United Kingdom</option>
-                                            <option value="Afghanistan">Afghanistan</option>
-                                            <option value="Aland Islands">Aland Islands</option>
-                                            <option value="Albania">Albania</option>
-                                            <option value="Algeria">Algeria</option>
-                                            <option value="American Samoa">American Samoa</option>
-                                        </select>
-                                </div>
-                            </div>
-                            -->
-
-
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                    <h2>Multiple Example</h2>
+                                    <h2>Etiquetas Existentes</h2>
                                 </div>
                                 <div class="chosen-select-act fm-cmp-mg">
                                     <select name="old_tag" class="chosen" multiple data-placeholder="seleccione las etiquetas">
@@ -112,33 +78,33 @@
                                             $output .= '';
                                             echo  $output;
                                     ?>
-
                                     </select>
                                 </div>
                             </div>
                             
 
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                        <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                            <h2>Nueva Etiqueta</h2>
+                                            <p></p>
+                                        </div>
+                                    <div class="nk-int-st">
+                                        <input name="new_tag" type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
 
 
 
 
-<?php
 
-/*
 
-$tags = get_tags(array('get'=>'all'));
-    $output .= '<ul class="tag-cloud-list">';
-        if($tags) {
-        foreach ($tags as $tag):
-        $output .= '<li><a href="'. get_term_link($tag).'">'. $tag->name .'</a></li>';
-        endforeach;
-        } else {
-        _e('No tags created.', 'text-domain');
-        }
-    $output .= '</ul>';
-echo  $output;
-*/
-?>
+
+
+
+
+
 
 
                             <input  name="ID_Post" type="hidden" value="<?php echo $ID_Post; ?>">

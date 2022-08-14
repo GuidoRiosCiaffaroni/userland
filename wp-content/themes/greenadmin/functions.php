@@ -100,17 +100,26 @@ function meta_insert()
 add_action( 'page_tag_insert', 'tag_insert' );
 function tag_insert() 
 {
-wp_add_post_tags( $_POST['ID_Post'], $_POST['new_tag'] );
-wp_add_post_tags( $_POST['ID_Post'], $_POST['old_tag'] );
-
-//add_post_meta( 68, '_color', 'red', true );
-
+    wp_add_post_tags( $_POST['ID_Post'], $_POST['new_tag'] );
+    wp_add_post_tags( $_POST['ID_Post'], $_POST['old_tag'] );
 }
 /********************************************************************************************/
 
 
 
+/********************************************************************************************/
+// Ingreso categoria
+/*
 
+*/
+/********************************************************************************************/
+add_action( 'page_tag_insert', 'tag_insert' );
+function tag_insert() 
+{
+    wp_add_post_tags( $_POST['ID_Post'], $_POST['new_tag'] );
+    wp_add_post_tags( $_POST['ID_Post'], $_POST['old_tag'] );
+}
+/********************************************************************************************/
 
 
 
