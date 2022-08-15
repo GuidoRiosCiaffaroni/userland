@@ -100,8 +100,17 @@ function meta_insert()
 add_action( 'page_tag_insert', 'tag_insert' );
 function tag_insert() 
 {
-    wp_add_post_tags( $_POST['ID_Post'], $_POST['new_tag'] );
-    wp_add_post_tags( $_POST['ID_Post'], $_POST['old_tag'] );
+    if ($_POST['new_tag'] == null || $_POST['old_tag'] == null)
+    {
+        echo ' ';
+    }
+    else 
+    {
+        wp_add_post_tags( $_POST['ID_Post'], $_POST['new_tag'] );
+        wp_add_post_tags( $_POST['ID_Post'], $_POST['old_tag'] ); 
+        header('Location: '.home_url().'/category-insert');
+    }    
+
 }
 /********************************************************************************************/
 
@@ -111,29 +120,26 @@ function tag_insert()
 // Ingreso categoria
 /*
 URLs
+https://wp-kama.com/function/wp_insert_category
+
+
+https://hotexamples.com/es/examples/-/-/wp_update_post/php-wp_update_post-function-examples.html
+https://wp-qa.com/how-we-add-new-categories-by-wp_insert_post
+
+
 */
 /********************************************************************************************/
 add_action( 'page_category_insert', 'category_insert' );
 function category_insert() 
 {
-// echo $id = wp_create_category( 'Child of Uncategorized', 0 );
-/*
-    register_taxonomy_for_object_type('category', 'attachment');
-    register_taxonomy_for_object_type('category', 'page');
-    register_taxonomy_for_object_type('post_tag', 'page');
-*/
 
-require_once('wp-load.php' );
-require_once(ABSPATH . 'wp-admin/includes/taxonomy.php');
-
-$cat_defaults = array(
-    'cat_name' => 'some_name',
-    'category_description' => 'as asdfasdf sdf adfa fas f',
-    'category_nicename' => '',
-    'category_parent' => '',
-    'taxonomy' => 'category'
- );
-$someSome = wp_insert_category($cat_defaults);
+$cat_ID = get_cat_ID($_POST['category']);
+echo '------------------------></br>';
+echo $_POST['category'];
+echo '</br>';
+echo $cat_ID;
+echo '</br>';
+echo '------------------------></br>';
 
 }
 /********************************************************************************************/
@@ -146,10 +152,6 @@ https://wp-qa.com/how-we-add-new-categories-by-wp_insert_post
 https://wpseek.com/function/wp_insert_category/
 https://docs.w3cub.com/wordpress/functions/wp_insert_category
 https://hitchhackerguide.com/2011/02/12/wp_insert_category/
-https://wp-kama.com/function/wp_insert_category
-
-
-
 */
 /********************************************************************************************/
 add_action( 'page_category_create', 'category_create' );

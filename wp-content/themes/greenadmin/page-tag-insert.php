@@ -119,35 +119,6 @@
                                 </div>
                             </div>
 
-
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                    <h2>Basic Example</h2>
-                                </div>
-                                <div class="nk-int-mk sl-dp-mn">
-                                    <select class="chosen" data-placeholder="Choose a Country...">
-                                            <option value="United States">United States</option>
-                                                                                <?php
-                                        $categories = get_categories(array('get'=>'all'));
-                                            $outputc .= '';
-                                            if($categories) 
-                                            {
-                                                foreach ($categories as $category):
-                                                $outputc .= '<option value="'. $category->name .'">'. $category->name .'</option>';
-                                                endforeach;
-                                            } 
-                                            else 
-                                            {
-                                                //_e('No tags created.', 'text-domain');
-                                            }
-                                            $outputc .= '';
-                                            echo  $outputc;
-                                    ?>
-                                        </select>
-                                </div>
-                            </div>
-
-
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group">
                                         <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">

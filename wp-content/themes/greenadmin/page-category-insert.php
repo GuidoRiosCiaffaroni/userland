@@ -16,18 +16,34 @@
 
 
                             
-                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                        <div class="basic-tb-hd">
-                                            <h2>Traduccion</h2>
-                                            <p>Traduccion directa</p>
-                                        </div>
-                                    <div class="nk-int-st">
-                                        <input name="translation" type="text" class="form-control" placeholder="">
-                                    </div>
+                   
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                    <h2>Insertar Categoria</h2>
+                                </div>
+                                <div class="nk-int-mk sl-dp-mn">
+                                    <select name="category" class="chosen" data-placeholder="">
+                                    <?php
+                                        $categories = get_categories(array('get'=>'all'));
+                                            $outputc .= '';
+                                            if($categories) 
+                                            {
+                                                foreach ($categories as $category):
+                                                $outputc .= '<option value="'. $category->name .'">'. $category->name .'</option>';
+                                                endforeach;
+                                            } 
+                                            else 
+                                            {
+                                                //_e('No tags created.', 'text-domain');
+                                            }
+                                            $outputc .= '';
+                                            echo  $outputc;
+                                    ?>
+                                        </select>
                                 </div>
                             </div>
-                   
+
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     

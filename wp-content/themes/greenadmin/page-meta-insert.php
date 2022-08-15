@@ -142,6 +142,10 @@
                                 </div>
                             </div>
 
+
+
+
+
                             <input  name="ID_Post" type="hidden" value="<?php echo $ID_Post; ?>">
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
