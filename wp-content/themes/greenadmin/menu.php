@@ -1,4 +1,5 @@
     <!-- Mobile Menu start -->
+    <!--
     <div class="mobile-menu-area">
         <div class="container">
             <div class="row">
@@ -62,7 +63,7 @@
                                         <li><a href="<?php echo get_template_directory_uri(); ?>/form-examples.html">Form Examples</a></li>
                                     </ul>
                                 </li>
-                                <!--
+                             
                                 <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">App views</a>
                                     <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
                                         <li><a href="<?php echo get_template_directory_uri(); ?>/notification.html">Notifications</a>
@@ -104,16 +105,18 @@
                                         </li>
                                     </ul>
                                 </li>
-                            -->
-                            
                             </ul>
                         </nav>
                     </div>
                 
+
+
+
                 </div>
             </div>
         </div>
     </div>
+-->
     <!-- Mobile Menu end -->
 
 
@@ -126,8 +129,8 @@
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
                         <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home </a></li>
                         <li><a data-toggle="tab" href="#pruebas"><i class="notika-icon notika-mail"></i> Pruebas</a></li>
+                        <li><a data-toggle="tab" href="#category"><i class="notika-icon notika-edit"></i> Categorias</a></li>
                         <!--
-                        <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Interface</a></li>
                         <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Charts</a></li>
                         <li><a data-toggle="tab" href="#Tables"><i class="notika-icon notika-windows"></i> Tables</a></li>
                         <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Forms</a></li>
@@ -159,17 +162,15 @@
                             </ul>
                         </div>
 
-                        <!--
-                        <div id="Interface" class="tab-pane notika-tab-menu-bg animated flipInX">
+                        
+                        <div id="category" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="animations.html">Animations</a></li>
-                                <li><a href="<?php echo get_template_directory_uri(); ?>/google-map.html">Google Map</a></li>
-                                <li><a href="<?php echo get_template_directory_uri(); ?>/data-map.html">Data Maps</a></li>
-                                <li><a href="<?php echo get_template_directory_uri(); ?>/code-editor.html">Code Editor</a></li>
-                                <li><a href="<?php echo get_template_directory_uri(); ?>/image-cropper.html">Images Cropper</a></li>
-                                <li><a href="<?php echo get_template_directory_uri(); ?>/wizard.html">Wizard</a></li>
+                                <li><a href="<?php echo home_url(); ?>/category-create">Crear Categoria</a></li>
                             </ul>
                         </div>
+
+
+                        <!--
                         <div id="Charts" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="<?php echo get_template_directory_uri(); ?>/flot-charts.html">Flot Charts</a></li>
@@ -191,12 +192,13 @@
                                 <li><a href="<?php echo get_template_directory_uri(); ?>/form-examples.html">Form Examples</a></li>
                             </ul>
                         </div>
+                    -->
                         <div id="Appviews" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="<?php echo home_url(); ?>/install">Install</a></li>
                             </ul>
                         </div>
-                    -->
+                    
 
 
 

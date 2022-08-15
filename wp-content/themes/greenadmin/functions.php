@@ -110,22 +110,18 @@ function tag_insert()
 /********************************************************************************************/
 // Ingreso categoria
 /*
-
+URLs
 */
 /********************************************************************************************/
 add_action( 'page_category_insert', 'category_insert' );
 function category_insert() 
 {
-
- 
-   // echo $id = wp_create_category( 'Child of Uncategorized', 0 );
- /*
+// echo $id = wp_create_category( 'Child of Uncategorized', 0 );
+/*
     register_taxonomy_for_object_type('category', 'attachment');
- register_taxonomy_for_object_type('category', 'page');
-  register_taxonomy_for_object_type('post_tag', 'page');
+    register_taxonomy_for_object_type('category', 'page');
+    register_taxonomy_for_object_type('post_tag', 'page');
 */
-
-
 
 require_once('wp-load.php' );
 require_once(ABSPATH . 'wp-admin/includes/taxonomy.php');
@@ -139,14 +135,52 @@ $cat_defaults = array(
  );
 $someSome = wp_insert_category($cat_defaults);
 
+}
+/********************************************************************************************/
+
+
+/********************************************************************************************/
+// Crear Categoria
+/*
+https://wp-qa.com/how-we-add-new-categories-by-wp_insert_post
+https://wpseek.com/function/wp_insert_category/
+https://docs.w3cub.com/wordpress/functions/wp_insert_category
+https://hitchhackerguide.com/2011/02/12/wp_insert_category/
+https://wp-kama.com/function/wp_insert_category
+
+
+
+*/
+/********************************************************************************************/
+add_action( 'page_category_create', 'category_create' );
+function category_create() 
+{
+
+// echo $id = wp_create_category( 'Child of Uncategorized', 0 );
+/*
+    register_taxonomy_for_object_type('category', 'attachment');
+    register_taxonomy_for_object_type('category', 'page');
+    register_taxonomy_for_object_type('post_tag', 'page');
+*/
+
+
+require_once('wp-load.php' );
+require_once(ABSPATH . 'wp-admin/includes/taxonomy.php');
+
+$cat_defaults = array(
+    'cat_name' => $_POST['cat_name'],
+    'category_description' => $_POST['category_description'],
+    'category_nicename' => $_POST['category_nicename'],
+    'category_parent' => '',
+    'taxonomy' => 'category'
+ );
+$someSome = wp_insert_category($cat_defaults);
+
 
 
 
 }
 /********************************************************************************************/
-
-
-
 
 
 
