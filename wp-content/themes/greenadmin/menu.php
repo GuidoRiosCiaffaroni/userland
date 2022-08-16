@@ -124,8 +124,9 @@
                         <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="<?php echo home_url(); ?>">Home</a></li>
-                                <li><a href="<?php echo home_url(); ?>/post-insert">Post Insert</a></li>
-                                <!-- <li><a href="<?php echo home_url(); ?>/last-post">Last Post</a></li>
+                                <li><a href="<?php echo home_url(); ?>/post-insert">Insert</a></li>
+                                <li><a href="<?php echo home_url(); ?>/post-list">List</a></li>
+                                <!--
                                 <li><a href="<?php echo home_url(); ?>/test">Test</a></li>
                                 <li><a href="<?php echo home_url(); ?>/insert-meta">Insert Meta</a></li>
                                 <li><a href="<?php echo get_template_directory_uri(); ?>/analytics.html">Analytics</a></li>

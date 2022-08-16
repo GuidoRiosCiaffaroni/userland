@@ -1,6 +1,4 @@
 <?php secure_setup(); ?> 
-<?php //cyb_session_start(); ?>
-<?php //session_setup(); ?>
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
@@ -42,6 +40,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/notika-custom-icon.css">
     <!-- wave CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/wave/waves.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/wave/button.css">
     <!-- main CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/main.css">
     <!-- style CSS ============================================ -->
@@ -60,11 +59,82 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/notification/notification.css">
     <!-- dropzone CSS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/dropzone/dropzone.css">
-
+    <!-- Data Table JS ============================================ -->
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
 
     
-    <!-- modernizr JS ============================================ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Notika icon CSS
+        ============================================ -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/notika-custom-icon.css">
+    <!-- Data Table JS
+        ============================================ -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/jquery.dataTables.min.css">
+    <!-- main CSS
+        ============================================ -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/main.css">
+    <!-- style CSS
+        ============================================ -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+    <!-- responsive CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- modernizr JS
+        ============================================ -->
     <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.8.3.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 
 <body <?php body_class(); ?>>
