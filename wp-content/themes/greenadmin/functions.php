@@ -42,7 +42,7 @@ add_action( 'page_post_insert', 'post_insert' );
 function post_insert() 
 {
 
-    if ($_POST['post_title'] == null || $_POST['post_content'] == null)
+    if ($_POST['post_title'] == null || $_POST['post_content'] == null )
     {
         echo ' ';
     }
@@ -56,8 +56,16 @@ function post_insert()
  
         // Insert the post into the database
         wp_insert_post( $my_post );
+
+        echo '------------------------------------------------------------> </br>';
+        echo $my_post;
+        echo '------------------------------------------------------------> </br>';
         
-        header('Location: '.home_url().'/meta-insert');
+        //header('Location: '.home_url().'/meta-insert');
+        header('Location: '.home_url().'/post-insert');
+
+
+
     }
 
 }
@@ -109,8 +117,7 @@ function tag_insert()
         wp_add_post_tags( $_POST['ID_Post'], $_POST['new_tag'] );
         wp_add_post_tags( $_POST['ID_Post'], $_POST['old_tag'] ); 
         header('Location: '.home_url().'/category-insert');
-    }    
-
+    } 
 }
 /********************************************************************************************/
 
@@ -140,6 +147,14 @@ echo '</br>';
 echo $cat_ID;
 echo '</br>';
 echo '------------------------></br>';
+
+
+
+
+
+
+
+
 
 }
 /********************************************************************************************/
