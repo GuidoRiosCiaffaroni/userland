@@ -16,8 +16,6 @@
     }
 ?>
 
-
-
     <form action="<?php echo home_url().'/meta-insert' ?>" method="post">
     <div class="form-element-area">
         <div class="container">
@@ -123,8 +121,8 @@
                                 </div>
                                 <div class="bootstrap-select fm-cmp-mg">
                                     <select class="selectpicker" name="source_language">
-                                        <option value='es'>Español</option>
                                         <option value='en'>Ingles</option>
+                                        <option value='es'>Español</option>
                                     </select>
                                 </div>                                    
                             </div>
@@ -141,9 +139,6 @@
                                     </select>
                                 </div>
                             </div>
-
-
-
 
 
                             <input  name="ID_Post" type="hidden" value="<?php echo $ID_Post; ?>">

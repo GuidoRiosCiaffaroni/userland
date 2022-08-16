@@ -20,7 +20,7 @@
                                             <p></p>
                                         </div>
                                     <div class="nk-int-st">
-                                        <input name="post_title" type="text" class="form-control" placeholder="post_title">
+                                        <input name="post_title" type="text" class="form-control" placeholder="">
                                     </div>
                                 </div>
                             </div>
@@ -88,6 +88,17 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <input  name="ID_Post" type="hidden" value="<?php echo $ID_Post; ?>">
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="nk-int-st">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="fm-checkbox">

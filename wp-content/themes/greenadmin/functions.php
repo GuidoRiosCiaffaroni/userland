@@ -59,7 +59,7 @@ function post_insert()
         // Insert the post into the database
         wp_insert_post( $my_post );
 
-       
+
         $args = array( 'numberposts' => '1' );
         $recent_posts = wp_get_recent_posts( $args );
         foreach( $recent_posts as $recent )
@@ -73,17 +73,9 @@ function post_insert()
         $taxonomy = 'category';
         wp_set_object_terms( $post_id, intval( $category_id ), $taxonomy );
 
-
-
-
-
-/*
-        register_taxonomy_for_object_type( 'Prueba 2', 'page' );
-        $post_id = get_the_ID();
-        wp_set_post_categories( $post_id, array( 1 ) );
-  */       
-        //header('Location: '.home_url().'/meta-insert');
-        header('Location: '.home_url().'/post-insert');
+     
+        header('Location: '.home_url().'/meta-insert');
+        //header('Location: '.home_url().'/post-insert');
 
 
 
@@ -137,7 +129,7 @@ function tag_insert()
     {
         wp_add_post_tags( $_POST['ID_Post'], $_POST['new_tag'] );
         wp_add_post_tags( $_POST['ID_Post'], $_POST['old_tag'] ); 
-        header('Location: '.home_url().'/category-insert');
+        header('Location: '.home_url().'/tag-insert');
     } 
 }
 /********************************************************************************************/

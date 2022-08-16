@@ -1,6 +1,5 @@
 <?php get_header();?>
 <?php tag_insert(); ?>
-<?php category_insert(); ?> 
     <!-- Form Element area Start-->
 <?php
     $args = array(
@@ -17,8 +16,6 @@
     }
 
 ?>
-
-
 
     <form action="<?php echo home_url().'/tag-insert' ?>" method="post">
     <div class="form-element-area">
@@ -82,20 +79,6 @@
                                     </select>
                                 </div>
                             </div>
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
 
 
 
