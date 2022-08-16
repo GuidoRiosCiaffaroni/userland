@@ -106,30 +106,25 @@
                                     <h2>Prueba</h2>
                                 </div>
                           
-                           
-                                    <?php
-                                        echo '------------------------------------------------------------> </br>';
-                                        //echo get_the_ID();
-                                        echo '</br>';
-                                        //echo get_the_category( $post_id );
-                                        echo '</br>------------------------------------------------------------> ';
+<?php
+        $args = array( 'numberposts' => '1' );
+        $recent_posts = wp_get_recent_posts( $args );
+        $noticias_highlight = true;
 
-
-
- 
-                                        $post_id = get_the_ID();
-                                        $cat_ids = array();
-                                        echo $post_id = get_the_ID();
-                                        echo $categories = get_the_category( $post_id );
-                                        if ( $categories && ! is_wp_error( $categories ) ) 
-                                        {
-                                            foreach ( $categories as $category ) 
-                                            {
-                                                echo '</br>' .array_push( $cat_ids, $category->term_id );
-                                            }
-                                        }
-                                    ?>
-                                    
+        foreach( $recent_posts as $recent )
+        {
+        echo '</br>';
+        echo  $recent["ID"];
+        echo '</br>';
+        //echo the_permalink($recent["ID"]);
+        echo '</br>';
+        // echo the_title($recent["ID"]);
+        echo '</br>';
+       // echo the_excerpt($recent["ID"]);
+        echo '</br>';
+                    
+        } 
+?>
                               
                             </div>
 

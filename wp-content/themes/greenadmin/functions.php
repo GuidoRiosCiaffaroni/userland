@@ -59,10 +59,17 @@ function post_insert()
         // Insert the post into the database
         wp_insert_post( $my_post );
 
-        //register_taxonomy_for_object_type( 'Prueba 2', 'page' );
+        wp_get_recent_posts();
+
+
+
+
+
+/*
+        register_taxonomy_for_object_type( 'Prueba 2', 'page' );
         $post_id = get_the_ID();
         wp_set_post_categories( $post_id, array( 1 ) );
-         
+  */       
         //header('Location: '.home_url().'/meta-insert');
         header('Location: '.home_url().'/post-insert');
 
