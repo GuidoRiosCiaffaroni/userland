@@ -59,7 +59,6 @@
 	<!--  Chat JS ============================================ -->
     <script src="<?php echo get_template_directory_uri(); ?>/js/chat/moment.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/chat/jquery.chat.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/chat/jquery.chat.js"></script>
     <!-- main JS ============================================ -->
     <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
     <!-- flot JS ============================================ -->
@@ -95,15 +94,11 @@
     <script src="<?php echo get_template_directory_uri(); ?>/js/dropzone/dropzone.js"></script>   
     <!--  chosen JS ============================================ -->
     <script src="<?php echo get_template_directory_uri(); ?>/js/chosen/chosen.jquery.js"></script>
-   
-
-
-
- 
-  
     <!-- main JS ============================================ -->
     <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
-
+    <!-- Data Table JS ============================================ -->
+    <script src="<?php echo get_template_directory_uri(); ?>/js/data-table/jquery.dataTables.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/data-table/data-table-act.js"></script>
 
 
 

@@ -61,78 +61,10 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/dropzone/dropzone.css">
     <!-- Data Table JS ============================================ -->
     <link rel="stylesheet" href="css/jquery.dataTables.min.css">
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Notika icon CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/notika-custom-icon.css">
-    <!-- Data Table JS
-        ============================================ -->
+    <!-- Data Table JS ============================================ -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/jquery.dataTables.min.css">
-    <!-- main CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/main.css">
-    <!-- style CSS
-        ============================================ -->
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
-    <!-- responsive CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/responsive.css">
-    <!-- modernizr JS
-        ============================================ -->
+    <!-- modernizr JS ============================================ -->
     <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.8.3.min.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </head>

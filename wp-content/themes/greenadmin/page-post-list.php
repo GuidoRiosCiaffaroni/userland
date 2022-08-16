@@ -532,84 +532,8 @@
         </div>
     </div>
     <!-- Data Table area End-->
-    <!-- Start Footer area-->
-    <div class="footer-copyright-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="footer-copy-right">
-                        <p>Copyright © 2018 
-. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Footer area-->
-    <!-- jquery
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery-1.12.4.min.js"></script>
-    <!-- bootstrap JS
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
-    <!-- wow JS
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/wow.min.js"></script>
-    <!-- price-slider JS
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-price-slider.js"></script>
-    <!-- owl.carousel JS
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/owl.carousel.min.js"></script>
-    <!-- scrollUp JS
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.scrollUp.min.js"></script>
-    <!-- meanmenu JS
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/meanmenu/jquery.meanmenu.js"></script>
-    <!-- counterup JS
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/counterup/jquery.counterup.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/counterup/waypoints.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/counterup/counterup-active.js"></script>
-    <!-- mCustomScrollbar JS
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!-- sparkline JS
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/sparkline/sparkline-active.js"></script>
-    <!-- flot JS
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/flot/jquery.flot.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/flot/jquery.flot.resize.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/flot/flot-active.js"></script>
-    <!-- knob JS
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/knob/jquery.knob.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/knob/jquery.appear.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/knob/knob-active.js"></script>
-    <!--  Chat JS
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/chat/jquery.chat.js"></script>
-    <!--  todo JS
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/todo/jquery.todo.js"></script>
-    <!--  wave JS
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/wave/waves.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/wave/wave-active.js"></script>
-    <!-- plugins JS
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/plugins.js"></script>
-    <!-- Data Table JS
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/data-table/jquery.dataTables.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/data-table/data-table-act.js"></script>
-    <!-- main JS
-        ============================================ -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 
-</body>
+<?php get_footer(); ?>
 
-</html>
+
+
