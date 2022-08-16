@@ -33,17 +33,6 @@
                                 </div>
                             </div>
                             
-                            <!--
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="cmp-tb-hd">
-                                    <h2>Descripción</h2>
-                                </div>
-                  
-                                <div class="summernote-clickable">
-                                    <textarea class="html-editor" name="post_content" id="summernote"></textarea>
-                                </div>
-                            </div>
-                            -->
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group">
@@ -99,48 +88,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                    <h2>Prueba</h2>
-                                </div>
-                          
-<?php
-        $args = array( 'numberposts' => '1' );
-        $recent_posts = wp_get_recent_posts( $args );
-        $noticias_highlight = true;
-
-        foreach( $recent_posts as $recent )
-        {
-        echo '</br>';
-        echo  $recent["ID"];
-        echo '</br>';
-        //echo the_permalink($recent["ID"]);
-        echo '</br>';
-        // echo the_title($recent["ID"]);
-        echo '</br>';
-       // echo the_excerpt($recent["ID"]);
-        echo '</br>';
-                    
-        } 
-?>
-                              
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="fm-checkbox">

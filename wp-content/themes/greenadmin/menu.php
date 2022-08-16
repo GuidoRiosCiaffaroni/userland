@@ -66,26 +66,16 @@
                              
                                 <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">App views</a>
                                     <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
-                                        <li><a href="<?php echo get_template_directory_uri(); ?>/notification.html">Notifications</a>
-                                        </li>
-                                        <li><a href="<?php echo get_template_directory_uri(); ?>/alert.html">Alerts</a>
-                                        </li>
-                                        <li><a href="<?php echo get_template_directory_uri(); ?>/modals.html">Modals</a>
-                                        </li>
-                                        <li><a href="<?php echo get_template_directory_uri(); ?>/buttons.html">Buttons</a>
-                                        </li>
-                                        <li><a href="<?php echo get_template_directory_uri(); ?>/tabs.html">Tabs</a>
-                                        </li>
-                                        <li><a href="<?php echo get_template_directory_uri(); ?>/accordion.html">Accordion</a>
-                                        </li>
-                                        <li><a href="<?php echo get_template_directory_uri(); ?>/dialog.html">Dialogs</a>
-                                        </li>
-                                        <li><a href="<?php echo get_template_directory_uri(); ?>/popovers.html">Popovers</a>
-                                        </li>
-                                        <li><a href="<?php echo get_template_directory_uri(); ?>/tooltips.html">Tooltips</a>
-                                        </li>
-                                        <li><a href="<?php echo get_template_directory_uri(); ?>/dropdown.html">Dropdowns</a>
-                                        </li>
+                                        <li><a href="<?php echo get_template_directory_uri(); ?>/notification.html">Notifications</a></li>
+                                        <li><a href="<?php echo get_template_directory_uri(); ?>/alert.html">Alerts</a></li>
+                                        <li><a href="<?php echo get_template_directory_uri(); ?>/modals.html">Modals</a></li>
+                                        <li><a href="<?php echo get_template_directory_uri(); ?>/buttons.html">Buttons</a></li>
+                                        <li><a href="<?php echo get_template_directory_uri(); ?>/tabs.html">Tabs</a></li>
+                                        <li><a href="<?php echo get_template_directory_uri(); ?>/accordion.html">Accordion</a></li>
+                                        <li><a href="<?php echo get_template_directory_uri(); ?>/dialog.html">Dialogs</a></li>
+                                        <li><a href="<?php echo get_template_directory_uri(); ?>/popovers.html">Popovers</a></li>
+                                        <li><a href="<?php echo get_template_directory_uri(); ?>/tooltips.html">Tooltips</a></li>
+                                        <li><a href="<?php echo get_template_directory_uri(); ?>/dropdown.html">Dropdowns</a></li>
                                     </ul>
                                 </li>
     
@@ -93,25 +83,16 @@
                                     <ul id="Pagemob" class="collapse dropdown-header-top">
                                         <li><a href="contact.html">Contact</a>
                                         </li>
-                                        <li><a href="<?php echo get_template_directory_uri(); ?>/invoice.html">Invoice</a>
-                                        </li>
-                                        <li><a href="<?php echo get_template_directory_uri(); ?>/typography.html">Typography</a>
-                                        </li>
-                                        <li><a href="<?php echo get_template_directory_uri(); ?>/color.html">Color</a>
-                                        </li>
-                                        <li><a href="<?php echo get_template_directory_uri(); ?>/login-register.html">Login Register</a>
-                                        </li>
-                                        <li><a href="<?php echo get_template_directory_uri(); ?>/404.html">404 Page</a>
-                                        </li>
+                                        <li><a href="<?php echo get_template_directory_uri(); ?>/invoice.html">Invoice</a></li>
+                                        <li><a href="<?php echo get_template_directory_uri(); ?>/typography.html">Typography</a></li>
+                                        <li><a href="<?php echo get_template_directory_uri(); ?>/color.html">Color</a></li>
+                                        <li><a href="<?php echo get_template_directory_uri(); ?>/login-register.html">Login Register</a></li>
+                                        <li><a href="<?php echo get_template_directory_uri(); ?>/404.html">404 Page</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </nav>
                     </div>
-                
-
-
-
                 </div>
             </div>
         </div>
@@ -128,7 +109,7 @@
                     
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
                         <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home </a></li>
-                        <li><a data-toggle="tab" href="#pruebas"><i class="notika-icon notika-mail"></i> Pruebas</a></li>
+                        <!-- <li><a data-toggle="tab" href="#pruebas"><i class="notika-icon notika-mail"></i> Pruebas</a></li> -->
                         <li><a data-toggle="tab" href="#category"><i class="notika-icon notika-edit"></i> Categorias</a></li>
                         <!--
                         <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Charts</a></li>
@@ -143,12 +124,13 @@
                         <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="<?php echo home_url(); ?>">Home</a></li>
-                                <li><a href="<?php echo home_url(); ?>/post-insert">Post</a></li>
-                                <li><a href="<?php echo home_url(); ?>/last-post">Last Post</a></li>
+                                <li><a href="<?php echo home_url(); ?>/post-insert">Post Insert</a></li>
+                                <!-- <li><a href="<?php echo home_url(); ?>/last-post">Last Post</a></li>
                                 <li><a href="<?php echo home_url(); ?>/test">Test</a></li>
                                 <li><a href="<?php echo home_url(); ?>/insert-meta">Insert Meta</a></li>
                                 <li><a href="<?php echo get_template_directory_uri(); ?>/analytics.html">Analytics</a></li>
                                 <li><a href="<?php echo get_template_directory_uri(); ?>/widgets.html">Widgets</a></li>
+                            -->
                             </ul>
                         </div>
                         
@@ -162,13 +144,11 @@
                             </ul>
                         </div>
 
-                        
                         <div id="category" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="<?php echo home_url(); ?>/category-create">Crear Categoria</a></li>
                             </ul>
                         </div>
-
 
                         <!--
                         <div id="Charts" class="tab-pane notika-tab-menu-bg animated flipInX">
@@ -199,9 +179,6 @@
                             </ul>
                         </div>
                     
-
-
-
                         <div id="Page" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="<?php echo home_url(); ?>/perfil">Perfil</a></li>
