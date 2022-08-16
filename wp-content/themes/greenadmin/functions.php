@@ -59,7 +59,19 @@ function post_insert()
         // Insert the post into the database
         wp_insert_post( $my_post );
 
-        wp_get_recent_posts();
+       
+        $args = array( 'numberposts' => '1' );
+        $recent_posts = wp_get_recent_posts( $args );
+        foreach( $recent_posts as $recent )
+        {
+        $recent["ID"];
+        } 
+
+
+        $post_id = $recent["ID"];
+        $category_id = $_POST['category'];
+        $taxonomy = 'category';
+        wp_set_object_terms( $post_id, intval( $category_id ), $taxonomy );
 
 
 

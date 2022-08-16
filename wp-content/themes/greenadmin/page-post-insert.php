@@ -69,8 +69,8 @@
                                 <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                     <h2>Insertar Categoria</h2>
                                 </div>
-                                <div class="chosen-select-act fm-cmp-mg">
-                                    <select name="category" class="chosen" multiple data-placeholder="seleccione las etiquetas">
+                                <div class="nk-int-mk sl-dp-mn">
+                                     <select name="category" class="chosen" data-placeholder="">
                                     <?php
                                         $categories = get_categories(array('get'=>'all'));
                                             $outputc .= '';
