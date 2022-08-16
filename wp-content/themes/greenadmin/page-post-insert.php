@@ -102,6 +102,52 @@
 
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+                                    <h2>Prueba</h2>
+                                </div>
+                          
+                           
+                                    <?php
+                                        echo '------------------------------------------------------------> </br>';
+                                        //echo get_the_ID();
+                                        echo '</br>';
+                                        //echo get_the_category( $post_id );
+                                        echo '</br>------------------------------------------------------------> ';
+
+
+
+ 
+                                        $post_id = get_the_ID();
+                                        $cat_ids = array();
+                                        echo $post_id = get_the_ID();
+                                        echo $categories = get_the_category( $post_id );
+                                        if ( $categories && ! is_wp_error( $categories ) ) 
+                                        {
+                                            foreach ( $categories as $category ) 
+                                            {
+                                                echo '</br>' .array_push( $cat_ids, $category->term_id );
+                                            }
+                                        }
+                                    ?>
+                                    
+                              
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="fm-checkbox">
                                 </div>
                                 <div class="summernote-clickable">

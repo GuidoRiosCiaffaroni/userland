@@ -41,6 +41,8 @@ https://developer.wordpress.org/reference/functions/wp_insert_post/
 add_action( 'page_post_insert', 'post_insert' );
 function post_insert() 
 {
+    require_once('wp-load.php' );
+    require_once(ABSPATH . 'wp-admin/includes/taxonomy.php');
 
     if ($_POST['post_title'] == null || $_POST['post_content'] == null )
     {
@@ -57,10 +59,10 @@ function post_insert()
         // Insert the post into the database
         wp_insert_post( $my_post );
 
-        echo '------------------------------------------------------------> </br>';
-        echo $my_post;
-        echo '------------------------------------------------------------> </br>';
-        
+        //register_taxonomy_for_object_type( 'Prueba 2', 'page' );
+        $post_id = get_the_ID();
+        wp_set_post_categories( $post_id, array( 1 ) );
+         
         //header('Location: '.home_url().'/meta-insert');
         header('Location: '.home_url().'/post-insert');
 
