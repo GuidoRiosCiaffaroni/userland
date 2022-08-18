@@ -136,9 +136,15 @@ function tag_insert()
 add_action( 'page_post_delete', 'post_delete' );
 function post_delete() 
 {
+    global $wpdb;
+    
     echo '-------------------------------------------------------------------->';
-    //wp_delete_post( $myproduct->ID, true);
-    //header('Location: '.home_url().'/tag-insert');
+    echo '</br>';
+    echo $_GET['ID'];
+    $post_id = $_GET['ID'];    
+
+    wp_delete_post( $post_id, true);
+    header('Location: '.home_url().'/post-list');
 
 }
 /********************************************************************************************/
