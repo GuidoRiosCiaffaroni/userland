@@ -1,9 +1,4 @@
 <?php get_header();?>
-<?php //get_template_part( 'top-area' ); ?>
-<?php //get_template_part( 'menu' ); ?>    
-
-
-
     <!-- Breadcomb area Start-->
     <div class="breadcomb-area">
         <div class="container">
@@ -55,68 +50,58 @@ https://wordpress.stackexchange.com/questions/109773/how-do-i-use-wp-get-recent-
 
 
 <?php
+/*
         $args = array( 'numberposts' => '500' );
         $recent_posts = wp_get_recent_posts( $args );
-        $noticias_highlight = true;
-
-        foreach( $recent_posts as $recent ){ 
-?>
-                    <div class="entry <?php if ($noticias_highlight) echo 'highlight'; $noticias_highlight = !$noticias_highlight; ?>">
-                        <div class="title"><p><a href="<?php the_permalink($recent["ID"]); ?>"><?php the_title($recent["ID"]); ?></a></p></div>
-                        <div class="subtitle"><?php the_excerpt($recent["ID"]); ?></div>
-                    </div>
-<?php
+        foreach( $recent_posts as $recent )
+        { 
+            echo the_permalink($recent["ID"]);
+            echo '</br>';
+            echo the_title($recent["ID"]);
+            echo '</br>';
+            echo the_excerpt($recent["ID"]);
+            echo '</br>';
         } 
+*/
 ?>
-
-
-
-
-
-
-
-
-
-
-
 
 
                         <div class="table-responsive">
                             <table id="data-table-basic" class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
+                                        <th>ID</th>
+                                        <th>Texto</th>
+                                        <th>Detalle</th>
+                                        <th>Editar</th>
+                                        <th>Borrar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                    $args = array( 'numberposts' => '500' );
+                                    $recent_posts = wp_get_recent_posts( $args );
+                                    foreach( $recent_posts as $recent )
+                                    {
+                                        echo '<tr>';   
+                                            echo '<td>'.$recent["ID"].'</td>';
+                                            echo '<td>'.$recent["post_title"].'</td>';
+                                            echo '<td><a href="https://www.w3schools.com">detalles</a></td>';
+                                            echo '<td><a href="https://www.w3schools.com">editar</a></td>';
+                                            echo '<td><a href=" ">borrar</a></td>';
+                                        echo '</tr>';
+                                   } 
+                                ?>
 
-
-
-
-
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                    </tr>
 
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
+                                        <th>ID</th>
+                                        <th>Texto</th>
+                                        <th>Detalle</th>
+                                        <th>Editar</th>
+                                        <th>Borrar</th>
                                     </tr>
                                 </tfoot>
                             </table>

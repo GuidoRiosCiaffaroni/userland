@@ -59,7 +59,6 @@ function post_insert()
         // Insert the post into the database
         wp_insert_post( $my_post );
 
-
         $args = array( 'numberposts' => '1' );
         $recent_posts = wp_get_recent_posts( $args );
         foreach( $recent_posts as $recent )
@@ -67,18 +66,12 @@ function post_insert()
         $recent["ID"];
         } 
 
-
         $post_id = $recent["ID"];
         $category_id = $_POST['category'];
         $taxonomy = 'category';
         wp_set_object_terms( $post_id, intval( $category_id ), $taxonomy );
-
      
         header('Location: '.home_url().'/meta-insert');
-        //header('Location: '.home_url().'/post-insert');
-
-
-
     }
 
 }
@@ -134,6 +127,83 @@ function tag_insert()
 }
 /********************************************************************************************/
 
+/********************************************************************************************/
+// Ingreso tag
+/*
+
+*/
+/********************************************************************************************/
+add_action( 'page_post_delete', 'post_delete' );
+function post_delete() 
+{
+    echo '-------------------------------------------------------------------->';
+    //wp_delete_post( $myproduct->ID, true);
+    //header('Location: '.home_url().'/tag-insert');
+
+}
+/********************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /********************************************************************************************/
@@ -152,22 +222,6 @@ https://wp-qa.com/how-we-add-new-categories-by-wp_insert_post
 add_action( 'page_category_insert', 'category_insert' );
 function category_insert() 
 {
-
-$cat_ID = get_cat_ID($_POST['category']);
-echo '------------------------></br>';
-echo $_POST['category'];
-echo '</br>';
-echo $cat_ID;
-echo '</br>';
-echo '------------------------></br>';
-
-
-
-
-
-
-
-
 
 }
 /********************************************************************************************/
