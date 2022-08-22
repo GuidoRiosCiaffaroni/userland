@@ -170,7 +170,26 @@
                                 <tr>   
                                     <td>meta _target_language:</td>
                                     <td><?php echo get_post_meta( $_GET['ID'], '_target_language', true  ); ?></td>
-                                </tr>                                                                                           
+                                </tr> 
+
+                                
+                                <?php
+                                $tags = get_tags($_GET['ID']);
+                                $html = '';
+                                foreach ( $tags as $tag ) {
+                                    $tag_link = get_tag_link( $tag->term_id );
+                                    $html .=  "<tr><td>Tag : </td><td>{$tag->name}</td></tr>";     
+                                    //$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
+                                    //$html .= "{$tag->name}</a>";
+                                    $html .= "";
+                                }
+                                $html .= '';
+                                echo $html;
+                                ?>
+                                
+
+
+
 
                                 </tbody>
                                 <tfoot>
