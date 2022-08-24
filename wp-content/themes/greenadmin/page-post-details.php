@@ -198,7 +198,13 @@
                                 
 
 
-
+                            // https://developer.wordpress.org/reference/functions/wp_get_post_categories/
+                                $post_categories = wp_get_post_categories($_GET['ID']);
+                                foreach ( $post_categories as $name ) 
+                                {
+                                    $html .=  "<tr><td>Categories->: </td><td>".$name."</td></tr>";     
+                                }
+                                echo $html;
 
                                 ?>
                                 
