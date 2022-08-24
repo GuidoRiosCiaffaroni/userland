@@ -174,6 +174,7 @@
 
                                 
                                 <?php
+                                /*
                                 $tags = get_tags($_GET['ID']);
                                 $html = '';
                                 foreach ( $tags as $tag ) {
@@ -185,6 +186,20 @@
                                 }
                                 $html .= '';
                                 echo $html;
+                                */
+
+                                // https://codex.wordpress.org/es:Referencia_de_Funcion/wp_get_post_tags
+                                $tags = wp_get_post_tags($_GET['ID']);
+                                foreach ( $tags as $t => $tag ) 
+                                {
+                                    $html .=  "<tr><td>Tag : </td><td>".$tag->name."</td></tr>";     
+                                }
+                                echo $html;
+                                
+
+
+
+
                                 ?>
                                 
 
