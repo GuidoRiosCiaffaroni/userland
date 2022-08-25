@@ -170,42 +170,13 @@
 
                                 
                                 <?php
-                                /*
-                                $tags = get_tags($_GET['ID']);
-                                $html = '';
-                                foreach ( $tags as $tag ) {
-                                    $tag_link = get_tag_link( $tag->term_id );
-                                    $html .=  "<tr><td>Tag : </td><td>{$tag->name}</td></tr>";     
-                                    //$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
-                                    //$html .= "{$tag->name}</a>";
-                                    $html .= "";
-                                }
-                                $html .= '';
-                                echo $html;
-                                */
-
-                                // https://codex.wordpress.org/es:Referencia_de_Funcion/wp_get_post_tags
                                 $tags = wp_get_post_tags($_GET['ID']);
                                 foreach ( $tags as $t => $tag ) 
                                 {
                                     $html .=  "<tr><td>Tag : </td><td>".$tag->name."</td></tr>";     
                                 }
                                 echo $html;
-                                
 
-
-                                // https://developer.wordpress.org/reference/functions/wp_get_post_categories/
-                                /*
-                                $post_categories = wp_get_post_categories($_GET['ID']);
-                                foreach ( $post_categories as $name ) 
-                                {
-                                    $html .=  "<tr><td>Categories->: </td><td>".$name."</td></tr>";     
-                                }
-                                echo $html;
-                                */
-
-
-                                // https://developer.wordpress.org/reference/functions/wp_get_post_categories/
                                 $post_categories = wp_get_post_categories( $_GET['ID'], array( 'fields' => 'names' ) );
  
                                 if( $post_categories )
