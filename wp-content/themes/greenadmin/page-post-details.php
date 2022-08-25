@@ -178,13 +178,11 @@
                                 echo $html;
 
                                 $post_categories = wp_get_post_categories( $_GET['ID'], array( 'fields' => 'names' ) );
- 
                                 if( $post_categories )
                                 {
                                     foreach($post_categories as $name)
                                     {
-                                    //echo $name;
-                                    echo "<tr><td>Categories->: </td><td>".$name."</td></tr>";
+                                    echo "<tr><td>Categories : </td><td>".$name."</td></tr>";
                                     }
                                 }
 
