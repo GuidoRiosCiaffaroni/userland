@@ -189,6 +189,8 @@ function category_create()
     register_taxonomy_for_object_type('category', 'attachment');
     register_taxonomy_for_object_type('category', 'page');
     register_taxonomy_for_object_type('post_tag', 'page');
+
+    -
 */
 
 
