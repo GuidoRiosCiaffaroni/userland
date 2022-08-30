@@ -87,7 +87,7 @@ https://developer.wordpress.org/reference/functions/wp_delete_post/
                                             echo '<td>'.$recent["ID"].'</td>';
                                             echo '<td>'.$recent["post_title"].'</td>';
                                             echo '<td><a href="'.home_url().'/post-details/?ID='.$recent["ID"].'">detalle</a></td>';
-                                            echo '<td><a href="https://www.w3schools.com">editar</a></td>';
+                                            echo '<td><a href="'.home_url().'/post-edit/?ID='.$recent["ID"].'">editar</a></td>';
                                             echo '<td><a href="'.home_url().'/post-delete/?ID='.$recent["ID"].'">borrar</a></td>';
                                         echo '</tr>';
                                    } 
