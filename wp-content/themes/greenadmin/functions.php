@@ -213,6 +213,85 @@ $someSome = wp_insert_category($cat_defaults);
 /********************************************************************************************/
 
 
+/********************************************************************************************/
+// Actualizar Post Categoria
+/*
+https://developer.wordpress.org/reference/functions/wp_update_post/
+https://wp-kama.com/function/wp_update_post
+*/
+/********************************************************************************************/
+add_action( 'page_post_update', 'post_update' );
+function post_update() 
+{
+
+require_once('wp-load.php' );
+require_once(ABSPATH . 'wp-admin/includes/taxonomy.php');
+
+echo '----------------------------------------------->>>>';
+echo '</br>';
+echo $_POST['ID'];
+echo '</br>';
+echo '----------------------------------------------->>>>';
+echo '</br>';
+echo '----------------------------------------------->>>>';
+echo '</br>';
+echo $_POST['post_title'];
+echo '</br>';
+echo '----------------------------------------------->>>>';
+echo '</br>';
+
+/*
+$my_post = array(
+    'ID'            => $_POST['ID'],
+    'post_status'   => 'future',
+    'post_date'     => date( 'Y-m-d H:i:s', $time ),
+    'post_date_gmt' => gmdate( 'Y-m-d H:i:s', $time ),
+);
+wp_update_post( $my_post );
+*/
+
+$my_post = array(
+    'ID'                     => $_POST['ID'],
+    'post_author'            => 1,
+    'post_date'              => '2010-03-26 09:27:40',
+    'post_date_gmt'          => '2010-03-26 05:27:40',
+    'post_content'           => 'My perfect content...',
+    'post_title'             => 'The title of the post',
+    'post_excerpt'           => '',
+    'post_status'            => 'publish',
+    'comment_status'         => 'open',
+    'ping_status'            => 'open',
+    'post_password'          => '',
+    'post_name'              => 'post_name',
+    'to_ping'                => '',
+    'pinged'                 => 'http://example.com/dopolnitelnyie-knopki',
+    'post_modified'          => '2014-02-10 10:31:17',
+    'post_modified_gmt'      => '2014-02-10 06:31:17',
+    'post_content_filtered'  => '',
+    'post_parent'            => 0,
+    'guid'                   => 'http://example.com/post_name',
+    'menu_order'             => 0,
+    'post_type'              => 'post',
+    'post_mime_type'         => '',
+    'comment_count'          => '',
+    'filter'                 => 'raw',
+
+
+
+
+
+
+);
+wp_update_post( $my_post );
+    header('Location: '.home_url().'/post-update');
+
+}
+/********************************************************************************************/
+
+
+
+
+
 
 
 

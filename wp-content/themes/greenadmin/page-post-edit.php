@@ -1,4 +1,5 @@
 <?php get_header();?>
+<?php post_update(); ?>
     <!-- Breadcomb area Start-->
     <div class="breadcomb-area">
         <div class="container">
@@ -61,23 +62,23 @@
                                     <tbody>
                                         <tr>
                                             <td>ID :</td>
-                                            <td><?php echo $post->ID; ?></td>
+                                            <td><div class="nk-int-st"><input type="text" class="form-control" name="ID" value="<?php echo $post->ID; ?>" placeholder=""></div></td>
                                         </tr>
                                         <tr>
                                             <td>post author ID :</td>
-                                            <td><div class="nk-int-st"><input type="text" class="form-control" value="<?php echo $post->post_author; ?>" placeholder=""></div></td>
+                                            <td><div class="nk-int-st"><input type="text" class="form-control" name="post_author" value="<?php echo $post->post_author; ?>" placeholder=""></div></td>
                                         </tr>
                                         <tr>
                                             <td>post name :</td>
-                                            <td><div class="nk-int-st"><input type="text" class="form-control" value="<?php echo $post->post_name; ?>" placeholder=""></div></td>
+                                            <td><div class="nk-int-st"><input type="text" class="form-control" name="post_name" value="<?php echo $post->post_name; ?>" placeholder=""></div></td>
                                         </tr>
                                         <tr>
                                             <td>post type :</td>
-                                            <td><div class="nk-int-st"><input type="text" class="form-control" value="<?php echo $post->post_type; ?>" placeholder=""></div></td>
+                                            <td><div class="nk-int-st"><input type="text" class="form-control" name="post_type" value="<?php echo $post->post_type; ?>" placeholder=""></div></td>
                                         </tr>
                                         <tr>
                                             <td>post title :</td>
-                                            <td><div class="nk-int-st"><input type="text" class="form-control" value="<?php echo $post->post_title; ?>" placeholder=""></div></td>
+                                            <td><div class="nk-int-st"><input type="text" class="form-control" name="post_title" value="<?php echo $post->post_title; ?>" placeholder=""></div></td>
                                         </tr>
                                         <tr>
                                             <td>post date :</td>
