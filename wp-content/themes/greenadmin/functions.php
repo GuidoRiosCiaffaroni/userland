@@ -218,6 +218,7 @@ $someSome = wp_insert_category($cat_defaults);
 /*
 https://developer.wordpress.org/reference/functions/wp_update_post/
 https://wp-kama.com/function/wp_update_post
+https://stackoverflow.com/questions/17617858/wordpress-wp-insert-post-wp-update-post
 */
 /********************************************************************************************/
 add_action( 'page_post_update', 'post_update' );
