@@ -1,5 +1,5 @@
 <?php get_header();?>
-<?php post_update(); ?>
+
     <!-- Breadcomb area Start-->
     <div class="breadcomb-area">
         <div class="container">
@@ -35,7 +35,7 @@
 
     <!-- Data Table area Start-->
 
-    <form action="<?php echo home_url().'/post-edit' ?>" method="post">
+    <form action="<?php echo home_url().'/post-update' ?>" method="post">
         <div class="normal-table-area">
             <div class="container">
 

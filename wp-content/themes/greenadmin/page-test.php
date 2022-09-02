@@ -1,4 +1,5 @@
 <?php get_header();?>
+<?php post_test();?>
 <?php 
 /*
 Dependecia
