@@ -1,5 +1,6 @@
 <?php get_header();?>
-<?php post_update(); ?>
+<?php post_update();?>
+ 
     <!-- Breadcomb area Start-->
     <div class="breadcomb-area">
         <div class="container">
@@ -30,41 +31,26 @@
         </div>
     </div>
     <!-- Breadcomb area End-->
-
-
-
     <!-- Data Table area Start-->
+    <div class="data-table-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="data-table-list">
+                        <div class="basic-tb-hd">
+                            <h2>Borrar Post</h2>
+                            <p></p>
+                        </div>
 
+                        <div class="table-responsive">
 
-        <div class="normal-table-area">
-            <div class="container">
-
-  
-
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="normal-table-list">
-                            <div class="basic-tb-hd">
-                                <h2></h2>
-                                <p></p>
-                            </div>
-                            
-                            <div class="bsc-tbl">
-
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>    
-
+        </div>
+    </div>
     <!-- Data Table area End-->
-
-
-
-
-
-
 
 <?php get_footer(); ?>
 

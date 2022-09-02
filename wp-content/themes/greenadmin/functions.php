@@ -226,23 +226,42 @@ https://stackoverflow.com/questions/17617858/wordpress-wp-insert-post-wp-update-
 add_action( 'page_post_update', 'post_update' );
 function post_update() 
 {
-    if ($_POST['ID'] == null)
+    global $wpdb;
+    
+    echo '-------------------------------------------------------------------->';
+    echo '</br>';
+    //echo $_GET['ID'];
+    //$post_id = $_GET['ID'];    
+
+    //wp_delete_post( $post_id, true);
+    header('Location: '.home_url().'/post-list');
+
+
+    /*
+    if ($_GET['ID'] == null)
     {
         echo ' ';
     }
+    elseif ($_GET['ID'] != null)
+    {
+    echo "-------------------------------------------------------->".$_GET['ID'];
+    header('Location: '.home_url().'/post-update/?ID='.$_POST['ID']);
+    //header('Location: '.home_url());
+    }
+*/
+
+/*
     else 
     {
-        //echo "-------------------------------------------------------->".$_POST['ID']; 
+        echo "-------------------------------------------------------->".$_GET['ID']; 
 
-        $post = get_post( $_POST['ID'] );
+        $post = get_post( $_GET['ID'] );
         $post->post_content = "Some other content 35";
         wp_update_post( $post );
-        header('Location: '.home_url().'/post-edit');
+        header('Location: '.home_url());
 
     }
-
-
-
+*/
 
 
 /*
@@ -251,7 +270,6 @@ function post_update()
         $post->post_content = "Some other content 35";
         wp_update_post( $post );
 */
-
 
 
 //header('Location: '.home_url().'/post-update');

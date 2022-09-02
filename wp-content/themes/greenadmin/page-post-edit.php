@@ -35,7 +35,7 @@
 
     <!-- Data Table area Start-->
 
-    <form action="<?php echo home_url().'/post-update' ?>" method="post">
+    <form action="<?php echo home_url().'/post-update/' ?>" method="post">
         <div class="normal-table-area">
             <div class="container">
 
@@ -178,11 +178,12 @@
                                     ?>
 
 
-
                                         <tr>
                                             <td><div class="summernote-clickable"><button class="btn btn-primary btn-sm hec-button">Actualizar</button></div></td>
                                             <td></td>
                                         </tr>
+
+
 
                                     </tbody>
                                 </table>
@@ -206,7 +207,6 @@
         </div>    
     </form>
     <!-- Data Table area End-->
-
 
 
 
