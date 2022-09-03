@@ -144,15 +144,10 @@
                             <input  name="ID_Post" type="hidden" value="<?php echo $ID_Post; ?>">
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    
-                                    
                                 <div class="fm-checkbox">
-                                    
                                 </div>
-                                    
                                 <div class="summernote-clickable">
                                     <button class="btn btn-primary btn-sm hec-button">Ingresar</button>
-                    
                                 </div>    
                             </div>
                             

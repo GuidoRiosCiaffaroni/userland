@@ -1,5 +1,5 @@
 <?php get_header();?>
-
+<?php post_update();?>
     <!-- Breadcomb area Start-->
     <div class="breadcomb-area">
         <div class="container">
@@ -35,7 +35,7 @@
 
     <!-- Data Table area Start-->
 
-    <form action="<?php echo home_url().'/post-update/' ?>" method="post">
+    <form action="<?php echo home_url().'/post-edit/' ?>" method="post">
         <div class="normal-table-area">
             <div class="container">
 
@@ -62,24 +62,43 @@
                                     <tbody>
                                         <tr>
                                             <td>ID :</td>
-                                            <td><div class="nk-int-st"><input type="text" class="form-control" name="ID" value="<?php echo $post->ID; ?>" placeholder=""></div></td>
+                                            <td><div class="nk-int-st"><input type="text" class="form-control" name="ID_post" value="<?php echo $post->ID; ?>" placeholder=""></div></td>
                                         </tr>
-                                        <tr>
-                                            <td>post author ID :</td>
-                                            <td><div class="nk-int-st"><input type="text" class="form-control" name="post_author" value="<?php echo $post->post_author; ?>" placeholder=""></div></td>
-                                        </tr>
+
                                         <tr>
                                             <td>post name :</td>
                                             <td><div class="nk-int-st"><input type="text" class="form-control" name="post_name" value="<?php echo $post->post_name; ?>" placeholder=""></div></td>
                                         </tr>
                                         <tr>
-                                            <td>post type :</td>
-                                            <td><div class="nk-int-st"><input type="text" class="form-control" name="post_type" value="<?php echo $post->post_type; ?>" placeholder=""></div></td>
-                                        </tr>
-                                        <tr>
                                             <td>post title :</td>
                                             <td><div class="nk-int-st"><input type="text" class="form-control" name="post_title" value="<?php echo $post->post_title; ?>" placeholder=""></div></td>
                                         </tr>
+                                        <tr>
+                                            <td>post content :</td>
+                                            <td><div class="nk-int-st"><input type="text" class="form-control" name="post_content" value="<?php echo $post->post_content; ?>" placeholder=""></div></td>
+                                        </tr>
+
+                                        
+                                        <!--
+                                        <tr>
+                                            <td>post author ID :</td>
+                                            <td><div class="nk-int-st"><input type="text" class="form-control" name="post_author" value="<?php echo $post->post_author; ?>" placeholder=""></div></td>
+                                        </tr>
+                                        -->
+
+
+
+                                        <!--
+                                        <tr>
+                                            <td>post type :</td>
+                                            <td><div class="nk-int-st"><input type="text" class="form-control" name="post_type" value="<?php echo $post->post_type; ?>" placeholder=""></div></td>
+                                        </tr>
+                                        -->
+
+
+
+
+                                        <!--
                                         <tr>
                                             <td>post date :</td>
                                             <td><div class="nk-int-st"><input type="text" class="form-control" value="<?php echo $post->post_date; ?>" placeholder=""></div></td>
@@ -88,10 +107,11 @@
                                             <td>post date gmt :</td>
                                             <td><div class="nk-int-st"><input type="text" class="form-control" value="<?php echo $post->post_date_gmt; ?>" placeholder=""></div></td>
                                         </tr>
-                                        <tr>
-                                            <td>post content :</td>
-                                            <td><div class="nk-int-st"><input type="text" class="form-control" value="<?php echo $post->post_content; ?>" placeholder=""></div></td>
-                                        </tr>
+                                        -->
+
+
+
+                                        <!--
                                         <tr>
                                             <td>post excerpt :</td>
                                             <td><div class="nk-int-st"><input type="text" class="form-control" value="<?php echo $post->post_excerpt; ?>" placeholder=""></div></td>
@@ -152,9 +172,10 @@
                                             <td>meta _target_language:</td>
                                             <td><div class="nk-int-st"><input type="text" class="form-control" value="<?php echo get_post_meta( $_GET['ID'], '_target_language', true  ); ?>" placeholder=""></div></td>
                                         </tr>
-
+                                    -->
 
                                     <?php
+                                    /*
                                     $tags = wp_get_post_tags($_GET['ID']);
                                     foreach ( $tags as $t => $tag ) 
                                     {
@@ -174,25 +195,38 @@
                                         echo "<tr><td>Categories : </td><td><div class=\"nk-int-st\"><input type=\"text\" class=\"form-control\" value=\"".$name."\" placeholder=\"\"></div></td></tr>";    
                                         }
                                     }
-
+                                        */
                                     ?>
 
 
-                                        <tr>
-                                            <td><div class="summernote-clickable"><button class="btn btn-primary btn-sm hec-button">Actualizar</button></div></td>
-                                            <td></td>
-                                        </tr>
+
 
 
 
                                     </tbody>
                                 </table>
+
+
+
+
+
                             </div>
                         </div>
                     </div>
 
 
-
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    
+                                    
+                                <div class="fm-checkbox">
+                                    
+                                </div>
+                                    
+                                <div class="summernote-clickable">
+                                    <button class="btn btn-primary btn-sm hec-button">Ingresar</button>
+                    
+                                </div>    
+                            </div>
  
 
 

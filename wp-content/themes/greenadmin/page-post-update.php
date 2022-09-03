@@ -1,5 +1,5 @@
 <?php get_header();?>
-<?php post_update();?>
+
  
     <!-- Breadcomb area Start-->
     <div class="breadcomb-area">
