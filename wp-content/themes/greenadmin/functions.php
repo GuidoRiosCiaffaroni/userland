@@ -243,8 +243,6 @@ function post_update()
     echo $_GET['ID_post'];
     echo "</br>";
 
-
-
     $post = get_post( $_POST['ID_post'] );
     $post->post_content = $_POST['post_content'];
     $post->post_title = $_POST['post_title'];
@@ -258,49 +256,6 @@ function post_update()
 
 
 
-    //echo $_GET['ID'];
-    //$post_id = $_GET['ID'];    
-
-    //wp_delete_post( $post_id, true);
-    //header('Location: '.home_url().'/post-list');
-
-
-    /*
-    if ($_GET['ID'] == null)
-    {
-        echo ' ';
-    }
-    elseif ($_GET['ID'] != null)
-    {
-    echo "-------------------------------------------------------->".$_GET['ID'];
-    header('Location: '.home_url().'/post-update/?ID='.$_POST['ID']);
-    //header('Location: '.home_url());
-    }
-*/
-
-/*
-    else 
-    {
-        echo "-------------------------------------------------------->".$_GET['ID']; 
-
-        $post = get_post( $_GET['ID'] );
-        $post->post_content = "Some other content 35";
-        wp_update_post( $post );
-        header('Location: '.home_url());
-
-    }
-*/
-
-
-/*
-
-        $post = get_post( $_POST['ID'] );
-        $post->post_content = "Some other content 35";
-        wp_update_post( $post );
-*/
-
-
-//header('Location: '.home_url().'/post-update');
 
 /*
 $my_post = array(
@@ -431,7 +386,7 @@ function install_setup()
     );
     wp_insert_post( $my_page );
 
-    // Creacion de pagina Home
+    // Creacion de pagina Login
     $my_page = array(
     'post_title'    => 'Login',
     'post_content'  => '',
@@ -449,16 +404,7 @@ function install_setup()
     );
     wp_insert_post( $my_page );
 
-    // Creacion de pagina Post Insert
-    $my_page = array(
-    'post_title'    => 'Meta Insert',
-    'post_content'  => '',
-    'post_status'   => 'publish',
-    'post_type'     => 'page'
-    );
-    wp_insert_post( $my_page );
-
-    // Creacion de pagina Post Insert
+    // Creacion de pagina Logout
     $my_page = array(
     'post_title'    => 'Logout',
     'post_content'  => '',
@@ -467,7 +413,41 @@ function install_setup()
     );
     wp_insert_post( $my_page );
 
+    // Creacion de pagina Meta Insert
+    $my_page = array(
+    'post_title'    => 'Meta Insert',
+    'post_content'  => '',
+    'post_status'   => 'publish',
+    'post_type'     => 'page'
+    );
+    wp_insert_post( $my_page );
 
+    // Creacion de pagina perfil
+    $my_page = array(
+    'post_title'    => 'Perfil',
+    'post_content'  => '',
+    'post_status'   => 'publish',
+    'post_type'     => 'page'
+    );
+    wp_insert_post( $my_page );
+
+    // Creacion de pagina Post Delete
+    $my_page = array(
+    'post_title'    => 'Post Delete',
+    'post_content'  => '',
+    'post_status'   => 'publish',
+    'post_type'     => 'page'
+    );
+    wp_insert_post( $my_page );
+
+    // Creacion de pagina Post Details
+    $my_page = array(
+    'post_title'    => 'Post Details',
+    'post_content'  => '',
+    'post_status'   => 'publish',
+    'post_type'     => 'page'
+    );
+    wp_insert_post( $my_page );    
 
 }
 /********************************************************************************************/

@@ -73,32 +73,35 @@
                                             <td>post title :</td>
                                             <td><div class="nk-int-st"><input type="text" class="form-control" name="post_title" value="<?php echo $post->post_title; ?>" placeholder=""></div></td>
                                         </tr>
+
+                                        <tr>
+                                            <td>post content :</td>
+                                            <td>
+                                                <div class="nk-int-st">
+                                                    <textarea class="html-editor" name="post_content" id="summernote">
+                                                        <?php echo $post->post_content; ?>
+                                                    </textarea>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+
+                                        <!--
                                         <tr>
                                             <td>post content :</td>
                                             <td><div class="nk-int-st"><input type="text" class="form-control" name="post_content" value="<?php echo $post->post_content; ?>" placeholder=""></div></td>
                                         </tr>
 
-                                        
-                                        <!--
                                         <tr>
                                             <td>post author ID :</td>
                                             <td><div class="nk-int-st"><input type="text" class="form-control" name="post_author" value="<?php echo $post->post_author; ?>" placeholder=""></div></td>
                                         </tr>
-                                        -->
 
-
-
-                                        <!--
                                         <tr>
                                             <td>post type :</td>
                                             <td><div class="nk-int-st"><input type="text" class="form-control" name="post_type" value="<?php echo $post->post_type; ?>" placeholder=""></div></td>
                                         </tr>
-                                        -->
 
-
-
-
-                                        <!--
                                         <tr>
                                             <td>post date :</td>
                                             <td><div class="nk-int-st"><input type="text" class="form-control" value="<?php echo $post->post_date; ?>" placeholder=""></div></td>
@@ -107,11 +110,7 @@
                                             <td>post date gmt :</td>
                                             <td><div class="nk-int-st"><input type="text" class="form-control" value="<?php echo $post->post_date_gmt; ?>" placeholder=""></div></td>
                                         </tr>
-                                        -->
 
-
-
-                                        <!--
                                         <tr>
                                             <td>post excerpt :</td>
                                             <td><div class="nk-int-st"><input type="text" class="form-control" value="<?php echo $post->post_excerpt; ?>" placeholder=""></div></td>
@@ -198,26 +197,15 @@
                                         */
                                     ?>
 
-
-
-
-
-
                                     </tbody>
                                 </table>
-
-
-
-
 
                             </div>
                         </div>
                     </div>
 
 
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    
-                                    
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                    
                                 <div class="fm-checkbox">
                                     
                                 </div>
