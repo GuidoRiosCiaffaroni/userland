@@ -34,6 +34,266 @@ function secure_setup()
 /****************************************************************************************************************************************************/
 
 /********************************************************************************************/
+// Auntentificacion  
+/*
+Dependecia
+PlugIn Name             :   
+PlugIn Url              :   
+PlugIn Url WordPress    :   
+
+URLs:
+
+
+
+*/
+/********************************************************************************************/
+add_action( 'authentication_system_theme', 'authentication_system' );
+function authentication_system() 
+{
+echo '-------------------------------------------------------------------------------------';
+echo '</br>';
+
+echo $_GET['test'];
+
+//wp_authenticate( 'admin', '123' );
+//header('Location: '.home_url().'/');
+
+echo '</br>';
+echo '-------------------------------------------------------------------------------------';
+echo '</br>';
+
+
+$email = 'guido@guidorios.cl'; 
+$password = '123';
+
+    if ($email !== null && $password !== null) {
+        /**
+         * @var \WegeTech\LottoYard\Service $lottoService
+         */
+        global $lottoService;
+        $credentials = array();
+        $credentials['user_login'] = $email;
+        $credentials['user_password'] = $password;
+        $credentials['remember'] = true;
+        $user = wp_signon($credentials, false);
+        if (is_wp_error($user)) 
+        {
+            wp_send_json(array('data' => $user->get_error_message()));
+        } 
+        else 
+        {
+            header('Location: '.home_url().'/');
+            /*
+            $userData = new User();
+            $lottoPass = get_user_meta($user->id, 'lottoPass', true);
+            $userData->Email = $email;
+            $userData->Password = $lottoPass;
+            $response = $lottoService->loginUser($userData);
+            session_start();
+            $_SESSION['userData'] = $response->data;
+            if ($response->success) 
+            {
+                header('Location: http://wpjl.2hypnotize.com/');
+            } 
+            else 
+            {
+                wp_send_json(array('data' => $response->message));
+            }
+            */
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+/********************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************************************************************************************************************************************/
+
+/********************************************************************************************/
 // Ingreso Post
 /*
 URLs
@@ -226,15 +486,6 @@ https://stackoverflow.com/questions/17617858/wordpress-wp-insert-post-wp-update-
 add_action( 'page_post_update', 'post_update' );
 function post_update() 
 {
-    //global $wpdb;
-    
-    /*
-    echo '-------------------------------------------------------------------->';
-    echo '</br>';
-    echo $_GET['ID'];
-    echo '</br>';
-    echo $_POST['ID_post'];
-    */
 
     if ($_GET['ID'] == null || $_GET['ID_post'] != null)
     {
@@ -448,31 +699,6 @@ function install_setup()
     'post_type'     => 'page'
     );
     wp_insert_post( $my_page );    
-
-}
-/********************************************************************************************/
-
-/****************************************************************************************************************************************************/
-
-/********************************************************************************************/
-// Actualizar Post 
-/*
-https://developer.wordpress.org/reference/hooks/post_updated/
-
-*/
-/********************************************************************************************/
-add_action( 'page_post_test', 'post_test' );
-function post_test() 
-{
-
-echo "------------------------------------------------------------------------------------------------>";
-
-$post = get_post( 256 );
-
-$post->post_content = "Some other content 35";
-
-wp_update_post( $post );
-
 
 }
 /********************************************************************************************/
