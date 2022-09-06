@@ -101,7 +101,7 @@ $password = '123';
 
 
 
-            //header('Location: '.home_url().'/');
+            header('Location: '.home_url().'/');
             /*
             $userData = new User();
             $lottoPass = get_user_meta($user->id, 'lottoPass', true);
