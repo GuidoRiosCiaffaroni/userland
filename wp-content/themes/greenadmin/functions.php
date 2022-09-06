@@ -59,6 +59,7 @@ echo '</br>';
 
 
 $email = 'guido@guidorios.cl'; 
+//$email = 'admin'; 
 $password = '123';
 
     if ($email !== null && $password !== null) {
@@ -77,7 +78,23 @@ $password = '123';
         } 
         else 
         {
-            header('Location: '.home_url().'/');
+            /*
+            $user = get_user_by( $email, $password );
+            echo 'User is ' . $user->first_name . ' ' . $user->last_name;
+            echo '</br>';
+            echo 'User Email ' . $user->user_email;
+            */
+
+
+            $user = get_user_by( $email, $password );
+            if($user)
+            {
+                echo $user->ID;
+            }
+
+
+
+            //header('Location: '.home_url().'/');
             /*
             $userData = new User();
             $lottoPass = get_user_meta($user->id, 'lottoPass', true);
