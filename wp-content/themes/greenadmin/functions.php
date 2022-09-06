@@ -42,8 +42,11 @@ PlugIn Url              :
 PlugIn Url WordPress    :   
 
 URLs:
-
-
+https://hotexamples.com/es/examples/-/-/get_user_by/php-get_user_by-function-examples.html
+https://developer.wordpress.org/reference/functions/get_user_by/
+https://developer.wordpress.org/reference/functions/wp_signon/
+https://hotexamples.com/es/examples/-/-/get_user_by/php-get_user_by-function-examples.html
+https://developer.wordpress.org/reference/functions/get_userdata/
 
 */
 /********************************************************************************************/
@@ -89,7 +92,11 @@ $password = '123';
             $user = get_user_by( $email, $password );
             if($user)
             {
+                echo '-------------------';
+                echo '</br>';
                 echo $user->ID;
+                echo '</br>';
+                echo '-------------------';
             }
 
 
