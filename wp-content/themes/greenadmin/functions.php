@@ -53,11 +53,6 @@ function authentication_system()
 echo '-------------------------------------------------------------------------------------';
 echo '</br>';
 
-echo $_GET['test'];
-
-//wp_authenticate( 'admin', '123' );
-//header('Location: '.home_url().'/');
-
 echo '</br>';
 echo '-------------------------------------------------------------------------------------';
 echo '</br>';
@@ -70,7 +65,7 @@ $password = '123';
         /**
          * @var \WegeTech\LottoYard\Service $lottoService
          */
-        global $lottoService;
+        //global $lottoService;
         $credentials = array();
         $credentials['user_login'] = $email;
         $credentials['user_password'] = $password;
