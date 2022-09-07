@@ -75,68 +75,39 @@ $password = '123';
         } 
         else 
         {
-
-
             $sql = "SELECT * FROM {$wpdb->prefix}users WHERE user_email LIKE '%$email%'";
             $result = $wpdb->get_results($sql);
 
-
             foreach( $result as $results ) 
             {
-                echo '</br>';
-                echo "-->".$results->ID.'</br>';
+                echo "ID -->        ".$results->ID.'</br>';
+                echo "user_pass --> ".$results->user_pass.'</br>';
             }
 
+            $bytes = random_bytes(12);
+            echo $bytes . '</br>';
+            echo bin2hex($bytes) . '</br>';
+            $varbin = bin2hex($bytes);
 
+            //echo var_dump(bin2hex($bytes)) . '</br>';
+            
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-$user = new WP_User(get_current_user_id());
-echo $user->roles[0];
-*/
-            /*
-            $user = get_user_by( $email, $password );
-            echo 'User is ' . $user->first_name . ' ' . $user->last_name;
+            $options = [
+            'cost' => 12,
+            ];
+            echo password_hash($varbin, PASSWORD_BCRYPT, $options);
             echo '</br>';
-            echo 'User Email ' . $user->user_email;
-            */
-
-            /*
-            $user = get_user_by( $email, $password );
-            if($user)
-            {
-                echo '-------------------';
-                echo '</br>';
-                echo $user->ID;
-                echo '</br>';
-                echo '-------------------';
-            }
-            */
-
+            
 
             //header('Location: '.home_url().'/');
+            
+
+
+
+
+
+
+
             /*
             $userData = new User();
             $lottoPass = get_user_meta($user->id, 'lottoPass', true);
@@ -156,193 +127,8 @@ echo $user->roles[0];
             */
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 /********************************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /****************************************************************************************************************************************************/
