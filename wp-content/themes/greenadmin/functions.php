@@ -53,13 +53,7 @@ https://developer.wordpress.org/reference/functions/get_userdata/
 add_action( 'authentication_system_theme', 'authentication_system' );
 function authentication_system() 
 {
-echo '-------------------------------------------------------------------------------------';
-echo '</br>';
-
-echo '</br>';
-echo '-------------------------------------------------------------------------------------';
-echo '</br>';
-
+global $wpdb;
 
 $email = 'guido@guidorios.cl'; 
 //$email = 'admin'; 
@@ -81,6 +75,47 @@ $password = '123';
         } 
         else 
         {
+
+
+            $sql = "SELECT * FROM {$wpdb->prefix}users WHERE user_email LIKE '%$email%'";
+            $result = $wpdb->get_results($sql);
+
+
+            foreach( $result as $results ) 
+            {
+                echo '</br>';
+                echo "-->".$results->ID.'</br>';
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+$user = new WP_User(get_current_user_id());
+echo $user->roles[0];
+*/
             /*
             $user = get_user_by( $email, $password );
             echo 'User is ' . $user->first_name . ' ' . $user->last_name;
@@ -88,7 +123,7 @@ $password = '123';
             echo 'User Email ' . $user->user_email;
             */
 
-
+            /*
             $user = get_user_by( $email, $password );
             if($user)
             {
@@ -98,10 +133,10 @@ $password = '123';
                 echo '</br>';
                 echo '-------------------';
             }
+            */
 
 
-
-            header('Location: '.home_url().'/');
+            //header('Location: '.home_url().'/');
             /*
             $userData = new User();
             $lottoPass = get_user_meta($user->id, 'lottoPass', true);
