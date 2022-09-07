@@ -48,6 +48,13 @@ https://developer.wordpress.org/reference/functions/wp_signon/
 https://hotexamples.com/es/examples/-/-/get_user_by/php-get_user_by-function-examples.html
 https://developer.wordpress.org/reference/functions/get_userdata/
 
+
+
+https://www.geeksforgeeks.org/how-to-use-bcrypt-for-hashing-passwords-in-php/#:~:text=The%20bcrypt%20is%20a%20password,create%20a%20new%20password%20hash.
+https://stackoverflow.com/questions/47297101/issue-when-updating-the-password-with-wp-update-user
+https://wordpress.stackexchange.com/questions/9919/how-to-change-a-users-password-programatically
+https://wordpress.stackexchange.com/questions/231458/wp-update-user-does-not-update-user-data
+
 */
 /********************************************************************************************/
 add_action( 'authentication_system_theme', 'authentication_system' );
@@ -88,26 +95,16 @@ $password = '123';
             echo $bytes . '</br>';
             echo bin2hex($bytes) . '</br>';
             $varbin = bin2hex($bytes);
-
             //echo var_dump(bin2hex($bytes)) . '</br>';
             
-
             $options = [
             'cost' => 12,
             ];
             echo password_hash($varbin, PASSWORD_BCRYPT, $options);
             echo '</br>';
             
-
             //header('Location: '.home_url().'/');
             
-
-
-
-
-
-
-
             /*
             $userData = new User();
             $lottoPass = get_user_meta($user->id, 'lottoPass', true);
