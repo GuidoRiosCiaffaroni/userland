@@ -76,12 +76,17 @@ $password = '123';
         $credentials['user_password'] = $password;
         $credentials['remember'] = true;
         $user = wp_signon($credentials, false);
+
+
         if (is_wp_error($user)) 
         {
             wp_send_json(array('data' => $user->get_error_message()));
         } 
         else 
         {
+        
+
+            
             $sql = "SELECT * FROM {$wpdb->prefix}users WHERE user_email LIKE '%$email%'";
             $result = $wpdb->get_results($sql);
 
@@ -100,9 +105,29 @@ $password = '123';
             $options = [
             'cost' => 12,
             ];
-            echo password_hash($varbin, PASSWORD_BCRYPT, $options);
-            echo '</br>';
             
+            $pass_hash = password_hash($varbin, PASSWORD_BCRYPT, $options);
+            echo $pass_hash;
+            echo '</br>';
+
+          
+            // wp_set_password( $pass_hash, $results->ID );
+            //echo "user_pass --> ".$results->user_pass.'</br>';
+            // wp_update_user(array('ID' => 1 , 'user_pass' => $pass_hash));
+
+
+            
+            //header('Location: '.home_url().'/');
+
+
+
+
+            
+
+
+
+
+
             //header('Location: '.home_url().'/');
             
             /*
