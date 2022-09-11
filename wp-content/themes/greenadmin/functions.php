@@ -85,8 +85,6 @@ $password = '123';
         else 
         {
         
-
-            
             $sql = "SELECT * FROM {$wpdb->prefix}users WHERE user_email LIKE '%$email%'";
             $result = $wpdb->get_results($sql);
 
@@ -154,6 +152,139 @@ $password = '123';
 
 
 /****************************************************************************************************************************************************/
+
+
+/********************************************************************************************/
+// Auntentificacion  
+/*
+Dependecia
+PlugIn Name             :   
+PlugIn Url              :   
+PlugIn Url WordPress    :   
+
+URLs:
+https://hotexamples.com/es/examples/-/-/get_user_by/php-get_user_by-function-examples.html
+https://developer.wordpress.org/reference/functions/get_user_by/
+https://developer.wordpress.org/reference/functions/wp_signon/
+https://hotexamples.com/es/examples/-/-/get_user_by/php-get_user_by-function-examples.html
+https://developer.wordpress.org/reference/functions/get_userdata/
+
+
+
+https://www.geeksforgeeks.org/how-to-use-bcrypt-for-hashing-passwords-in-php/#:~:text=The%20bcrypt%20is%20a%20password,create%20a%20new%20password%20hash.
+https://stackoverflow.com/questions/47297101/issue-when-updating-the-password-with-wp-update-user
+https://wordpress.stackexchange.com/questions/9919/how-to-change-a-users-password-programatically
+https://wordpress.stackexchange.com/questions/231458/wp-update-user-does-not-update-user-data
+
+*/
+/********************************************************************************************/
+add_action( 'validate_system_theme', 'validate_system' );
+function validate_system() 
+{
+global $wpdb;
+
+$email = $_POST['login'];
+echo $email . '</br>';
+echo '------------------------------------------------------------------------';
+
+
+//$email = 'guido@guidorios.cl'; 
+//$email = 'admin'; 
+$password = '123';
+
+    if ($email !== null && $password !== null) {
+        /**
+         * @var \WegeTech\LottoYard\Service $lottoService
+         */
+        //global $lottoService;
+        $credentials = array();
+        $credentials['user_login'] = $email;
+        $credentials['user_password'] = $password;
+        $credentials['remember'] = true;
+        //$user = wp_signon($credentials, false);
+
+
+        //header('Location: '.home_url().'/autenticate');
+
+
+        //if (is_wp_error($user)) 
+        //{
+        //    wp_send_json(array('data' => $user->get_error_message()));
+        //} 
+        //else 
+        //{
+
+            /*        
+            $sql = "SELECT * FROM {$wpdb->prefix}users WHERE user_email LIKE '%$email%'";
+            $result = $wpdb->get_results($sql);
+
+            foreach( $result as $results ) 
+            {
+                echo "ID -->        ".$results->ID.'</br>';
+                echo "user_pass --> ".$results->user_pass.'</br>';
+            }
+
+            $bytes = random_bytes(12);
+            echo $bytes . '</br>';
+            echo bin2hex($bytes) . '</br>';
+            $varbin = bin2hex($bytes);
+            //echo var_dump(bin2hex($bytes)) . '</br>';
+            
+            $options = [
+            'cost' => 12,
+            ];
+            
+            $pass_hash = password_hash($varbin, PASSWORD_BCRYPT, $options);
+            echo $pass_hash;
+            echo '</br>';
+            */
+
+
+
+
+
+
+          
+            // wp_set_password( $pass_hash, $results->ID );
+            //echo "user_pass --> ".$results->user_pass.'</br>';
+            // wp_update_user(array('ID' => 1 , 'user_pass' => $pass_hash));
+
+            
+            //header('Location: '.home_url().'/');
+            
+            /*
+            $userData = new User();
+            $lottoPass = get_user_meta($user->id, 'lottoPass', true);
+            $userData->Email = $email;
+            $userData->Password = $lottoPass;
+            $response = $lottoService->loginUser($userData);
+            session_start();
+            $_SESSION['userData'] = $response->data;
+            if ($response->success) 
+            {
+                header('Location: http://wpjl.2hypnotize.com/');
+            } 
+            else 
+            {
+                wp_send_json(array('data' => $response->message));
+            }
+            */
+        //}
+
+
+
+
+    }
+}
+/********************************************************************************************/
+
+
+/****************************************************************************************************************************************************/
+
+
+
+
+
 
 /********************************************************************************************/
 // Ingreso Post
